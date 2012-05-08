@@ -1,0 +1,16 @@
+<div class="portlet-data">
+	<div id="FeaturedProfilesPortlet-RootData">
+		<script id="FeaturedProfilesPortletView" type="text/html">
+			<li class="title">Các thành viên tích cực</li>
+			<li class="list_user">
+    		<% for(var i=0;i<users.length;i++) { %>
+				<ul>
+                    <li class="left"><a href="#!page/Profile/id/<%=users[i].id%>" class="userpro"><%=users[i].name%></a></li>
+                    <li class="middle"><%=users[i].expertise%></li>
+                    <li class="right">?</li>
+				</ul>
+			<% } %>
+			</li>
+		</script>
+	</div>
+</div>

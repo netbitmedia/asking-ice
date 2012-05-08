@@ -1,0 +1,26 @@
+<div class='portlet-data'>
+	<div id='FeaturedArticlesPortlet-RootData'>
+		<script type="text/html" id='FeaturedArticlesPortletView'>
+        	<div class="box">
+        		<div class="box_header">Được bình chọn nhiều nhất</div>
+        		<div class="box_wrapper">
+        			<div class="box_outer" id="FeaturedArticlesPortlet-ContentPlaceholder">
+        			</div>
+        		</div>
+        	</div>
+		</script>
+		
+		<script type="text/html" id='FeaturedArticlesPortlet-FeaturedArticles'>
+			<% for (var i in articles) { %>
+				<div class="box_article_row">
+					<div class="left box_count_vote"><%=articles[i].vote%></div>
+					<div class="right">
+						<a class="bold" href="#!page/Profile/id/<%=articles[i].userId%>"><%=articles[i].name%></a>: 
+						<a href="#!page/ArticleDetail/aid/<%=articles[i].id%>"><%=articles[i].title%></a>
+						<%=articles[i].summary%>
+					</div>
+				</div><!-- box row-->
+			<% } %>
+		</script>
+	</div>
+</div>

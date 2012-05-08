@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>BKProfile - Kết nối - Chia sẻ - Thành công</title>
+		<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+		
+        <script type="text/javascript">
+        	google.load("gdata", "1.x");
+			google.setOnLoadCallback(initFunc);
+			
+			function closeWindow()	{
+				self.close();
+			}
+			
+			function initFunc()	{
+				var scope = 'https://www.google.com/m8/feeds';
+				if (google.accounts.user.checkLogin(scope))	{
+			  		closeWindow();
+					return;
+			  	}
+				if (window.location.href.indexOf('#') == -1)
+					logMeIn();
+			}
+			
+			function logMeIn() {
+				var scope = 'https://www.google.com/m8/feeds';
+				contactsService = new google.gdata.contacts.ContactsService('BKProfile-Picker-1-0');
+			  	var token = google.accounts.user.login(scope);
+				return;
+			}
+		</script>
+	</head>
+	<body>
+		<img src="static/css/beta/images/logo/banner.jpg">
+	</body>
+</html>

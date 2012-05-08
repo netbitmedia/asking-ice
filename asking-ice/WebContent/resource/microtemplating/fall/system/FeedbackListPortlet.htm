@@ -1,0 +1,23 @@
+<div class="portlet-data">
+	<div id="FeedbackListPortlet-RootData">
+		<script id="FeedbackListPortlet-Content" type="text/html">
+			<% for(var i=0; i<feedbacks.length; i++) { %>
+				<div class="item font11">
+					<%=feedbacks[i].content%>
+					<div class="note font11">Được gửi bởi <%=feedbacks[i].userId != 0 ? "bạn <a class=user-account href=#!page/Profile/id/"+feedbacks[i].userId+">"+feedbacks[i].name+"</a>, "+ $.timeFormat(feedbacks[i].since) : "một bạn giấu tên"%></div>
+				</div>
+			<% } %>
+		</script>
+		<script id="FeedbackListPortletView" type="text/html">
+			<div class="box">
+            	<div class="box_header">
+                	Góp ý cho Asking.vn
+            	</div><!-- box2-title -->
+           		<div class="box_wrapper">
+                	<div id="FeedbackListPortlet-ContentPlaceholder" class="box_outer _text_left">
+                    </div><!-- user-comment -->
+            	</div><!-- box2-content -->
+            </div><!-- box2 -->
+		</script>
+	</div>
+</div>

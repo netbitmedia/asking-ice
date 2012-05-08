@@ -1,0 +1,21 @@
+<div class='portlet-data'>
+	<div id='BookmarkPorlet-RootData'>
+		<script type="text/html" id="BookmarkPortlet-QuestionTmpl">
+			<% for(var i in list) { %>
+				<div class="listview">
+					<div class="right">
+						<a class="list_title" href="#!page/Question/qid/<%=list[i].questionId%>/s/<%=$.slugify(list[i].title)%>"><%=list[i].title%></a><br />
+		    	        <span class="note">Bookmark vào <%=$.timeFormat(list[i].since)%></span>
+					</div>
+				</div>
+			<% } %>
+		</script>
+		<script type="text/html" id="BookmarkPortletView">
+			<div id="BookmarkPortlet-Container">
+			</div>
+			<div class="page_more">    
+				<a id="BookmarkPortlet-ViewMore" onclick="generateEvent('GetMoreBookmarks')">Xem thêm ↓</a>   
+			</div>
+		</script>
+	</div>
+</div>

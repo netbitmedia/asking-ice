@@ -1,0 +1,82 @@
+<div class='portlet-data'>
+	<div id='UserBrowserPortlet-RootData'>
+		<script type="text/html" id='UserBrowserPortletView'>
+		<div class="boundgrid">
+        	<div id="UserBrowserPortlet-ContentPlaceholder">
+				<div class="browse_title">Các thành viên uy tín</div>
+        		<div id="UserBrowserPortlet-ContentPlaceholder-MaxScore"></div>
+
+        		<div id="UserBrowserPortlet-ContentPlaceholder-TopRank">
+					<div class="browse_title">Các thành viên xếp hạng cao</div>
+				</div>
+
+				<div class="browse_title">Các thành viên mới</div>
+        		<div id="UserBrowserPortlet-ContentPlaceholder-Latest"></div>
+
+        		<!--<span class="more"><a href="#!page/AllUsers">Xem tất cả</a></span>-->
+        	</div>
+			<div class="bottom_box">
+				<div class="header">Các câu hỏi thường gặp
+					<div class="_right">
+						<a href="#!page/Faq" class="green_button">FAQ ></a>
+						<a href="#!page/AllUsers" class="green_button">Danh sách thành viên ></a>
+					</div>
+				</div>
+				<div class="grey_box">
+					<ul>
+						<li><a href="#!qid/213/page/Question">Những ai được tham gia BKProfile?</a></li>
+						<li><a href="#!qid/292/page/Question">Sinh viên dùng BKPROFILE để làm gì?</a></li>
+						<li><a href="#!qid/176/page/Question">Muốn thay đổi thông tin cá nhân trên BKProfile thì làm thế nào?</a></li>
+						<li><a href="#!qid/20/page/Question">Làm sao để BKProfile có thể mở rộng và duy trì được cộng đồng người sử dụng?</a></li>
+					</ul>
+				</div>
+			</div><!-- end grey_box -->
+		</div>
+		</script>
+		<script type="text/html" id='UserBrowserPortlet-TopRankList'>
+			<% for(var i=0; i< users.length; i++) { %>
+				<div class="user_brief">
+					<div class="left">
+						<a href="#!page/Profile/id/<%=users[i].userId%>">
+							<img onerror="this.src='resource/images/unknown.png'" class="avatar60 bkp_pic_profile" src="resource/avatar/<%=users[i].avatar%>" alt="avatar" />
+						</a>
+					</div>
+					<div class="right">
+						<a href="#!page/Profile/id/<%=users[i].userId%>"><%=users[i].name%></a><br />
+						Hạng 1 <%=users[i].ranks%>
+					</div>
+				</div>
+			<% } %>
+		</script>
+		<script type="text/html" id='UserBrowserPortlet-MaxScoreList'>
+			<% for(var i=0; i< users.length; i++) { %>
+				<div class="user_brief">
+					<div class="left">
+						<a href="#!page/Profile/id/<%=users[i].id%>">
+							<img onerror="this.src='resource/images/unknown.png'" class="avatar60 bkp_pic_profile" src="resource/avatar/<%=users[i].avatar%>" alt="avatar" />
+						</a>
+					</div>
+					<div class="right stat_outer">
+						<a href="#!page/Profile/id/<%=users[i].id%>"><%=users[i].name%></a><br />
+						<span class="beescore stat"><%=users[i].score%></span>
+					</div>
+				</div>
+			<% } %>
+		</script>
+		<script type="text/html" id='UserBrowserPortlet-LatestList'>
+			<% for(var i=0; i< users.length; i++) { %>
+				<div class="user_brief">
+					<div class="left">
+						<a href="#!page/Profile/id/<%=users[i].id%>">
+							<img onerror="this.src='resource/images/unknown.png'" class="avatar60 bkp_pic_profile" src="resource/avatar/<%=users[i].avatar%>" alt="avatar" />
+						</a>
+					</div>
+					<div class="right">
+						<a href="#!page/Profile/id/<%=users[i].id%>"><%=users[i].name%></a><br />
+						<span class="note"><%=$.timeFormat(users[i].registerDate)%></span>
+					</div>
+				</div>
+			<% } %>
+		</script>
+	</div>
+</div>

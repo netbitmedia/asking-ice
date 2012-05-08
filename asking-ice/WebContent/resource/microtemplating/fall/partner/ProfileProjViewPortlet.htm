@@ -1,0 +1,78 @@
+<div class="portlet-data">
+	<div id="ProfileProjViewPortlet-RootData">
+		<script type="text/html" id="ProfileProjViewPortletView">
+			<div class="grey_title"> 
+				Thông tin công việc
+			</div>
+			<div id="ProfileProjViewPortlet-Profile">
+				<div profileExtension="project" class="user-outer">
+				</div> 
+			</div>
+		</script>
+		<script type="text/html" id="ProfileProjViewPortlet-ProjectTmpl">
+			<div class="dynamic-edit-main" level=<%=partner.level.val%> id=<%=partner.id.val%> tbl="<%=partner.tbl.val%>" >
+				<div class="row2 title-formatter">
+					<div class="left">
+						<span class="keyword">Công ty</span>
+					</div>
+					<div class="right">
+						<div class="content">
+							<%=partner.name.val%>
+						</div>
+					</div>
+				</div><!-- end row -->
+				
+				<div class="row2 normal-formatter">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<div class="normal-left">
+							<span class="keyword">Vị trí:</span> 
+						</div>
+						<div class="normal-right">
+							<span class="content"><%=partner.isNew.val?"":partner.position.val%></span>
+						</div>
+					</div>
+				</div><!-- end row -->
+				
+				<div class="row2 normal-formatter">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<div class="normal-left">
+							<span class="keyword">Thời gian:</span> 
+						</div>
+						<div class="normal-right">
+							<span class="content">
+								từ <%=partner.isNew.val?"":partner.from.val%>
+								tới <%=partner.isNew.val?"":partner.to.val%>
+							</span>
+						</div>
+					</div>
+				</div><!-- end row -->
+
+				<div class="row2 normal-formatter">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<div class="normal-left">
+							<span class="keyword">Tỉnh/thành phố:</span> 
+						</div>
+						<div class="normal-right">
+							<span class="content"><%=partner.isNew.val?"":partner.place.val%></span>
+						</div>
+					</div>
+				</div><!-- end row -->
+				
+				<div class="row2 normal-formatter">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<div class="normal-left">
+							<span class="keyword">Mô tả:</span> 
+						</div>
+						<div class="normal-right">
+							<span class="content"><%=partner.isNew.val?"":partner.description.val%></span>
+						</div>
+					</div>
+				</div><!-- end row -->
+			</div>	
+		</script>
+	</div>
+</div>

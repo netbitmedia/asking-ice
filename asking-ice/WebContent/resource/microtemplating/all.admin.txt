@@ -1,0 +1,138 @@
+<div id="shadow"></div>
+<div id="action_msg" style="display: none;">
+	<span id="msg_content"></span>&nbsp;&nbsp;&nbsp;&nbsp;<a>x</a>
+</div>
+<div id="effective-area">
+	<div id="container">
+		<div id="header">
+			<div class="row">
+	        	<div id="logo">
+	            	<a href="#"><img src="resource/css/fall/images/home/logo2.png" alt="Trang chủ"/></a>
+	            </div><!--end logo-->
+	            <div class="right">
+					<div class="top-menu extension-point" extensionname="TopRight">
+					</div><!-- end top menu-->
+					<div class="statistic" id="header_right"></div>
+				</div>
+			</div>
+            <div id="menu_header">
+            	<div id="menu_left">
+                    <a class="active home" page="Introduce" href="http://asking.vn#!page/Introduce" title="Trang chủ"></a>
+                    <a class="" page="Home" href="http://asking.vn#!page/Home" title="Các câu hỏi và trả lời tại Asking.vn">Hỏi đáp</a>
+                    <a class="" page="AllTopics" href="http://asking.vn#!page/AllTopics" title="Các lĩnh vực được thảo luận tại Asking.vn">Lĩnh vực</a>
+                    <a class="" page="Article" href="http://asking.vn#!page/Article" title="Các bài viết trên Asking.vn">Bài viết</a>
+                    <a class="" page="AllUsers" href="http://asking.vn#!page/AllUsers" title="Các thành viên trên Asking.vn">Thành viên</a>
+                </div><!--end menu_left-->
+                <div id="menu_right">
+				</div><!--end menu_right-->
+            </div><!--end menu_header-->
+        </div><!--end header-->
+        
+        <div id="wrapper">
+        	<div id="content_top"></div>
+			<div id="content">
+				<div id="content_left">
+					<div class="extension-point" extensionName="MiddleMain"></div>
+					<div id="top_left"></div>
+					<div id="main_left"></div>
+				</div>
+				<div id="content_right">
+				</div>
+			</div>
+        </div><!--end wrapper-->
+        <br style="clear:both" />
+    </div><!--end container-->
+    <div id="footer">
+        <div id="other"></div>
+    </div><!--end footer-->
+</div>
+<div id="Portlets-Layout">
+	<script type="text/html" id="portlets-LayoutPage">
+	{
+	plugins:
+	[
+	{plugin: 'PopupPlugin', delay: false}
+	]
+	,
+	portlets:
+	[
+	{portlet: 'StatsPortlet', position: 'content_top'}
+	]
+	}
+	</script>
+	
+	<script type="text/html" id="portlets-Home">
+	{
+	plugins:
+	[
+	]
+	,
+	portlets:
+	[
+	]
+	,
+	parent: 'LayoutPage'
+	}
+	</script>
+	
+	<script type="text/html" id="portlets-Newsletter">
+	{
+	plugins:
+	[
+	]
+	,
+	portlets:
+	[
+	{portlet: 'NewsletterPortlet', position: 'main_left'}
+	]
+	,
+	parent: 'LayoutPage'
+	}
+	</script>
+	
+	<script type="text/html" id="portlets-ErrorPage">
+	{
+	plugins:
+	[
+	]
+	,
+	portlets:
+	[
+	]
+	,
+	parent: 'LayoutPage'
+	}
+	</script>
+</div>
+
+<div class='portlet-data'>
+	<div id='NewsletterPortlet-RootData'>
+		<script type="text/html" id='NewsletterPortletView'>
+			<div class="grey_title">Asking.vn Newsletter</div>
+			<div class="askQuestionWrapper">
+				<div class="row">
+					<div class="left">Tiêu đề: <input type="text" class="text" id="NewsletterPortlet-Title" /></div>
+				</div>
+				<div class="row">
+					Nội dung
+				</div>
+				<div class="row">
+					<textarea id="NewsletterPortlet-Content"></textarea>
+				</div>
+				<div class="row _text_right">
+					<a onclick="generateEvent('SendNewsletter')" class="action_button">Gửi</a>
+				</div>
+			</div>
+		</script>
+	</div>
+</div>
+<div class='portlet-data'>
+	<div id='StatsPortlet-RootData'>
+		<script type="text/html" id='StatsPortletView'>
+			<span class="number" id="StatsPortlet-UserTotal">?</span>  Thành viên&nbsp;&nbsp;
+			<span class="number" id="StatsPortlet-CatchwordTotal">?</span>  Chủ đề&nbsp;&nbsp;
+			<span class="number" id="StatsPortlet-QuestionTotal">?</span>  Câu hỏi&nbsp;&nbsp;
+			<span class="number" id="StatsPortlet-AnswerTotal">?</span>  Câu trả lời
+		</script>
+	</div>
+</div>

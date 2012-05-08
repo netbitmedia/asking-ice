@@ -1,0 +1,34 @@
+<div class='portlet-data'>
+    <div id='PartnerBasicInfoPortlet-RootData'>
+		<script type="text/html" id="PartnerBasicInfoPortlet-IntroductionTmpl">
+			<div class="box4-content">
+				<div class="row">
+					<span class="dynamic-edit-selection">	
+                    	<a class="dynamic-edit-selection-view" onclick="generateEvent('DynamicEditViewButtonClick',event)"> Xem </a>
+						<a class="dynamic-edit-selection-edit" onclick="generateEvent('DynamicEditEditButtonClick',event)"> Sửa </a>
+					</span>
+                </div>
+	            <div class="row">
+					<span class="profile-introduction">
+						<span class="dynamic-edit-content">
+							<span class="dynamic-edit-content-value"><%=partner.introduction.val%></span>
+							<a class="dynamic-edit-content-button-fix dynamic-edit-editable"> Sửa </a>
+							<br/>
+						</span>
+						<span class="dynamic-edit-form" style="display:none">
+							<input isRequired="true" class="text dynamic-edit-form-value" name="introduction" tid="<%=partner.introduction.id%>" tbl="<%=partner.introduction.tbl%>" type="text" />
+							<a class="dynamic-edit-content-button-save" onclick="generateEvent('DynamicEditSaveButtonClick',event)"> Lưu </a>
+							<a class="dynamic-edit-content-button-cancel"> Hủy </a>
+						</span>
+					</span>
+				</div>
+	        </div><!-- box4-content -->
+		</script>
+        <script type="text/html" id="PartnerBasicInfoPortletView">
+    		<div class="grey_title">
+            	Giới thiệu
+        	</div>
+    		<div id="PartnerBasicInfoPortlet-Introduction"> </div>
+        </script>
+    </div>
+</div>

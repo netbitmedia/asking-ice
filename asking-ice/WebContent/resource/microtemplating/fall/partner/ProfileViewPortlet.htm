@@ -1,0 +1,125 @@
+<div class="portlet-data">
+	<div id="ProfileViewPortlet-RootData">
+		<script type="text/html" id="ProfileViewPortletView">
+			<div class="grey_title">
+				Thông tin cơ bản
+			</div>
+			<div id="ProfileViewPortlet-Profile">
+				<div class="user-outer">
+					<% if (result == undefined || (result.about == undefined && result.gender == undefined || result.hometown == undefined)) { %>
+						Chưa cập nhật
+					<% } else { %>
+						<div class="row">
+							<div class="left">
+								Giới thiệu bản thân: 
+							</div>
+							<div class="right">
+								<% if (result.about != undefined) { %>
+									<%=result.about%>
+								<% } else { %>
+									Chưa cập nhật
+								<% } %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="left">
+								Quê quán: 
+							</div>
+							<div class="right">
+								<% if (result.hometown != undefined) { %>
+									<%=result.hometown%>
+								<% } else { %>
+									Chưa cập nhật
+								<% } %>
+							</div>
+						</div><!-- end row -->
+						<div class="row">
+							<div class="left">
+								Giới tính: 
+							</div>
+							<div class="right">
+								<% if (result.gender != undefined) { %>
+									<%=result.gender%>
+								<% } else { %>
+									Chưa cập nhật
+								<% } %>
+							</div>
+						</div><!-- end row -->
+					<% } %>
+				</div> 
+			</div>
+
+			<div class="grey_title">
+				Thông tin làm việc
+			</div>
+			<div id="ProfileViewPortlet-ProfileWork">
+				<div class="user-outer">
+					<% if (result == undefined || (result.profession == undefined && result.company == undefined)) { %>
+						Chưa cập nhật
+					<% } else { %>
+						<div class="row">
+							<div class="left">
+								Nghề nghiệp:
+							</div>
+							<div class="right">
+								<% if (result.profession != undefined) { %>
+									<%=result.profession%>
+								<% } else { %>
+									Chưa cập nhật
+								<% } %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="left">
+								Công ty: 
+							</div>
+							<div class="right">
+								<% if (result.company != undefined) { %>
+									<%=result.company%>
+								<% } else { %>
+									Chưa cập nhật
+								<% } %>
+							</div>
+						</div><!-- end row -->
+					<% } %>
+				</div> 
+			</div>
+
+			<div class="grey_title">
+				Thông tin học tập
+			</div>
+			<div id="ProfileViewPortlet-ProfileEdu">
+				<div class="user-outer">
+					<% if (result == undefined || (result.school == undefined && result.major == undefined)) { %>
+						Chưa cập nhật
+					<% } else { %>
+						<div class="row">
+							<div class="left">
+								Trường:
+							</div>
+							<div class="right">
+								<% if (result.school != undefined) { %>
+									<%=result.school%>
+								<% } else { %>
+									Chưa cập nhật
+								<% } %>
+							</div>
+						</div>
+						<div class="row">
+							<div class="left">
+								Chuyên ngành: 
+							</div>
+							<div class="right">
+								<% if (result.major != undefined) { %>
+									<%=result.major%>
+								<% } else { %>
+									Chưa cập nhật
+								<% } %>
+							</div>
+						</div><!-- end row -->
+					<% } %>
+				</div> 
+			</div>
+		</script>
+	</div>
+</div>

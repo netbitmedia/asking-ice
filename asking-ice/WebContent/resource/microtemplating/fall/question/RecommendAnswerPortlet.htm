@@ -1,0 +1,51 @@
+<div class='portlet-data'>
+	<div id='RecommendAnswerPortlet-RootData'>
+		<script type="text/html" id="RecommendAnswerPortletView">
+			<div class="box">
+				<div class="box_header">Mời người khác trả lời</div>
+				<div class="box_wrapper">
+					<div class="box_outer _text_left">
+						<input id="RecommendAnswerPortlet-AddPeopleInputBox" type="text" style="float: none" class="text" />
+						<a id="RecommendAnswerPortlet-SubmitButtonContainer" class="form_button" style="display: none" onclick="generateEvent('RecommendAnswerButtonClick')">Xong</a>
+						<div id="RecommendAnswerPortlet-AddPeopleContainer"></div>
+						<div id="RecommendAnswerPortlet-AddedContainer"></div>
+						<div><a class="has_icon mail" onclick="generateEvent('RecommendEmail')">Hoặc bạn có thể mời qua email</a></div>
+					</div><!-- box_outer -->
+				</div><!-- box_wrapper -->
+			</div><!-- box -->
+		</script>
+		
+		<script type="text/html" id="RecommendAnswerPortlet-AddedTmpl">
+			<% if (list.length > 0) { %>
+				<div>
+					<%=list.length%> người đã được mời trả lời:
+				</div>
+				<% for (var i=0;i<list.length&&i<10;i++) { %>
+					<a title="<%=list[i].name%>" href="#!page/Profile/id/<%=list[i].targetId%>">
+						<img class="avatar24 bkp_pic_profile" src="resource/avatar/<%=list[i].avatar%>" alt="<%=list[i].name%>" />
+					</a>
+				<% } %>
+			<% } %>
+		</script>
+		
+		<script type="text/html" id="RecommendAnswerPortlet-EmailRecommend">
+			<div class="recommend_box">
+				<div class="askQuestionWrapper">
+					<div class="row">
+						Gửi: <input id="RecommendAnswerPortlet-AddEmailInputBox" type="text" name="email" placeholder="Nhập vào Email" />
+					</div>
+					<div class="row">
+						<textarea id="RecommendAnswerPortlet-OptionalMsg" placeholder="Nhập vào lời nhắn (không bắt buộc)"></textarea>
+					</div>
+					<div class="popup-toolbar row">
+						<a class="action_button" onclick="generateEvent('EmailRecommendButtonClick')">Gửi Email</a>
+						<a class="button" onclick="generateEvent('PopupRemove', {id: 'RecommendAnswer'})">Hủy bỏ</a>
+					</div>
+					<div class="row">
+						<span class="error" id="RecommendAnswerPortlet-Error"></span>
+					</div>
+				</div>
+			</div>
+		</script>
+	</div>
+</div>

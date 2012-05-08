@@ -1,0 +1,25 @@
+<div class='portlet-data'>
+	<div id='LatestArticlesPortlet-RootData'>
+		<script type="text/html" id='LatestArticlesPortletView'>
+        	<div class="box">
+        		<div class="box_header">Bài viết mới nhất</div>
+        		<div class="box_wrapper">
+        			<div class="box_outer _text_left" id="LatestArticlesPortlet-ContentPlaceholder">
+        			</div>
+        		</div>
+        	</div>
+		</script>
+		
+		<script type="text/html" id='LatestArticlesPortlet-FeaturedArticles'>
+			<% for (var i in articles) { %>
+				<div class="box_article_row">
+					<a class="bold" href="#!page/Profile/id/<%=articles[i].userId%>"><%=articles[i].name%></a>: 
+					<a href="#!page/ArticleDetail/aid/<%=articles[i].id%>"><%=articles[i].title%></a>
+					<span class="note">
+						<%=articles[i].since != null? $.timeFormat(articles[i].since):""%>
+					</span>
+				</div><!-- box row-->
+			<% } %>
+		</script>
+	</div>
+</div>

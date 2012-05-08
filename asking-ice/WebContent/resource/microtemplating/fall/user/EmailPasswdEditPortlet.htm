@@ -1,0 +1,176 @@
+<div class='portlet-data'>
+	<div id="EmailPasswdEditPortlet-RootData">
+		<script type="text/html" id="EmailPasswdEditPortletView">
+			<div class="browse_title">
+				Sửa thông tin tài khoản
+			</div>
+			<div class="usercp_box">
+				<div class="left">
+					<img class="bkp_pic_profile avatar48" alt="avatar" src="resource/avatar/<%=avatar%>" />
+				</div>
+				<div class="right">
+					<span class="bold"><%=name%></span><br />
+					<a href="#!page/UserAvatarEdit">Sửa hồ sơ cá nhân</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="separator"></div>
+			<div class="usercp_item">
+				<div class="row">
+					<span class="grey_title">Bảo mật</span>
+				</div>
+				<div class="row">
+					<div class="left">Mật khẩu</div>
+					<div class="right bkp_passwd"><a onclick="$('.bkp_passwd').hide(); $('.bkp_passwd_edit').show()">Đổi mật khẩu</a></div>
+					<div class="right bkp_passwd_edit" style="display: none;">
+						<br />
+						<div class="edit_row">
+							<span class="edit_label">Mật khẩu hiện tại: </span>
+							<span><input type="password" id="EmailPasswdEditPortlet-CurrentPasswd" /></span>
+							<span id="EmailPasswdEditPortlet-CurPassError" class="error"></span>
+						</div>
+						<div class="edit_row">
+							<span class="edit_label">Mật khẩu mới: </span>
+							<span><input type="password" id="EmailPasswdEditPortlet-Passwd" /></span>
+							<span id="EmailPasswdEditPortlet-NewPassError" class="error"></span>
+						</div>
+						<div class="edit_row">
+							<span class="edit_label">Nhập lại mật khẩu mới: </span>
+							<span><input type="password" id="EmailPasswdEditPortlet-ConfirmPasswd" /></span>
+							<span id="EmailPasswdEditPortlet-ConfirmPassError" class="error"></span>
+						</div>
+
+						<div class="clear"></div>
+						<div class="short_separator"></div>
+
+						<div class="edit_row">
+							<a class="action_button" onclick="generateEvent('SubmitPasswd')">Đồng ý</a>
+							<a class="button" onclick="$('.bkp_passwd').show(); $('.bkp_passwd_edit').hide()">Hủy bỏ</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="row">
+					<div class="left">Đăng nhập tự động</div>
+					<div class="right"><a onclick="generateEvent('OperationNotSupported')">Quản lý đăng nhập</a></div>
+					<div class="clear"></div>
+				</div>
+				<div class="separator"></div>
+				
+				<div class="row">
+					<span class="grey_title">Địa chỉ email và tên đăng nhập</span>
+				</div>
+				<div class="row">
+					<div class="left">Tên đăng nhập</div>
+					<div class="right">
+						<% if (username != undefined) { %>
+							<%=username%>&nbsp;
+						<% } else { %>
+							<span class="note">Bạn chưa tạo tên đăng nhập.</span> <!--<a class="has_icon">Tạo ngay</a>-->
+						<% } %>
+					</div>
+				</div>
+				<div class="row">
+					<div class="left">Địa chỉ email</div>
+					<div class="right bkp_email">
+						<span id="EmailPasswdEditPortlet-Email"></span>
+						<a class="has_icon" onclick="$('.bkp_email').hide(); $('.bkp_email_edit').show()">Thay đổi</a>
+					</div>
+					<div class="right bkp_email_edit" style="display: none;">
+						<input placeholder="Nhập email của bạn, VD: john.doe@example.com" class="text" name="email" type="text" id="EmailPasswdEditPortlet-EmailInput" />
+						<span id="EmailPasswdEditPortlet-EmailError" class="error"></span>
+
+						<div class="clear"></div>
+						<div class="short_separator"></div>
+
+						<div class="edit_row">
+							<span class="bold font11">Để thay đổi email, bạn cần nhập mật khẩu hiện tại</span><br />
+							<span class="edit_label">Mật khẩu: </span>
+							<span><input type="password" id="EmailPasswdEditPortlet-EmailPass" /></span>
+							<span id="EmailPasswdEditPortlet-EmailPassError" class="error"></span>
+						</div>
+
+						<div class="edit_row">
+							<a class="action_button" onclick="generateEvent('SubmitEmail')">Đồng ý</a>
+							<a class="button" onclick="$('.bkp_email').show(); $('.bkp_email_edit').hide()">Hủy bỏ</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="separator"></div>
+
+				<div class="row">
+					<span class="grey_title">Dịch vụ trên Asking.vn</span>
+				</div>
+				<div class="row">
+					<div class="left">Nhận newsletter <a onmouseover="showtip('Tính năng newsletter cho phép bạn nhận được các tin mới nhất từ
+						Asking.vn: Câu hỏi tiêu biểu trong tuần, trong tháng, các thành viên mới vào... qua email của mình')" onmouseout="hidetip()">[?]</a></div>
+					<div class="right bkp_newsletter"><%=newsletter%>
+						<% if (newsletterEmail != "") { %>
+							<span class="note">&lt;<%=newsletterEmail%>&gt;</span>
+						<% } %>
+						<a class="has_icon" onclick="$('.bkp_newsletter').hide(); $('.bkp_newsletter_edit').show()">Thay đổi</a>
+					</div>
+					<div class="right bkp_newsletter_edit" style="display: none;">
+						<div class="edit_row">
+							<input onchange="generateEvent('NewsletterSubscribeCheckChanged')" type="checkbox" <%=newsletterChecked%> id="EmailPasswdEditPortlet-NewsletterCheck" />
+							<label for="EmailPasswdEditPortlet-NewsletterCheck">Đăng ký nhận newsletter</label><br />
+							<input placeholder="Nhập email muốn nhận newsletter" class="text" type="text" <%=newsletterDisable%> id="EmailPasswdEditPortlet-NewsletterEmail" value="<%=newsletterEmail%>" />
+							<span id="EmailPasswdEditPortlet-EmailNewsletterError" class="error"></span>
+						</div>
+
+						<div class="clear"></div>
+						<div class="short_separator"></div>
+
+						<div class="edit_row">
+							<a class="action_button" onclick="generateEvent('SubmitNewsletter')">Đồng ý</a>
+							<a class="button" onclick="$('.bkp_newsletter').show(); $('.bkp_newsletter_edit').hide()">Hủy bỏ</a>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="left">Nhận thông báo</div>
+					<div class="right bkp_notification">
+						<a onclick="generateEvent('OperationNotSupported')">Cấu hình nhận thông báo</a>
+					</div>
+					<div class="right bkp_notification_edit" style="display: none;">
+						<div>Nhận thông báo qua email khi</div>
+
+						<div class="edit_row">
+							<div class="config_item config_header bold">Câu hỏi</div>
+							<div class="config_item">Ai đó trả lời cho câu hỏi tôi đang theo dõi
+								<span class="config_action"><input type="checkbox" /></span>
+							</div>
+							<div class="config_item">Ai đó vote cho câu hỏi của tôi
+								<span class="config_action"><input type="checkbox" /></span>
+							</div>
+							<div class="config_item">Ai đó mời tôi trả lời câu hỏi
+								<span class="config_action"><input type="checkbox" /></span>
+							</div>
+							<div class="config_item">Ai đó hỏi tôi
+								<span class="config_action"><input type="checkbox" /></span>
+							</div>
+
+							<div class="config_item config_header bold">Câu trả lời</div>
+							<div class="config_item">Ai đó bình luận về câu trả lời của tôi
+								<span class="config_action"><input type="checkbox" /></span>
+							</div>
+							<div class="config_item">Ai đó vote cho câu trả lời của tôi
+								<span class="config_action"><input type="checkbox" /></span>
+							</div>
+							<div class="config_item">Ai đó góp ý cho câu trả lời của tôi
+								<span class="config_action"><input type="checkbox" /></span>
+							</div>
+						</div>
+
+						<div class="edit_row">
+							<a class="action_button">Đồng ý</a>
+							<a class="button" onclick="$('.bkp_notification').show(); $('.bkp_notification_edit').hide()">Hủy bỏ</a>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div><!-- usercp_item -->
+		</script>
+	</div>
+</div>

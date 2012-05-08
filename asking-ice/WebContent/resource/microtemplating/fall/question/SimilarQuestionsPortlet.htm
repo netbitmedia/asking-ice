@@ -1,0 +1,36 @@
+<div class='portlet-data'>
+  	<div id='SimilarQuestionsPortlet-RootData'>
+  		<script type="text/html" id='SimilarQuestionsPortletView'>
+			<div class="box">
+				<div class="box_header">Câu hỏi liên quan</div>
+				<div class="box_wrapper">
+					<div class="box_outer _text_left">
+						<ul class="box_list" id="SimilarQuestionsPortlet-SimilarQuestions"></ul>
+						<div style="display: none" id="SimilarQuestionsPortlet-AttachQuestions">
+							<input id="SimilarQuestionsPortlet-AddQuestionInputBox" type="text" style="float: none" class="text" />
+							<a id="SimilarQuestionsPortlet-SubmitButtonContainer" class="form_button" onclick="generateEvent('SimilarQuestionsButtonClick')">Xong</a>
+							<div id="SimilarQuestionsPortlet-AddQuestionContainer"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+  		</script>
+  		<script type="text/html" id='SimilarQuestionsPortlet-QuestionTmpl'>
+			<li qid="<%=id%>">
+				<a href="#!page/Question/qid/<%=id%>/s/<%=$.slugify(label)%>"><%=label%></a>
+				<span class="delToken" onclick="generateEvent('RemoveSimilarQuestion', event)">x</span>
+			</li>
+		</script>
+		<script type="text/html" id='SimilarQuestionsPortlet-SimilarQuestionsTmpl'>
+		    <% if(user.length > 0) {
+				for (var i=0;i<user.length;i++) { %>
+		    		<li>
+						<a href="#!page/Question/qid/<%=user[i].id%>/s/<%=$.slugify(user[i].title)%>"><%=user[i].title%></a>
+					</li>
+				<% } %>
+				<a id="SimilarQuestionsPortlet-ViewMore" onclick="generateEvent('ViewAllSimilarQuestions')" class="_right">Xem thêm</a>
+			<% } %>
+			<a class="edit-note" id="SimilarQuestionsPortlet-AddNew" onclick="generateEvent('AttachSimilarQuestions')">Thêm câu hỏi tương tự</a>
+ 		</script>	
+	</div>
+</div>

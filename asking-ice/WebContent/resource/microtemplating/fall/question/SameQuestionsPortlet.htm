@@ -1,0 +1,30 @@
+<div class='portlet-data'>
+  	<div id='SameQuestionsPortlet-RootData'>
+  		<script type="text/html" id='SameQuestionsPortletView'>
+			<div class="box">
+				<div class="box_header">
+					Câu hỏi cùng chủ đề
+				</div>
+				<div class="box_wrapper">
+					<div class="box_outer _text_left" id="SameQuestionsPortlet-Questions">
+						<ul class="box_list" id="SameQuestionsPortlet-QuestionsContainer"></ul>
+						<p>
+							<a id="SameQuestionsPortlet-ViewMore" onclick="generateEvent('ViewMoreSameQuestions')" class="_right">Xem thêm</a>
+						</p>
+					</div>
+				</div><!-- box_wrapper -->
+			</div>
+  		</script>
+		<script type="text/html" id='SameQuestionsPortlet-QuestionsTmpl'>
+		    <% if(question.length > 0) { %>
+				<% for (var i=0;i<question.length;i++) { %>
+					<% if (question[i].question_id != currentId) { %>
+    					<li>
+							<a href="#!page/Question/qid/<%=question[i].question_id%>/s/<%=$.slugify(question[i].content)%>"><%=question[i].content%></a>
+						</li>
+					<% } %>
+				<% } %>
+			<% } %>
+ 		</script>	
+	</div>
+</div>

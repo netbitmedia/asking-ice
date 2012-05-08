@@ -1,0 +1,58 @@
+<div class='portlet-data'>
+	<div id='AskSimilarQuestionPorlet-RootData'>
+		<script type="text/html" id="AskSimilarQuestionPortletView">
+			<div class="askQuestion">
+				<div class="askQuestionWrapper">
+					<div class="row">
+						<label>Câu hỏi:</label>
+						<span class="error" id="AskSimilarQuestionPortlet-QuestionError1"></span>
+					</div>
+					<div class="row">
+						<input type="text" onfocus="generateEvent(&apos;AskSimilarTextBoxFocus&apos;)" id="AskSimilarQuestionPortlet-TextBox" type="text" class="text" />
+					</div>
+					<div class="row">
+						<label>Chủ đề:</label>
+						<a class="topic-link" onclick="generateEvent('ShowTopicCreatePopup', {'callback':'AskSimilarQuestionPortletFetchAutocomplete', 'commitcallback':'AskSimilarQuestionPortletAppend'})">Không tìm thấy chủ đề?</a>
+					</div>
+					<div class="row">
+						<input id="AskSimilarQuestionPortlet-AddTopicInputBox" class="text" type="text" />
+					</div>
+					<div class="row">
+						<div class="bkp_question_topic" id="AskSimilarQuestionPortlet-AddTopicContainer"></div>
+					</div>
+					<!-- <div class="row">
+						<label>Người được hỏi:</label>
+						<span class="msg">Chọn tối đa 2 người để hỏi câu này</span>
+					</div>
+					<div class="row">
+						<input id="AskSimilarQuestionPortlet-AddPeopleInputBox" type="text" class="text" />
+					</div>
+					<div class="row">
+						<div class="bkp_question_topic" id="AskSimilarQuestionPortlet-AddPeopleContainer"></div>
+					</div> -->
+					<div class="row">
+						<label>Thông tin bổ sung: </label>
+						<span class="msg">Bổ sung chi tiết cho câu hỏi</span>
+					</div>
+					<div class="row">
+						<textarea type="text" class="textarea" id="AskSimilarQuestionPortlet-TextAreaExtended"></textarea>
+					</div>
+					
+					<div class="popup-toolbar">
+						<a class="action_button" onclick="generateEvent('AskSimilarButtonClick')">Gửi câu hỏi</a>
+						<a class="button" onclick="generateEvent('PopupRemove', {id: 'AskSimilarQuestion'})">Hủy bỏ</a>
+					</div>
+					<div class="row">
+						<span class="error" id="AskSimilarQuestionPortlet-QuestionError"></span>
+					</div>
+				</div>
+			</div>
+		</script>
+		<div id="AskSimilarQuestionPortletMessage">
+			<div id="AskSimilarQuestionPortlet-TextAskMessage">Hỏi</div>
+			<div id="AskSimilarQuestionPortlet-TextAskMessageMissingTarget">Hỏi người này</div>
+			<div id="AskSimilarQuestionPortlet-TextAskSuccess">Câu hỏi của bạn đã được gửi thành công!</div>
+			<div id="AskSimilarQuestionPortlet-TextAskError">Hiện thời chúng tôi không thể gửi câu hỏi của bạn, hãy vui lòng thử lại sau</div>
+		</div>
+	</div>
+</div>

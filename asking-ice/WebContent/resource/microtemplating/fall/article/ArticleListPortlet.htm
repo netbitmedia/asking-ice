@@ -1,0 +1,42 @@
+<div class='portlet-data'>
+	<div id='ArticleListPortlet-RootData'>
+			<script type="text/html" id="ArticleListPortlet-ItemNotification-catch_word-item-template">
+				<a class="lv_tag" href="#!page/Topic/id/<%=cid%>" class="bkp_question_topic"><%=catch_word%></a>
+			</script>
+			<script type="text/html" id="ArticleListPortletView">
+				<div class="browse_title">
+					Các bài viết chọn lọc <a href="#!page/ArticleIntroduce"><sup>?</sup></a>
+					<div class="simple_tab">
+						<a type="0" href="#!page/Article">Tất cả</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a type="2" href="#!page/Article/t/2">Chia sẻ kinh nghiệm</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a type="4" href="#!page/Article/t/4">Phỏng vấn</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+						<a type="1" href="#!page/Article/t/1">Bài báo khoa học</a>
+					</div>
+				</div>
+				<div class="article_list">
+					<% for(var i=0; i<list.length; i++){ %>
+						<div class="article_listview">
+							<div class="topic_list">
+								
+							</div>
+							<div class="lv_title">
+								<a href="#!page/ArticleDetail/aid/<%=list[i].id%>/s/<%=$.slugify(list[i].title)%>"><%=list[i].title%></a>
+							</div>
+							<div class="lv_summary">
+								<% if (list[i].summary != undefined && $.trim(list[i].summary) != "") { %>
+									<%=list[i].summary+"<br />"%>
+								<% } %>
+							</div>
+							<div class="lv_note">
+								<span class="note">
+									<%=list[i].since != null? $.timeFormat(list[i].since):""%>, bởi <a href="#!page/Profile/id/<%=list[i].userId%>" class="small-user"><%=list[i].name%></a>,
+									<span class="count_vote">+<%=list[i].vote%></span>
+								</span>
+							</div>
+                    	</div>
+					<% } %>
+					<div class="extension-point" extensionName="PostResultList"></div>
+				</div>
+			</script>
+	</div>
+</div>

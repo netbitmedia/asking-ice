@@ -1,0 +1,26 @@
+<div class='portlet-data'>
+	<div id='ArticleSummaryPortlet-RootData'>
+		<script type="text/html" id='ArticleSummaryPortlet-ContentTmpl'>
+    		<div class="box">
+    			<div class="box_header">Tóm lược bài viết</div>
+				<div class="box_wrapper">
+					<div class="box_outer _text_left italic">
+        				<%=summary%>
+        			</div>
+    			</div>
+    		</div>
+    		<div class="box">
+				<div class="box_header">Về tác giả</div>
+				<div class="box_wrapper">
+					<div class="box_outer _text_left">
+        				<a href="#!page/Profile/id/<%=userID%>"><%=name%></a><br />
+        				<%=about%>
+        			</div>
+    			</div>
+    		</div>
+		</script>
+		<script type="text/html" id='ArticleSummaryPortletView'>
+    		<div class="_text_left" id="ArticleSummaryPortlet-ContentPlaceholder"></div>
+		</script>
+	</div>
+</div>

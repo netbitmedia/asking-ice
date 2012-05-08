@@ -1,0 +1,46 @@
+<div class='portlet-data'>
+    <div id='ErrorPortlet-RootData'>
+        <script type="text/html" id="ErrorPortletView">
+            <div id="ErrorPortlet-ErrorPortlet">
+				<div class="article_title uppercase _text_center">
+               		<%=errorHeader %>
+            	</div><!-- article_title -->
+				<div class="article_content">
+                        <div id="ErrorPortlet-Content" class="dialog_content row">
+                            <%=errorContent %>
+                        </div>
+                        <div class="dialog_footer row">
+                            <button class="button extension-point" extensionName="NavigateRoute" onclick="generateEvent(&apos;GoToPrevious&apos;)">
+                                Quay lại
+                            </button>
+                            <button class="button extension-point" extensionName="NavigateRoute" onclick="generateEvent(&apos;GoToHome&apos;)">
+                                Trang chủ
+                            </button>
+                        </div>
+                </div><!-- article_content-->
+            </div>
+        </script>
+        <script type="text/html" id="ErrorPortlet-HandledErrorCode">
+            [401,404]
+        </script>
+        <script type="text/html" id="ErrorPortlet-ErrorCode404_Heading">
+            Trang không tồn tại
+        </script>
+        <script type="text/html" id="ErrorPortlet-ErrorCode404_Content">
+            Chúng tôi không tìm thấy trang bạn yêu cầu trong hệ thống. Mong bạn vui lòng kiểm tra lại.
+            <img src="resource/css/fall/images/home/notfound-bk.png" alt="404 page"/>
+        </script>
+        <script type="text/html" id="ErrorPortlet-ErrorCode401_Heading">
+            Không có quyền
+        </script>
+        <script type="text/html" id="ErrorPortlet-ErrorCode401_Content">
+            Bạn không có đủ quyền để vào trang này! 
+        </script>
+        <script type="text/html" id="ErrorPortlet-ErrorCode_Heading">
+            Lỗi hệ thống xảy ra
+        </script>
+        <script type="text/html" id="ErrorPortlet-ErrorCode_Content">
+            Rất tiếc. Hiện thời hệ thống đang gặp phải sự cố gì đó, mong bạn thử lại sau.
+        </script>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ice-framework</display-name>
+  <context-param>
+  	<param-name>ice.config.parser</param-name>
+  	<param-value>org.ice.config.parser.XMLConfigParser</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>ice.config.source</param-name>
+  	<param-value>file://ice.xml</param-value>
+  </context-param>
+  <context-param>
+  	<param-name>ice.config.output</param-name>
+  	<param-value>org.ice.config.DefaultConfigData</param-value>
+  </context-param>
+  
+  <listener>
+	<listener-class>listener.Listener</listener-class>
+  </listener>
+  
+  <!-- Framework Recommended Configurations -->
+  <servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>/resource/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>module</servlet-name>
+    <servlet-class>org.ice.ModuleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>module</servlet-name>
+    <url-pattern>/*</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  <!-- <listener>
+	<listener-class>org.ice.listener.IceListener</listener-class>
+  </listener>  -->
+  <mime-mapping>
+    <extension>ico</extension>
+    <mime-type>image/x-icon</mime-type>
+  </mime-mapping>
+</web-app>

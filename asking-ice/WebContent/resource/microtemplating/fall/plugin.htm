@@ -1,0 +1,523 @@
+<div class="plugin-data">
+	<script type="text/html" id="FollowUserTmpl-Follow">
+		<a onclick="generateEvent('FollowUser', {uid: <%=uid%>, containerID: '<%=containerID%>'})" class="widget_button">
+   			Theo dõi người này
+   		</a>
+	</script>
+	<script type="text/html" id="FollowUserTmpl-Unfollow">
+		<a onclick="generateEvent('UnfollowUser', {uid: <%=uid%>,containerID: '<%=containerID%>'})" class="widget_button">
+   			<img src="resource/images/remove3.png" />
+   			Bỏ theo dõi
+   		</a>
+	</script>
+	<script type="text/html" id="FollowUserTmpl">
+		<span flag="FollowUser"></span>
+		<span class="followuser_container" uid="<%=uid%>"></span>
+	</script>
+	
+	<script type="text/html" id="UserEditMenuTmpl">
+		<div id="UserEditMenu">
+			<span id="UserEditMenu-Msg"></span>
+            <div class="browse_title">Sửa hồ sơ cá nhân</div>
+    		<div class="user-tab">
+    			<a href="#!page/PartnerProfileEdit" class="first">Cơ bản</a>
+	        	<span style="vertical-align: middle">&#183;</span>
+        		<!--<a href="#!page/UserBasicEdit" class="first">Cơ bản</a>
+        		<span style="vertical-align: middle">&#183;</span>-->
+            	<a href="#!page/UserAvatarEdit">Tên & Hình đại diện</a> 
+            	<!--<span style="vertical-align: middle">&#183;</span>
+            	<a>Học tập</a>-->
+            	<span style="vertical-align: middle">&#183;</span>
+            	<a href="#!page/UserExpertiseEdit">Kinh nghiệm</a> 
+            	<span style="vertical-align: middle">&#183;</span>
+				<a href="#!page/UserInterestEdit">Lĩnh vực quan tâm</a> 
+			</div>
+		</div>
+	</script>
+	
+	<script type="text/html" id="TopicInterestAdderTmpl">
+		<a onclick="generateEvent('AddTopicToInterest', event)" class="widget_button">
+			Thêm vào lĩnh vực quan tâm
+		</a>
+	</script>
+	<script type="text/html" id="AskUserPluginTmpl">
+		<a onclick="generateEvent('MakeNewTargetedQuestion', event)" class="widget_button">
+			Hỏi người này
+		</a>
+		<span flag="AskUser"></span>
+	</script>
+	<script type="text/html" id="ProfileSearchHeaderTmpl">
+		<div class="<%=style%>"><%=label%></div>
+		<span flag="ProfileSearchHeader"></span>
+	</script>
+	<script type="text/html" id="QuestionFollowTmpl-Follow">
+		<a onclick="generateEvent('FollowQuestion', {id: <%=id%>})" class="green_button">
+   			Theo dõi
+   		</a>
+	</script>
+	<script type="text/html" id="QuestionFollowTmpl-Unfollow">
+		<a onclick="generateEvent('UnfollowQuestion', {id: <%=id%>})" class="button">
+   			Bỏ theo dõi
+   		</a>
+	</script>
+	<script type="text/html" id="QuestionFollowTmpl">
+		<span id="QuestionFollow-Container"></span>
+		<span flag="QuestionFollow"></span>
+	</script>
+	<script type="text/html" id="CommentPlugin-Item">
+		<div class="comment-put clear">
+        	<img src="resource/avatar/<%=avatar%>" class="avatar40 img-put bkp_pic_profile" />
+            <div class="comment-content">
+            	<a href="#!page/Profile/id/<%=uid%>" class="title"><%=username%></a>
+                <%=content%> 
+            	<span class="comment-time"><%=$.timeFormat(date)%></span>
+                <a class="remove-comment"></a>
+           	</div>
+        </div><!-- comment-put -->
+	</script>
+	
+	<script type="text/html" id="CommentPlugin-Control">
+		<a id="CommentControl-<%=uid%>-<%=aid%>" onclick="generateEvent('ShowComment', {uid: <%=uid%>, aid: <%=aid%>})" class="widget_button">Bàn luận thêm (0)</a><span flag="AnsComment"></span>
+	</script>
+	
+	<script type="text/html" id="ImproveAnswerPluginTmpl">
+		<a id="ImproveControl-<%=aid%>" onclick="generateEvent('ImproveControlClick', {aid: <%=aid%>})" class="widget_button">Góp ý ></a>
+	</script>
+	
+	<script type="text/html" id="ImproveAnswerPlugin-Form">
+		<div class="expertEditFrame pnote-wrapper">
+			<span class="msg">
+				Góp ý cho câu trả lời nếu bạn thấy nó không phải là một câu trả lời tốt.
+				<br />
+				Bạn có thể xem <a target="_blank" href="#!page/Question/qid/550/s/the-nao-la-mot-cau-tra-loi-tot-o-askingvn">tiêu chí đánh giá một câu trả lời tốt.</a>
+			</span>
+			<div class="row" style="border-bottom:none;">
+				<span>Tại sao bạn nghĩ đây không phải là một câu trả lời tốt?</span>
+			</div>
+			<div class="row" style="border-bottom:none;">
+				<select id="ImproveAnswerPlugin-Select">
+					<option value="1">Không trả lời trực tiếp cho ý câu hỏi</option>
+					<option value="2">Câu trả lời trùng lặp</option>
+					<option value="3">Thiếu giải thích</option>
+					<option value="4">Nên đưa vào phần bình luận cho câu trả lời khác</option>
+				</select>
+			</div>
+			<div class="popup-toolbar">
+				<a onclick="generateEvent('SendImprovement', {id: <%=aid%>})" class="button" style="margin:5px 10px 5px 0">Gửi</a>
+				<a onclick="generateEvent('PopupRemove', {id: 'ImproveAnswerPlugin'})" class="button">Hủy</a>
+			</div>
+		</div><!-- end expertEditFrame-->
+	</script>
+	
+	<script type="text/html" id="ImproveQuestionPluginTmpl">
+		<a class="button" id="ImproveQuestionControl-<%=qid%>" onclick="generateEvent('ImproveQuestionControlClick', {qid: <%=qid%>})" class="improve-ans">Góp ý cho câu hỏi</a>
+	</script>
+	
+	<script type="text/html" id="QuestionCommentControlTmpl">
+		<a class="widget_button" id="QuestionCommentControl-<%=qid%>" onclick="generateEvent('QuestionCommentControlClick', {qid: <%=qid%>})" class="improve-ans">Bàn luận thêm (<%=no_comment%>)</a>
+		<div id="QuestionCommentArea" class="answer-extension-item comment-outer" style="display: none">
+        	<div class="comment-text">
+                <textarea class="comment-content textarea"></textarea>
+                <div class="row-bottom clear">
+                	<a onclick="generateEvent('AddQuestionComment', {qid: <%=qid%>})" class="button _right">Gửi</a>
+                </div>
+            </div><!-- comment-text -->
+            <div class="comment-list">
+            </div><!-- comment-list -->
+            <div class="page-comment"><a onclick="">Xem thêm ↓</a></div>
+        </div><!-- comment-outer -->
+	</script>
+	
+	<script type="text/html" id="ImproveQuestionPlugin-Form">
+		<div class="expertEditFrame pnote-wrapper">
+			<span class="msg">
+				Góp ý cho câu hỏi nếu bạn thấy nó không phải là một câu hỏi tốt.
+				<br />
+				Bạn có thể xem <a target="_blank" href="#!page/GoodQuestion">tiêu chí đánh giá một câu hỏi tốt.</a>
+			</span>
+			<div class="row" style="border-bottom:none;">
+				<span>Tại sao bạn nghĩ đây không phải là một câu hỏi tốt?</span>
+			</div>
+			<div class="row" style="border-bottom:none;">
+				<select id="ImproveQuestionPlugin-Select">
+					<option value="1">Không trực tiếp vào vấn đề, quá dài dòng</option>
+					<option value="2">Chưa có nhãn đầy đủ</option>
+					<option value="3">Thiếu thông tin giải thích</option>
+					<option value="4">Không nhắm đến tri thức</option>
+				</select>
+			</div>
+			<div class="popup-toolbar">
+				<a onclick="generateEvent('SendQuestionImprovement', {id: <%=qid%>})" class="button" style="margin:5px 10px 5px 0">Gửi</a>
+				<a onclick="generateEvent('PopupRemove', {id: 'ImproveQuestionPlugin'})" class="button">Hủy</a>
+					
+			</div>
+		</div><!-- end expertEditFrame-->
+	</script>
+	
+	<script type="text/html" id="AnswerEditPlugin-Control">
+		<a id="AnswerEditControl-<%=uid%>-<%=aid%>" onclick="generateEvent('ShowAnswerEdit', {uid: <%=uid%>, aid: <%=aid%>})" class="widget_button">Sửa</a><span flag="AnsEdit"></span>
+	</script>
+	
+	<script type="text/html" id="CommentPlugin-Area">
+		<div class="answer-extension-item comment-outer" style="display: none">
+        	<div class="comment-text">
+                <textarea class="comment-content textarea"></textarea>
+                <div class="row-bottom clear">
+                	<a onclick="generateEvent('AddComment', {uid: <%=uid%>, aid: <%=aid%>})" class="button _right">Gửi</a>
+                </div>
+            </div><!-- comment-text -->
+            <div class="comment-list">
+            </div><!-- comment-list -->
+            <div class="page-comment"><a onclick="">Xem thêm ↓</a></div>
+        </div><!-- comment-outer -->
+	</script>
+	
+	<script type="text/html" id="AnswerEditPlugin-Area">
+		<div class="answer-extension-item answer-editor" style="display: none">
+			<div class="answer-text">
+            	<div class="row">
+            		<textarea id="OwnAnswerEditor-<%=uid%>-<%=aid%>" class="textarea"></textarea>
+            	</div>
+            	<div class="row">
+					<input id="OwnAnswerEditor-NotifyFollowers" type="checkbox" checked="checked" />
+					<label for="OwnAnswerEditor-NotifyFollowers" style="font-weight: normal">Thông báo cho những người đang theo dõi câu hỏi</label>
+            		<div class="answer_button">
+            			<span onclick="generateEvent('EditAnswerSubmit', {uid: <%=uid%>, aid: <%=aid%>})" class="action_button">Sửa câu trả lời</span>
+            		</div>
+            	</div>
+            </div>
+        </div>
+	</script>
+
+	<script type="text/html" id="SearchMorePluginTemplate">
+		<div class="page_more">
+			<a onclick="generateEvent('GetMoreResultRows')">Xem thêm ↓</a>
+		</div>
+    	<div class="no-more-search-result-placeholder form-message">Không còn câu hỏi để hiển thị</div>
+		<div flag="SearchMore"></div>
+	</script>
+	
+	<script type="text/html" id="QuestionTabTemplate">
+    	<div class="page_title">
+        	<ul class="menu_tab">
+        		<li class="tab">
+        			<a class="nav active" type="Latest" onclick="generateEvent('SearchResultChangeType', {type: 'notification-filter'})">Mới nhất</a>
+            	</li>
+            	<li class="tab">
+            		<a class="nav" type="Top" onclick="generateEvent('SearchResultChangeType', {type: 'question-best', page: 'BestQuestions'})">Tiêu biểu</a>
+            	</li>
+            	<li class="tab last">
+            		<a class="nav" type="Open" onclick="generateEvent('SearchResultChangeType', {type: 'question-open'})">Chưa trả lời</a>
+            	</li>
+            </ul>
+			<div class="simple_tab font11">
+        		Hiển thị: 
+				<a scope="limit" onclick="generateEvent('SearchResultChangeScope', {scope: 'limit'})" class="active">Quan tâm</a>&nbsp;|&nbsp;
+				<a scope="all" onclick="generateEvent('SearchResultChangeScope', {scope: 'all'})">Tất cả</a>
+        	</div>
+        </div>
+        
+		<span flag="QuestionTab"></span>
+	</script>
+	<script type="text/html" id="UserCP-EditExpertise">
+		<div id="UserCP-ViewPlaceholder">
+			<div id="UserCP-ExpertisePlaceholder"></div>
+            <center>
+           		<button onclick="generateEvent('SubmitExpertiseProfileButtonClick', event)" class="bkp-Button">Cập nhật</button>
+            </center>
+        </div>
+	</script>
+	
+	<script type='text/html' id='AnswerBioEditorExplanationTmpl'>
+		<span class="explanationPlaceholder"><%=expertiseExplanation%></span>
+		<% if (expertiseExplanation == "") { %>
+			<a onclick="generateEvent('BioEditorEditClick', {'event':event, 'mode':'update'})" class="expertiseLink block">Mô tả kinh nghiệm của bạn về <%=expertiseName%></a>
+		<% } else if (expertiseExplanation == undefined) {%>
+			<a onclick="generateEvent('BioEditorEditClick', {'event':event, 'mode':'add'})" class="expertiseLink block">Mô tả kinh nghiệm của bạn về <%=expertiseName%></a>
+		<% } else { %>
+			<a class="edit-note" onclick="generateEvent('BioEditorEditClick', {'event':event, 'mode':'update'})">Sửa</a>
+		<% } %>
+	</script>
+	<script type='text/html' id='AnswerBioEditorExplanationEditTmpl'>
+		<textarea oldVal="<%=content%>" class="expertiseExplanationEditTextBox textarea"><%=content%></textarea>
+		<a class="button" onclick="generateEvent('BioEditCancelClick', event)">Hủy</a>
+		<a class="button" onclick="generateEvent('BioEditUpdateClick', {'event':event, 'mode':'<%=mode%>'})">Cập nhật</a>
+	</script>
+	<script type='text/html' id='AnswerBioEditorTmpl'>
+		<div class="expertEditFrame pnote-wrapper">
+			<span class="msg">Thêm phần chú thích hiện ra cạnh câu trả lời của bạn theo từng chủ đề sẽ làm tăng tính thuyết phục của câu trả lời</span>
+			<% for(var i=0;i<expertises.length;i++)	{ %>
+				<div class="expertEditSeparator row">
+					<div class="left"><a class="expertiseLink strong"><%=expertises[i].expertiseName%></a></div>
+					<div class="right" expertiseID="<%=expertises[i].id%>" expertiseName="<%=expertises[i].expertiseName%>">
+						<%=expertises[i].expertisePlaceholder%>
+					</div>
+				</div>
+			<% } %>
+		</div><!-- end expertEditFrame-->
+		<div flag="AnswerBioEditor"></div>
+	</script>
+	<script type='text/html' id='AnswerEditBioTmpl'>
+		<a onclick="generateEvent('EditBioClick', {'qid': <%=qid%>})" class="edit-note"></a>
+		<span flag="AnswerEditBio"></span>
+	</script>
+	<script type='text/html' id='AnswerShowBioTmpl'>
+		<span class="note"><%=content%></span>
+	</script>
+	<script type='text/html' id='ProfileNameEdit'>
+		<a class="edit-note" onclick="generateEvent('ProfileNameEditClick', event)">Sửa</a>
+		<div flag="ProfileNameEdit"></div>
+	</script>
+	<script type='text/html' id='UserCP'>
+		<div class="usercp-edit-box">
+			<div><a href="#!page/UserCPEditPage"><button>Sửa email và mật khẩu</button></a></div>
+			<div><a onclick="generateEvent('ProfileExpertiseEditShow')"><button>Thêm lĩnh vực quan tâm</button></a></div>
+		</div>
+		<div flag="UserCPEdit"></div>
+	</script>
+	<script type='text/html' id='AvatarUploaderError'>
+		<div class="errorMsg">
+			<%=errors%>
+		</div>
+	</script>
+	<script type='text/html' id='AvatarUploader'>
+		<div class="uploader">
+			<form id="AvatarUploaderContainer" method="post" enctype="multipart/form-data" action="<%=root%>/user-ajax/change-avatar" target="avatar-upload-frame">
+				<input onchange="generateEvent('AvatarInputChange')" type="file" name="uploader">
+			</form><br />
+			<iframe class="doNotDisplay" id="avatar-upload-frame" name="avatar-upload-frame"></iframe>
+			<div class="msg fade">Bạn có thể sử dụng ảnh định dạng png hay jpg. Kích thước tối đa là 512x512 và 512KB</div>
+			<div class="error" id="AvatarUploaderErrorPlaceholder"></div>
+		</div>
+		<div flag="AvatarUploader"></div>
+	</script>
+	
+	<script type='text/html' id='TabsMeta'>
+		<ul class="doNotDisplay">
+			<% for ( var i = 0; i < tabs.length ; i ++ ) { %>
+				<li><a href="#<%=tabs[i].id%>"><span><%=tabs[i].title%></span></a></li>
+			<% } %>
+		</ul>
+	</script>
+	<script type="text/html" id="ExpertiseRank">
+    	<span class="count_rank" onmouseover="showtip('<%=tips%>')" onmouseout="hidetip()" id="">
+      		^ <%=rank%>
+    	</span>
+	</script>
+	<script type="text/html" id="ExpertiseRankDescription">
+		<div>
+			<span>Phần trăm số điểm trong lĩnh vực này là <b><%=er%>%</b></span>
+			<ul>Điểm chuyên gia được đánh giá dựa trên các tiêu chí như sau:
+				<li>Số lượng câu trả lời</li>
+				<li>Số lượng vote</li>
+				<li>Ai vote cho bạn</li>
+				<li>Ai hỏi bạn</li>
+			</ul>
+			<span>Càng nhiều câu trả lời với chất lượng cao, điểm chuyên gia càng cao.</span>
+		</div>
+	</script>
+	
+	<script type="text/html" id="UserTabGeneratorPlaceholder-Tmpl">
+		<div id="UserTabGeneratorPlaceholder" class="user-tab">
+      		<a href="#!page/User" class="first">Thông tin</a>|
+			<a href="#!page/UserFeed">Feed</a>|
+      		<a href="#!page/UserQuestion">Hỏi</a>|
+      		<a href="#!page/UserTarget">Được hỏi</a>|
+      		<a href="#!page/UserAnswer">Trả lời</a>|
+			<a href="#!page/UserBookmark">Bookmark</a>|
+      		<a href="#!page/UserReportedQuestions">Vi phạm</a>
+   		</div>
+	</script>
+	<script type="text/html" id="ProfileTabGeneratorPlaceholder-DATmpl">
+		<div id="ProfileTabGeneratorPlaceholder" class="user-tab">
+			<a href="#!page/Profile/id/<%=id%>">Thông tin</a>|
+			<a href="#!page/ProfileFeed/id/<%=id%>">Feed</a>|
+			<a href="#!page/ProfileQuestion/id/<%=id%>">Hỏi</a>|
+			<a href="#!page/ProfileTarget/id/<%=id%>">Được hỏi</a>|
+			<a href="#!page/ProfileAnswer/id/<%=id%>">Trả lời</a>|
+			<a href="#!page/ProfileBookmark/id/<%=id%>">Bookmark</a>|
+			<a href="#!page/ProfileReportedQuestions/id/<%=id%>">Vi phạm</a>
+        </div>
+	</script>
+	<script type="text/html" id="MockupProfileTabGenerator-Tmpl">
+		<div id="MockupProfileTabGeneratorPlaceholder" class="user-tab">
+			<a href="#!page/PartnerProfile/id/<%=id%>">Thông tin</a>|
+			<a href="#!page/PartnerProfileNews/id/<%=id%>">Tin tức</a>|
+			<a href="#!page/PartnerProfileTarget/id/<%=id%>">Được hỏi</a>|
+			<a href="#!page/PartnerProfileAnswer/id/<%=id%>">Trả lời</a>
+        </div>
+	</script>
+	<script type="text/html" id="NotificationList">
+		<% for(var i in notifs) { %>
+			<% if (notifs[i].checked == 0) { %>
+			<li class="active">
+			<% } else { %>
+			<li>
+			<% } %>
+				<a href="<%=notifs[i].link%>"><%=notifs[i].content%></a>
+			</li>
+		<% } %>
+		<li>
+			<a href="#!page/Notifications" class="_text_right">Xem tất cả</a>
+		</li>
+	</script>
+	<script type="text/html" id="NotificationItem-AnswerEdited">
+		<span class="bold blue"><%=name%></span> đã sửa câu trả lời cho <span class="bold blue"><%=trimOff(title, 20)%></span>
+	</script>
+	<script type="text/html" id="NotificationItem-AnswerCommented">	
+		<span class="bold blue"><%=name%></span> đã bình luận về câu trả lời của bạn
+	</script>
+	<script type="text/html" id="NotificationItem-AnswerReported">	
+		<span class="bold blue"><%=name%></span> đã góp ý cho câu trả lời của bạn
+	</script>
+	<script type="text/html" id="NotificationItem-AnswerVoted">
+		<span class="bold blue"><%=name%></span> đã vote cho câu trả lời của bạn
+	</script>
+	<script type="text/html" id="NotificationItem-QuestionAnswered">
+		<span class="bold blue"><%=name%></span> đã trả lời câu hỏi <span class="bold blue"><%=trimOff(title, 20)%></span>
+	</script>
+	<script type="text/html" id="NotificationItem-QuestionVoted">
+		<span class="bold blue"><%=name%></span> đã vote cho câu hỏi <span class="bold blue"><%=trimOff(title, 20)%></span>
+	</script>
+	<script type="text/html" id="NotificationItem-Asked">	
+		<span class="bold blue"><%=name%></span> đã hỏi bạn <%=trimOff(title, 20)%>
+	</script>
+	<script type="text/html" id="NotificationItem-QuestionInvited">
+		<span class="bold blue"><%=name%></span> đã mời bạn trả lời câu hỏi <span class="bold blue"><%=trimOff(title, 20)%></span>
+	</script>
+	<script type="text/html" id="UserControlBoxPluginContainer">
+		<ul id="UserControlBoxPlugin" class="no_padding"></ul>
+	</script>
+	<script type="text/html" id="UserControlBoxPluginTmpl">
+		<% if (!login) { %>           
+			<!--<li><a class="" page="Register" href="#!page/Register" title="Đăng ký tài khoản tại Asking.vn">Đăng ký thành viên</a></li>-->
+			<!--<li><a class="" onclick="generateEvent('NeedLogin', {disableWarning: true})" page="Login" title="Đăng nhập vào Asking.vn">Đăng nhập</a>&nbsp;&#183;&nbsp;</li>-->
+		<% } else { %>
+			<li id="nav-wrapper" class="dropdown_outer">
+				<a class="user_signup" onclick="generateEvent('ToggleAccountNav')"><%=name%></a>
+				<ul id="navAccount" class="dropdown">
+					<li onclick="generateEvent('ToggleAccountNav')">
+						<a href="#!page/<%=obj.userPage%>">Trang cá nhân</a>
+					</li>
+					<li onclick="generateEvent('ToggleAccountNav')">
+						<a href="#!page/UserAvatarEdit">Sửa hồ sơ</a>
+					</li>
+					<li onclick="generateEvent('ToggleAccountNav')">
+						<a href="#!page/UserCPEdit">Sửa tài khoản</a>
+					</li>
+					<li onclick="generateEvent('ToggleAccountNav')">
+						<a href="#!page/Logout">Thoát</a>
+					</li>
+				</ul>
+			</li>
+			<li class="dropdown_outer">
+				<a onmouseover="generateEvent('FetchFullNotifications')" class="menu_downdown" onclick="generateEvent('ToggleAccountNav')">
+					<span id="NotificationNumber" class="number_record"></span>
+				</a>
+				<ul class="notification_dropdown" id="NotificationDropdown"></ul>
+			</li>
+		<% } %>
+	</script>
+	<script type="text/html" id="SystemMessagePlugin">
+		<div class="row">
+			<%=msg%>
+		</div>
+	</script>
+    <script type="text/html" id="GetAnnouncementPluginContainer">
+        <div id="GetAnnouncementPlugin" style="clear: both" class="form-message"></div>
+    </script>
+	<script type="text/html" id="NotifyGlobalPluginContainer">
+        <div title="Click vào đây để tắt thông báo" onclick="generateEvent('CloseGlobalNotify')" id="NotifyGlobalPlugin" class="notify-global">
+        	<span class="notify-content"></span>
+        	<span onclick="generateEvent('CloseGlobalNotify')" style="float: right">x</span>
+        </div>
+    </script>
+    <script type="text/html" id="ExpertiseSubplaceholder">
+        <div id="ProfileExpertise">
+        </div>
+        <div id="ProfileFollow">
+        </div>
+    </script>
+    <script type="text/html" id="TokenPartial">
+        <span class="edit_tag">
+            <label eid="<%=value%>" class="lblToken">
+                <%=label%>
+            </label>
+            <span onclick="generateEvent('DelToken', event)" class="btnStl delToken">x</span>
+        </span>
+    </script>
+    <script type="text/html" id="ListContainer"> <!-- Plugin for edit expertise profile-->
+        <div class="content-separator extension-point" extensionname="RegisterExpertise">
+            <div id="<%=namespace%>-<%=id%>" container="<%=id%>" class="list-formatter" name="<%=name%>">
+                <div class="row">
+                	<div class="left"><label><%=keyword %></label></div>
+                	<div class="right">
+                        <input type="text" class="text ui-autocomplete-input">
+						<span class="msg _font-italic">Ví dụ: PHP, Java...</span>
+					</div>
+                </div><!-- end row -->
+                <div class="row">
+                	<div class="left"><span class="msg"><%=guideMsg %></span></div>
+                	<div class="right profileData content tokenContainer ui-droppable"></div>
+                </div><!-- end row -->
+            </div>
+        </div><!-- end RegisterExpertise extension-point -->
+    </script>
+    <script type='text/html' id='ExpertiseEdit'>
+    	<a title="Click để sửa chú thích" onclick="generateEvent('ExpertiseEditClick', event)" eid="<%=id%>" class="edit-note"></a>
+    </script>
+	<script type='text/html' id='ExpertiseDelete'>
+        <span title="Click để xóa" class="delete-topic" eid="<%=id%>" onclick="generateEvent('ExpertiseDeleteButtonClick', event)">x</span>
+    </script>
+    <script type='text/html' id='InterestDelete'>
+        <span title="Click để xóa" class="delete-topic" eid="<%=id%>" onclick="generateEvent('InterestDeleteButtonClick', event)">x</span>
+    </script>
+</div>
+
+<div class="portlet-data">
+	<div id="CommonPortlet-RootData">
+		<script type="text/html" id="CommonPortlet-Topic">
+            <span class="tag-label"><%=content%></span>,
+        </script>
+		<script type="text/html" id="CommonPortlet-TopicNew"><div>
+    		<div class="topic_popup">
+				<div class="row">
+					<label>Các chủ đề vừa thêm:</label>
+					<div id="commonCreatedTopics"></div>
+				</div><!-- row -->
+			    <div class="row">
+					<label>Tên chủ đề:<span style="color: red; font-weight: bold">*</span></label>
+				</div>
+				<div class="row">
+					<input id="fb-topic-name" type="text" class="fb-content-plhld text" />
+				</div>
+				<div class="row">
+					<label>Chi tiết:<span style="color: red; font-weight: bold">*</span></label>
+				</div>
+				<div class="row">
+					<textarea id="fb-topic-description" rows="5" cols="30" class="fb-content-plhld textarea"></textarea>
+				</div>
+				<div class="popup-toolbar">
+					<button class="button" onclick="generateEvent(&apos;NewTopicAdded&apos;,{name:&apos;fb-topic-name&apos;, des:&apos;fb-topic-description&apos;, avai: &apos;fb-context-avai&apos;, context: &apos;fb-context-name&apos;, contextDes: &apos;fb-context-description&apos;, radi: &apos;topic-type&apos;})">Thêm</button>
+					<button class="button" onclick="generateEvent(&apos;NewTopicConfirmed&apos;)">Hoàn tất</button>
+				</div><!-- row -->	
+		    </div>
+		</script>
+		<!-- View của phần navigation trang khác -->
+		<script type="text/html" id="CommonPortlet-NoResult">
+			<div id="search_no_result" class="bkp_no_result">Không có kết quả nào được tìm thấy</div>
+		</script>
+		
+		<!-- View của phần navigation trang hiện tại -->
+    	<script type="text/html" id="CommonPortlet-NavCurrent">
+            <font color="black">
+               <b><%=content %></b>
+            </font>&nbsp;
+        </script>
+                
+		<!-- View của phần navigation trang khác -->
+        <script type="text/html" id="CommonPortlet-NavOther">
+            <a href="#!page/<%=searchController%>/type/<%=core%>/query/<%=query%>/search-page/<%=searchPage%>/rows/<%=rows%>" class="page-slide-control"><%=content %></a>&nbsp;
+        </script>
+	</div>
+</div>

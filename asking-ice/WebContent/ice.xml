@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ice>
+	<config>
+		<param name="ice.app.env" value="development" />
+		<param name="ice.app.errorhandler" value="module.AjaxErrorModule" />
+		<param name="ice.app.registry" value="org.ice.registry.DefaultRegistry" />
+
+		<!-- database -->
+		<param name="ice.db.host" value="joolist.com" />
+		<param name="ice.db.port" value="3306" />
+		<param name="ice.db.name" value="bkprofile" />
+		<param name="ice.db.username" value="bkprofile" />
+		<param name="ice.db.password" value="YNcn3SnSw8" />
+		<param name="ice.db.adapter" value="org.ice.db.MySqlAdapter" />
+		
+		<!-- email -->
+		<param name="ice.email.enable" value="true" />
+		<param name="ice.email.server" value="localhost" />
+		<param name="ice.email.port" value="25" />
+		
+		<param name="ice.path.resource" value="/resource" />
+	</config>
+	
+	<setup>
+		<setup-class class="org.ice.config.setup.SystemConfigSetup" />
+		<setup-class class="org.ice.config.setup.DatabaseConfigSetup" />
+		<setup-class class="org.ice.config.setup.EmailConfigSetup" />
+	</setup>
+</ice>

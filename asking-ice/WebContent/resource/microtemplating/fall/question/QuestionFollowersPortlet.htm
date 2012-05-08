@@ -1,0 +1,16 @@
+<div class='portlet-data'>
+    <div id='QuestionFollowersPortlet-RootData'>
+		<script type="text/html" id="QuestionFollowersPortletView">
+			<% if (list.length > 0) { %>
+				<div>
+					<%=list.length%> người đang follow câu hỏi này:
+				</div>
+				<% for (var i=0;i<list.length&&i<40;i++) { %>
+					<a title="<%=list[i].name%>" href="#!page/Profile/id/<%=list[i].userId%>">
+						<img class="avatar24 bkp_pic_profile" src="resource/avatar/<%=list[i].avatar%>" alt="<%=list[i].name%>" />
+					</a>
+				<% } %>
+			<% } %>
+		</script>
+	</div>
+</div>

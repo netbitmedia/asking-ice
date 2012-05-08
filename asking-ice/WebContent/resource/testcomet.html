@@ -1,0 +1,34 @@
+<script type="text/javascript" src="resource/js/lib/jquery-1.6.2.js"></script>
+
+<div id="catContainer">
+	
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$.post('/bkprofile-ice/comet/add-new-user');
+		$.getJSON('/bkprofile-ice/comet/get-all-users', {}, function(ret) {
+			var data = ret.data;
+			for(var i in data) {
+				var obj = data[i];
+				$('#catContainer').append('<div>'+obj+'</div>');
+			}
+			pollNewUsers();
+		});
+	});
+	
+	function pollNewUsers() {
+		$.ajax({url: '/bkprofile-ice/comet/get-online-users', success: function(ret) {
+			try {
+				var data = ret.data;
+				for(var i in data) {
+					var obj = data[i];
+					$('#catContainer').append('<div>'+obj+'</div>');
+				}
+			} catch (err) {
+				alert(err);
+			}
+			pollNewUsers();
+		}, dataType: 'json', timeout: 5000});
+	}
+</script>

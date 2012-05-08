@@ -1,0 +1,14 @@
+<div class='portlet-data'>
+	<div id='OnlinePortlet-RootData'>
+		<script type="text/html" id='OnlinePortletView'>
+			<span class="number" id="OnlinePortlet-OnlineTotal">?</span> người đang online<br />
+			<span class="number" id="OnlinePortlet-OnlineUsers"></span>
+		</script>
+		
+		<script type="text/html" id='OnlinePortlet-UsersTmpl'>
+			<% for(var i in users) { %>
+				<img class="avatar40 bkp_pic_profile" alt="avatar" title="<%=users[i].name%>" src="/resource/avatar/<%=users[i].avatar%>" />
+			<% } %>
+		</script>
+	</div>
+</div>

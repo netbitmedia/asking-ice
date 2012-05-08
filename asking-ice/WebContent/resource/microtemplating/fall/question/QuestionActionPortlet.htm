@@ -1,0 +1,58 @@
+<div class='portlet-data'>
+  	<div id='QuestionActionPortlet-RootData'>
+  		<script type="text/html" id='QuestionActionPortletView'>
+			<ul class="option_list">
+				<li><span id="QuestionActionPortlet-FollowBtn"></span></li>
+				<li class="dropdown_outer"><a class="button">Tùy chọn</a>
+					<ul class="drop_down">
+						<li><a onclick="generateEvent('MakeNewSimilarQuestion',{id: '<%=qid%>'})">Đặt câu hỏi tương tự</a></li>
+						<li><% if (bestSource == undefined) { %>
+							<a id="QuestionActionPortlet-BestSourceBtn" bestSource="1" onclick="generateEvent('ChangeBestSourceMark')">Đánh dấu câu hỏi chất lượng</a>
+						<% } else { %>
+							<a id="QuestionActionPortlet-BestSourceBtn" bestSource="0" onclick="generateEvent('ChangeBestSourceMark')">Bỏ đánh dấu câu hỏi chất lượng</a>
+						<% } %></li>
+						<li><% if (anonymous != 1) { %>
+							<a id="QuestionActionPortlet-AnonymousBtn" anonymous="1" class="owner_fn" onclick="generateEvent('ChangeQuestionAnonymous')">Ẩn danh</a>
+						<% } else { %>
+							<a id="QuestionActionPortlet-AnonymousBtn" anonymous="0" class="owner_fn" onclick="generateEvent('ChangeQuestionAnonymous')">Bỏ ẩn danh</a>
+						<% } %></li>
+					</ul>
+				</li>
+			</ul>
+ 		</script>
+ 		<script type="text/html" id="QuestionActionPortlet-AddBestSource">
+			<div class="expertEditFrame pnote-wrapper">
+				<div class="grey_box">Tính năng này cho phép bạn đánh dấu một câu hỏi chất lượng, tức là nó có một hoặc nhiều câu trả lời đáng tin cậy.</div>
+			    <div class="row" style="border-bottom:none;">
+					<span>Lý do đây là một câu hỏi chất lượng?</span>
+		    	</div>
+				<div class="row" style="border-bottom:none;">
+					<div class="right">
+						<textarea style="width: 400px" id="QuestionActionPortlet-BestSourceReason"></textarea>
+					</div>
+				</div>
+				<div class="popup-toolbar">
+					<a onclick="generateEvent('MarkBestSource')" class="action_button" style="margin:5px 10px 5px 0">Đánh dấu</a>
+					<a onclick="generateEvent('PopupRemove', {id: 'QuestionBestSource'})" class="button">Hủy</a>
+				</div>
+			</div>
+    	</script>
+    	<script type="text/html" id="QuestionActionPortlet-RemoveBestSource">
+    		<div class="expertEditFrame pnote-wrapper">
+				<div class="grey_box">Tính năng này cho phép bạn đánh dấu một câu hỏi chất lượng, tức là nó có một hoặc nhiều câu trả lời đáng tin cậy.</div>
+			    <div class="row" style="border-bottom:none;">
+					<span>Lý do bạn bỏ đánh dấu câu hỏi chất lượng?</span>
+		    	</div>
+				<div class="row" style="border-bottom:none;">
+					<div class="right">
+						<textarea style="width: 400px" id="QuestionActionPortlet-BestSourceReason"></textarea>
+					</div>
+				</div>
+				<div class="popup-toolbar">
+					<a onclick="generateEvent('RemoveBestSource')" class="action_button" style="margin:5px 10px 5px 0">Bỏ đánh dấu</a>
+					<a onclick="generateEvent('PopupRemove', {id: 'QuestionBestSource'})" class="button">Hủy</a>
+				</div>
+			</div>
+		</script>
+	</div>
+</div>

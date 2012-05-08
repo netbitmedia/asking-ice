@@ -1,0 +1,16 @@
+<div class='portlet-data'>
+    <div id='InterestedAreaEditPortlet-RootData'>
+        <script type="text/html" id="InterestedAreaEditPortletView">
+        	<div class="user-outer edit_topic">
+				<% for ( var j in interestContexts ) { %>
+        			<% for ( var i = 0; i < interestContexts[j].length; i++ ) { %>
+    					<span class="edit_tag" style="margin:5px;">
+    						<%=interestContexts[j][i].catchWord %>
+    						<span class="extension-point" extensionName="InterestPartial" extensionId="<%=interestContexts[j][i].id%>"></span>
+						</span>
+					<% } %>
+				<% } %>
+        	</div>
+        </script>
+    </div>
+</div>

@@ -1,0 +1,61 @@
+<div class='portlet-data'>
+	<div id='UnsubscribePortlet-RootData'>
+		<script type="text/html" id='UnsubscribePortletView'>
+			<div id="UnsubscribePortlet-Container"></div>
+		</script>
+		<script type="text/html" id="UnsubscribePortlet-ErrorToken">
+			<div class="intro_reg _text_left">
+				<div class="grey_title">
+					Ngừng nhận tin từ hệ thống Asking.vn
+				</div>
+            	<div>
+					<div class="row">
+						<div class="error">Mã hủy không hợp lệ</div>
+						<div>
+							Đây chắc chắn là email của bạn? <a href="#!page/Unsubscribe/do/resend">Click vào đây để gửi mail xác nhận</a>
+						</div>
+					</div>
+				</div><!-- box_wrapper -->
+			</div><!-- box -->
+		</script>
+		<script type="text/html" id="UnsubscribePortlet-SendMail">
+			<div class="grey_title">Ngừng nhận tin từ hệ thống Asking.vn</div>
+           	<div class="reset_box">
+				<div class="note">Hãy nhập vào email bạn dùng để đăng ký nhận tin, chúng tôi sẽ gửi cho bạn email
+					để hoàn tất quá trình.</div>
+				<p></p>
+                <div class="row">
+                   	Email bạn dùng để đăng ký nhận tin:
+                </div>
+                <div class="row">
+					<div class="left">
+                   		<input name="email" type="text" id="UnsubscribePortlet-Email" class="text" />
+					</div>
+					<div class="right">
+						<button onclick="generateEvent('SendUnsubscribeCodeButtonClick')" class="action_button">Xác nhận</button>
+					</div>
+                </div>
+				<div class="row"><span id="UnsubscribePortlet-Error" class="error"></span></div>
+			</div><!-- reset_box -->
+		</script>
+		<script type="text/html" id="UnsubscribePortlet-ConfirmSuccess">
+			<div class="grey_title">Bạn đã ngừng nhận tin từ hệ thống Asking</div>
+			<a href="#">Click vào đây để quay lại trang chủ</a>
+		</script>
+		<script type="text/html" id="UnsubscribePortlet-Confirm">
+			<div class="grey_title">Ngừng nhận tin từ hệ thống Asking.vn</div>
+           	<div class="reset_box">
+                <div class="row">
+                   	Bạn có muốn ngừng nhận tin từ hệ thống Asking cho email: <%=email%>
+                </div>
+                <div class="row">
+					<div class="_right">
+						<a onclick="generateEvent('ConfirmUnsubscribe')" class="button">Đồng ý</a>
+						<a href="#" class="button">Từ chối</a>
+					</div>
+                </div>
+				<div class="row"><span id="UnsubscribePortlet-Error" class="error"></span></div>
+			</div><!-- reset_box -->
+		</script>
+	</div>
+</div>

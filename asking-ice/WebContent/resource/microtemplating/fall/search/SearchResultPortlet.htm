@@ -1,0 +1,564 @@
+<div class='portlet-data'>
+	<div id='SearchResultPortlet-RootData'>
+		<script type="text/html" id="SearchResultPortlet-SuggestFollow">
+			<div id="SearchResultPortlet-SuggestTopList" style="display: none;"></div>
+			<div>
+				Bạn chưa cập nhật lĩnh vực quan tâm! Hiện tại, hệ thống sẽ chỉ hiện ra danh sách câu hỏi theo lĩnh vực quan tâm
+				của bạn. Để có thể cập nhật lĩnh vực quan tâm, bạn có thể sử dụng 1 trong 2 cách sau:
+				<div class="grey_title">
+					<a href="#!page/UserInterestEdit">Vào trang cập nhật lĩnh vực quan tâm trong phần thay đổi hồ sơ cá nhân</a> 
+				</div>
+				
+				<div class="grey_title">
+					Theo dõi một trong các lĩnh vực mà chúng tôi gợi ý: 
+				</div>
+				<div id="SearchResultPortlet-SuggestTopics"></div>
+			</div>
+		</script>
+		<script type="text/html" id="SearchResultPortlet-TopicsContainerTmpl">
+			<% for (var i in topics) { %>
+				<div>
+					<div>
+						<a class="lv_tag" href="#!page/Topic/id/<%=topics[i].id%>"><%=topics[i].title%></a>
+					</div>
+					<div id="SearchResultPortlet-SuggestTopics-<%=topics[i].id%>"></div>
+					<div class="_text_right">
+						<a onclick="generateEvent('FollowTopicViaSuggest', <%=topics[i].id%>)" class="action_button">Theo dõi</a>
+					</div>
+				</div>
+			<% } %>
+		</script>
+		<script type="text/html" id="SearchResultPortlet-SuggestBestQuestion">
+			<% for (var i in list) { %>
+				<div class="row">
+					<a href="#!page/Question/qid/<%=list[i].question_id%>"><%=list[i].content%></a>
+				</div>
+			<% } %>
+		</script>
+		<div id="SearchResultPortlet-SearchResultPortlet">
+			<!-- View chính của toàn bộ cả trang -->
+			<script type="text/html" id="SearchResultPortletView">
+				<div class="extension-point" extensionName="SearchResultTitle"></div>
+				<div class="extension-point" extensionName="SearchResultHeader"></div>
+				<div class="question-outer">
+					<div class="search_result_list">
+						<% for(var i=0; i< children.length; i++){ %>
+							<%=$(children[i]).html()%>
+						<% } %>
+					</div>
+				</div>
+				<div class="extension-point" extensionName="PostResultList"></div>
+				
+				<div class="search_result_nav">
+					<center class="extension-point" extensionName="NavigatorUI"></center>
+				</div>
+			</script>
+			
+			<!-- Config những gì được hiển thị -->
+			<script type="text/html" id="SearchResultPortlet-ItemConfigKnowledge">
+				{
+					uifields: 
+							[
+								{tags: "tags-template"},
+								{content: "content-template"},
+								{quser: "quser-template"},
+								{src: "img-template"},
+								{uid: "uid-template"}
+							]
+							,
+					template: "Notification",
+					"tags-template":	
+								{
+									data : 
+										{ 
+											tags : { field: "tags", type : "multiple", template: "tags-item-template"}
+										}
+								},
+						"tags-item-template":	
+								{
+									data : 
+										{ 
+											tags 	: { field: "tags"},
+											cid			: { field: "tags_id"}
+										}
+								},
+					"content-template":		
+							{ 
+								data : 
+									{ 
+										content : { field : "content", type : "single"},
+										is_best_source 	: { field: "is_best_source"},
+										best_source 	: { field: "best_source"},
+										qid : { field : "question_id", type : "single"}
+									} 
+							},
+					"quser-template":		
+							{ 
+								data : 
+									{ 
+										user_name : { field : "user_name"},
+										user_id : { field : "user_id"},
+										date : { field : "date"},
+										answer_count: {field: "answers_count"},
+										answer_vote : { field: "answers_max_vote_vote"},
+										answer_user_name : { field: "answers_max_vote_user_name"},
+										answer_user_id : { field: "answers_max_vote_user_id"},
+										vote : { field : "vote", type : "single" },
+										anonymous : { field: "anonymous"}
+									}
+							},
+					"img-template":
+							{
+								data : 
+									{
+										user_id 	: { field: "user_id"},
+										img 	: { field: "user_avatar_url"},
+										anonymous : { field: "anonymous"}
+									}
+							},
+					"uid-template":
+							{
+								data : 
+									{
+										uid 	: { field: "user_id"}
+									}
+							}
+				}
+			</script>
+			
+			<!-- Phần này của Person -->
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-Main">
+				<div type="plhld">
+					<div style="border-bottom: 1px solid #DDD; padding: 5px 0px;">
+					<div style="display: inline-block; vertical-align:top; margin-right: 10px; margin-top:5px">
+						<a style="border:none" href="#!page/Profile/id/<%=uid%>"><img class="bkp_pic_profile" height="25px" width="25px" src="resource/avatar/<%=avatar%>"></img></a>
+					</div>
+					<div class="search_result" style="display:inline-block; margin: 0px; max-width: 500px">
+						<div class="search_result_brief">
+							<b><%=fullname%></b>
+						</div>
+						<div></div>
+						<div style="margin: 3px 0px;" class="extension-point" extensionName="CheckTopicsAvai"><%=expertise%></div>
+						<div style="color: #777777">
+							<%=topics%> • <%=answers%> • <%=followers%>
+						</div>
+					</div>
+					</div>
+				</div>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-fullname-template">
+					<a href="#!page/Profile/id/<%=id%>"><%=content%></a>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-uid-template"><%=uid%></script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-avatar-template"><%=content%></script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-topics-template">
+					Số câu hỏi: <%=content?content:0%>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-answers-template">
+					Số câu trả lời: <%=content?content:0%>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-followers-template">
+					Số bình chọn: <%=content?content:0%>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-expertise-template">
+					<%=content%>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemPerson-expertise-item-template">
+					<a href="#!page/Search/query/<%=content%>/type/catchword-filter" title="<%=explanation%>" alt="<%=explanation%>" class="bkp_question_topic"><span><%=content%></span></a>
+			</script>
+			
+			<!-- Config những gì được hiển thị -->
+			<script type="text/html" id="SearchResultPortlet-ItemConfigPerson">
+				{
+					template: "Person",
+					uifields: 
+							[
+								{fullname: "fullname-template"},
+								{uid: "uid-template"},
+								{avatar: "avatar-template"}, 
+								{topics: "topics-template"},
+								{answers: "answers-template"},
+								{followers: "followers-template"},
+								{expertise: "expertise-template"}
+							]
+							,
+					"fullname-template":		
+							{ 
+								data : 
+									{ 
+										content : { field : "full_name" },
+										id : { field : "profile_id" }
+									} 
+							},
+					"uid-template":		
+							{ 
+								data : 
+									{ 
+										uid : { field : "profile_id" }
+									} 
+							},
+					"avatar-template":		
+							{ 
+								data : 
+									{ 
+										content : { field : "avatar" }
+									} 
+							},
+					"topics-template":		
+							{ 
+								data : 
+									{ 
+										content	: { field : "expertise_total_ques_count" } 
+									} 
+							},
+					"answers-template":		
+							{ 
+								data : 
+									{ 	
+										content : { field: "expertise_total_ans_count" }
+									}
+							},
+					"followers-template":		
+							{ 
+								data : 
+									{ 	
+										content : { field: "expertise_total_vote" }
+									}
+							},
+					"expertise-template":		
+							{ 
+								data : 
+									{ 	
+										content : { field: "expertise", type: "advanced", template: "expertise-item-template" }
+									}
+							},
+					"expertise-item-template":		
+							{ 
+								data : 
+									{ 	
+										content : 		{ field: "expertise"},
+										id : 			{ field: "expertise_id"},
+										description : 	{ field: "expertise_description"},
+										explanation : 	{ field: "expertise_explanation"}
+									}
+							}
+				}
+			</script>
+			
+			<!-- Phần này của Notification -->
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-Main">
+				<div type="plhld">
+					<div class="listview">
+						<div class="left">
+							<%=src%>
+						</div>
+						<div class="right">
+							<%=content%><br />
+							<%=quser%>
+							<%=tags%>
+						</div>
+                    </div>
+				</div>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-content-template">
+				<a class="list_title" href="#!page/Question/qid/<%=qid%>/s/<%=$.slugify(content)%>"><%=content%></a>
+				<% if (is_best_source) { %>
+					<img src="resource/images/home/bestsource_green.png" class="best_source_img" alt="best source" title="<%=best_source%>" />
+				<% } %>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-detail-template">
+				<% if (detail != undefined && $.trim(detail) != "") { %>
+					<%=detail+"<br />"%>
+				<% } %>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-quser-template">
+				<% if (typeof(type) != "undefined") { %>
+					<% if (type == "PersonVoted") { %>
+						<a href="#!page/Profile/id/<%=feed_id%>"><%=feed_name%></a> đã bình chọn một <a href="#!page/Question/qid/<%=qid%>/hl/<%=feed_content_id%>">câu trả lời</a><br />
+					<% } else if (type == "PersonAnswered") { %>
+						<a href="#!page/Profile/id/<%=feed_id%>"><%=feed_name%></a> đã trả lời một <a href="#!page/Question/qid/<%=qid%>">câu hỏi</a><br />
+					<% } else if (type == "PersonAsked") { %>
+						<a href="#!page/Profile/id/<%=feed_id%>"><%=feed_name%></a> đã hỏi một <a href="#!page/Question/qid/<%=qid%>">câu hỏi</a><br />
+					<% } else if (type == "PersonAnswered") { %>
+						<a href="#!page/Profile/id/<%=feed_id%>"><%=feed_name%></a> đã trả lời một <a href="#!page/Question/qid/<%=qid%>">câu hỏi</a><br />
+					<% } else if (type == "PersonCommented") { %>
+						<a href="#!page/Profile/id/<%=feed_id%>"><%=feed_name%></a> đã bình luận một <a href="#!page/Question/qid/<%=qid%>/hl/<%=feed_content_id%>">câu trả lời</a><br />
+					<% } else if (type == "QuestionAdded") { %>
+						Câu hỏi mới trong lĩnh vực <a href="#!page/Topic/id/<%=feed_content_id%>"><%=feed_content%></a><br />
+					<% } else if (type == "QuestionAnswered") { %>
+						Câu trả lời mới trong lĩnh vực <a href="#!page/Topic/id/<%=feed_content_id%>"><%=feed_content%></a><br />
+					<% } %>
+				<% } %>
+				<span class="note">
+					<%=date != null? $.timeFormatSolr(date):""%> 
+					<% if (anonymous != 1) { %>
+						, bởi <a href="#!page/Profile/id/<%=user_id%>" class="small-user dark_link"><%=user_name%></a>
+					<% } %>
+					<% if (answer_count > 0) { %>
+						,<span class="count_vote">+<%=answer_vote%></span> trả lời của 
+						<a href="#!page/Profile/id/<%=answer_user_id%>" class="dark_link"><%=answer_user_name%></a>
+					<% } %>
+				</span>
+				<span class="_right">
+					<% if (answer_count > 0) { %>
+						<span class="bold font11 blue"><%=answer_count%>  trả lời</span> 
+					<% } else { %>
+						<span class="font11 dark">Chưa được trả lời</span>
+					<% } %>
+				</span>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-vote-template">
+					<%=vote%>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-uid-template"><%=uid%></script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-tags-template">
+				<div class="tag_container">
+					<%=tags%>
+				</div>
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-tags-item-template">
+				<a class="lv_tag" href="#!page/Topic/id/<%=cid%>" class="bkp_question_topic"><%=tags%></a>,
+			</script>
+			
+			<!-- View của format single của answer profile -->				
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-img-template">
+				<% if (typeof(type) != "undefined") { %>
+					<% if (type == "PersonVoted") { %>
+						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
+					<% } else if (type == "PersonAnswered") { %>
+						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
+					<% } else if (type == "PersonAsked") { %>
+						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
+					<% } else if (type == "PersonAnswered") { %>
+						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
+					<% } else if (type == "PersonCommented") { %>
+						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
+					<% } else if (type == "QuestionAdded") { %>
+						<a href="#!page/Topic/id/<%=content_id%>"><img onerror="this.src='resource/images/topics/asking.png'" class="avatar32" src="resource/images/topics/<%=img%>" alt="avatar"></a>
+					<% } else if (type == "QuestionAnswered") { %>
+						<a href="#!page/Topic/id/<%=content_id%>"><img onerror="this.src='resource/images/topics/asking.png'" class="avatar32" src="resource/images/topics/<%=img%>" alt="avatar"></a>
+					<% } %>
+				<% } else { %>
+					<% if (anonymous != 1) { %>
+						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
+					<% } else { %>
+						<img class="bkp_pic_profile avatar32" src="resource/images/unknown.png" alt="avatar">
+					<% } %>
+				<% } %>
+			</script>
+			
+			<!-- View của format highlight trong một item của profile -->
+			<script type="text/html" id="SearchResultPortlet-ItemNotification-Highlight">
+				<div class="divSearchResult">
+					<b><%=header%></b>
+					<span>: 
+						<%=content%>
+					</span>
+				</div>
+			</script>
+
+			<!-- View của format highlight trong một item của profile -->
+			<script type="text/html" id="SearchResultPortlet-SearchResultNumber">
+				<% if (numDocs > 0) { %>
+				<div class="note">Có <%=numDocs%> kết quả phù hợp (<%=qtime%> giây)</div>
+				<% } %>
+			</script>
+
+			<!-- Config những gì được hiển thị -->
+			<script type="text/html" id="SearchResultPortlet-ItemConfigNotification">
+				{
+					uifields: 
+							[
+								{tags: "tags-template"},
+								{content: "content-template"},
+								{quser: "quser-template"},
+								{src: "img-template"},
+								{uid: "uid-template"}
+							]
+							,
+					template: "Notification",
+					showNavigator: false,
+					showSearchResult: false,
+					notShowNoResult: true,
+					"content-template":		
+							{ 
+								data : 
+									{ 
+										content : { field : "content", type : "single"},
+										is_best_source 	: { field: "is_best_source"},
+										best_source 	: { field: "best_source"},
+										qid : { field : "question_id", type : "single"}
+									} 
+							},
+					"quser-template":		
+							{ 
+								data : 
+									{ 
+										user_name : { field : "user_name"},
+										user_id : { field : "user_id"},
+										date : { field : "date"},
+										answer_count: {field: "answers_count"},
+										answer_vote : { field: "answers_max_vote_vote"},
+										answer_user_name : { field: "answers_max_vote_user_name"},
+										answer_user_id : { field: "answers_max_vote_user_id"},
+										vote : { field : "vote", type : "single" },
+										anonymous : { field: "anonymous"},
+									}
+							},
+					"tags-template":	
+								{
+									data : 
+										{ 
+											tags : { field: "tags", type : "multiple", template: "tags-item-template"}
+										}
+								},
+						"tags-item-template":	
+								{
+									data : 
+										{ 
+											tags 	: { field: "tags"},
+											cid			: { field: "tags_id"}
+										}
+								},
+					"img-template":
+							{
+								data : 
+									{
+										user_id 	: { field: "user_id"},
+										img 	: { field: "user_avatar_url"},
+										anonymous : { field: "anonymous"}
+									}
+							},
+					"uid-template":
+							{
+								data : 
+									{
+										uid 	: { field: "user_id"}
+									}
+							}
+				}
+			</script>
+			
+			<script type="text/html" id="SearchResultPortlet-ItemConfigFeed">
+				{
+					uifields: 
+							[
+								{tags: "tags-template"},
+								{content: "content-template"},
+								{quser: "quser-template"},
+								{src: "img-template"},
+								{uid: "uid-template"}
+							]
+							,
+					template: "Notification",
+					showNavigator: false,
+					showSearchResult: false,
+					notShowNoResult: true,
+					"content-template":		
+							{ 
+								data : 
+									{ 
+										content : { field : "content", type : "single"},
+										is_best_source 	: { field: "is_best_source"},
+										best_source 	: { field: "best_source"},
+										qid : { field : "question_id", type : "single"}
+									} 
+							},
+					"quser-template":		
+							{
+								data : 
+									{ 
+										feed_name 	: { field: "feed_user_name"},
+										feed_id 	: { field: "feed_user_id"},
+										feed_content 	: { field: "feed_content"},
+										feed_content_id 	: { field: "feed_content_id"},
+										qid 	: { field: "question_id"},
+										type 	: { field: "feed_type"},
+										user_name : { field : "user_name"},
+										user_id : { field : "user_id"},
+										date : { field : "date"},
+										answer_count: {field: "answers_count"},
+										answer_vote : { field: "answers_max_vote_vote"},
+										answer_user_name : { field: "answers_max_vote_user_name"},
+										answer_user_id : { field: "answers_max_vote_user_id"},
+										vote : { field : "vote", type : "single" },
+										anonymous : { field: "anonymous"},
+									}
+							},
+					"tags-template":	
+								{
+									data : 
+										{ 
+											tags : { field: "tags", type : "multiple", template: "tags-item-template"}
+										}
+								},
+						"tags-item-template":	
+								{
+									data : 
+										{ 
+											tags 	: { field: "tags"},
+											cid			: { field: "tags_id"}
+										}
+								},
+					"img-template":
+							{
+								data : 
+									{
+										user_id 	: { field: "feed_user_id"},
+										content_id 	: { field: "feed_content_id"},
+										img 	: { field: "feed_avatar"},
+										type 	: { field: "feed_type"},
+										anonymous : { field: "anonymous"}
+									}
+							},
+					"uid-template":
+							{
+								data : 
+									{
+										uid 	: { field: "user_id"}
+									}
+							}
+				}
+			</script>
+
+			<!-- View của format highlight trong một item của profile -->
+			<script type="text/html" id="SearchResultPortlet-SearchResultNumber">
+				<div>Có 
+					<span style="color:blue; font-weight:bold;"><%=numDocs%></span>
+					 	kết quả phù hợp với truy vấn của bạn
+					</span>
+				</div>
+			</script>
+		</div>
+	</div>
+</div>

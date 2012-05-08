@@ -1,0 +1,60 @@
+<div id="Portlets-Layout">
+	<script type="text/html" id="portlets-LayoutPage">
+	{
+	plugins:
+	[
+	{plugin: 'PopupPlugin', delay: false},
+	{ plugin: 'ProfileImageCheckPlugin', delay: false }
+	]
+	,
+	portlets:
+	[
+	{portlet: 'StatsPortlet', position: 'content_top'},
+	{portlet: 'OnlinePortlet', position: 'content_top'}
+	]
+	}
+	</script>
+	
+	<script type="text/html" id="portlets-Home">
+	{
+	plugins:
+	[
+	]
+	,
+	portlets:
+	[
+	]
+	,
+	parent: 'LayoutPage'
+	}
+	</script>
+	
+	<script type="text/html" id="portlets-Newsletter">
+	{
+	plugins:
+	[
+	]
+	,
+	portlets:
+	[
+	{portlet: 'NewsletterPortlet', position: 'main_left'}
+	]
+	,
+	parent: 'LayoutPage'
+	}
+	</script>
+	
+	<script type="text/html" id="portlets-ErrorPage">
+	{
+	plugins:
+	[
+	]
+	,
+	portlets:
+	[
+	]
+	,
+	parent: 'LayoutPage'
+	}
+	</script>
+</div>
