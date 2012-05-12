@@ -1,0 +1,34 @@
+#dhtmltooltip{
+	border: 1px solid #1E335F;
+    padding: 5px 10px;
+    font-size: 11px;
+    z-index: 100;
+    left: -300px;
+    visibility: hidden;
+    position: absolute;
+    background: #fff;   
+    line-height: 15px;
+	color:#1E335F;
+	-moz-border-radius:3px;
+    -webkit-border-radius:3px;
+	border-radius:5px;
+}
+#dhtmlpointer{
+    z-index: 101;
+    left: -300px;
+    visibility: hidden;
+    position: absolute;
+}
+.usertips{
+    display: none;
+}
+/*expert tooltips*/
+#dhtmltooltip ul li{
+	color:#202020;
+	margin-left:20px;
+	list-style: disc;
+}
+#dhtmltooltip ul{
+	color:#202020;
+}
+/*end expert tooltips*/
