@@ -46,7 +46,7 @@ public class IndexModule extends HttpModule {
 //		} else {
 			getRequest().setAttribute("baseUrl", this.getBaseUrl());
 			getRequest().setAttribute("resourceUrl", this.getResourceUrl());
-			getRequest().setAttribute("version", this.getParam("version", "fall"));
+			getRequest().setAttribute("version", this.getParam("version", "may"));
 			setTemplate("/index.html");
 //		}
 	}
