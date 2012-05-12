@@ -1,0 +1,189 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<link href="{resourceUrl}/css/may/portlet.css" rel="stylesheet" type="text/css" />
+		<link href="{resourceUrl}/css/may/autocomplete.css" rel="stylesheet" type="text/css" />
+		<link href="{resourceUrl}/css/may/style.css" rel="stylesheet" type="text/css" />
+		<link href="{resourceUrl}/css/may/popup.css" rel="stylesheet" type="text/css" />
+		<link href="{resourceUrl}/css/may/tooltips.css" rel="stylesheet" type="text/css" />
+		<link href="{resourceUrl}/css/may/partner.css" rel="stylesheet" type="text/css" />
+		<link href="{resourceUrl}/js/thirdparty/tinyeditor/style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+    <body>
+        <!-- required libraries -->
+        <script type="text/javascript" src="{resourceUrl}/js/lib/jquery-1.6.2.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/lib/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/lib/jquery.json-2.2.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/lib/jquery.cookie.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/lib/inherit.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/lib/micro-templating.js"></script>
+		
+		<!-- 3rd party library -->
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/highcharts.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/avim.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/popup.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/thirdparty/jquery.dateFormat-1.0.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/jquery.easing.1.2.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/thirdparty/autocomplete.jquery.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/thirdparty/jquery.textarea-expander.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/thirdparty/jquery.scrollTo-min.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/time.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/slugify.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/tooltips.js"></script>
+		
+        <!-- framework -->
+        <script type="text/javascript" src="{resourceUrl}/js/framework/base.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/framework/ui.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/tools.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/event.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/observer.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/plugins.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/page.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/portlet.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/request.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/bootstrap.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/framework/utils.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/framework/memcached.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/inlineEditor.js"></script>
+		
+		<script type="text/javascript" src="{resourceUrl}/js/thirdparty/ajax.js"></script>
+		
+		<!-- application bootstrap -->
+		<script type="text/javascript" src="{resourceUrl}/js/app/bkbootstrap.js"></script>
+		
+		<!-- application plugins -->
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/SystemMessage.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/InputMethod.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/scroll.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/ajaxLoading.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/announcementPlugin.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/answerEditBio.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/askuserplugin.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/AutocompletePlugin.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/autocompleteQuestion.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/AvatarEditPlugin.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/FollowUserPlugin.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/profiletabs.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/questionTask.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginEditAnswer.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/SearchMorePlugin.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/cleanstyle.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/focusDetector.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/pagination.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/expertisePlugins.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/UserControlBoxPlugin.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/expertiseDeletePlugin.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/userPlugins.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/profileEditTabPlugin.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginProfileImage.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginNavigate.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginBKPTextEditor.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginPost.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginComment.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginEditPendingQuestions.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginContent.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/ProfileNameEditPlugin.js"></script>
+        <script type="text/javascript" src="{resourceUrl}/js/app/plugins/PluginSearchResHelper.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/HungPDPlugins.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/plugins/TopicInterestAdderPlugin.js"></script>
+		
+		<!-- application portlets -->
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/ArticleBrowserPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/ArticleCommentPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/ArticleEditPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/ArticleInsertCatchwordBoxPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/ArticleInsertPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/ArticleListPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/ArticleSummaryPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/FeaturedArticlesPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/article/LatestArticlesPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/FeaturedNewsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/NewsInsertPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/PartnerBasicInfoPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/PartnerLinkPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/PartnerProfileEditPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/PartnerProfilePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/PartnersPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/partner/ProfileViewPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/BestProfilesPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/BriefInfoPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/ExpertiseAdderPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/ExpertisePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/ExpertiseEditPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/ExpertsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/FeaturedProfilesPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/InterestAdderPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/InterestedAreaPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/InterestedAreaEditPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/profile/ProfileFinishPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/AnswerPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/AskBasePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/AskHomeQuestionPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/AskNonTargetQuestionPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/AskSimilarQuestionPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/BookmarkPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/ExtraQuestionsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/QuestionActionPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/QuestionSharePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/RecommendAnswerPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/SimilarQuestionsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/SameQuestionsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/ShuffleQuestionsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/search/SearcherPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/search/SearchResultPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/AnnouncementPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/OnlineSupportPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/TopicChartPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/ContactPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/ErrorPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/FeedbackPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/FooterPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/IntroducePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/InvitationPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/InviteLinkPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/EventLinkPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/FacebookLikeBoxPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/LinksPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/StaticContentFacebookPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/StaticContentPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/IntroduceNavPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/SlidePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/StatsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/UnsubscribePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/SubscribePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/system/FeedbackListPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/topic/AllTopicsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/topic/CatchWordBrowserPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/topic/CatchWordIntroPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/topic/SmallTopicCreatePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/topic/TopicCreatePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/topic/TopicCreatePortletStandalone.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/topic/TopicMainPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/AbstractFollowersPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/AllUsersPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/BriefInfoEditPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/ContactsPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/EmailPasswdEditPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/EmailRecoverPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/ListFollowersPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/ListFollowingPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/LoginPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/LightLoginPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/NotificationListPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/PasswordResetPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/PrivilegePortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/question/QuestionFollowersPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/RegisterPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/UserBrowserPortlet.js"></script>
+		<script type="text/javascript" src="{resourceUrl}/js/app/portlets/user/FollowRecommendPortlet.js"></script>
+
+		<!-- addons -->
+		<script type="text/javascript" src="{resourceUrl}/js/framework/addons/iefixer.js"></script>
+
+		<script type="text/javascript" src="{resourceUrl}/js/app/index.fall.js"></script>
+
+        <script type="text/javascript" src="{resourceUrl}/js/thirdparty/tinyeditor/packed.js" build="no"></script>
+		<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+		<!-- <script type="text/javascript" src="http://api.recaptcha.net/js/recaptcha_ajax.js"></script> -->
+</body>
+</html>
