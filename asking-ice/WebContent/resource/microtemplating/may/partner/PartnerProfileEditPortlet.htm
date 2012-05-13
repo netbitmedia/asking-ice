@@ -1,0 +1,121 @@
+<div class='portlet-data'>
+	<div id='PartnerProfileEditPortlet-RootData'>
+		<script type="text/html" id="PartnerProfileEditPortletView">
+			<div id="PartnerProfileEditPortlet-Profile" class="edit-profile reg-wrapper">
+                <div class="reg-outer" id="PartnerProfileEditPortlet-FormMain">
+					<!--<div class="row">
+						<div class="left">
+							Ngày sinh: 
+						</div>
+						<div class="right">
+							<div class="dynamic-edit-content">
+								<span class="dynamic-edit-content-value"></span>
+								<a>Sửa</a>
+							</div>
+							<div class="dynamic-edit-form"  style="display:none">
+								<input isRequired="true" class="date_picker text dynamic-edit-form-value" name="birthday" tid="" tbl="" type="text" />
+								<a class="dynamic-edit-content-button-save" onclick="generateEvent('DynamicEditSaveButtonClick',event)"> Lưu </a>
+								<a class="dynamic-edit-content-button-cancel"> Hủy </a>
+							</div>
+						</div>
+					</div>-->
+					<div class="row">
+						<div class="left">
+							Giới thiệu bản thân
+						</div>
+						<div class="right">
+							<span class="edit_content content_about"><%=result.about%></span>
+							<span class="edit_placeholder" style="display: none;">
+								<textarea><%=result.about%></textarea>
+								<a class="widget_button" onclick="generateEvent('UpdateProfile', {field: 'about', target: event.target, value: $(event.target).siblings('textarea').val()})">Cập nhật</a>
+								<a class="widget_button" onclick="generateEvent('CancelUpdateProfile', event.target)">Hủy</a>
+							</span>
+							<a class="edit-note">Sửa</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							Quê quán
+						</div>
+						<div class="right">
+							<span class="edit_content content_hometown"><%=result.hometown%></span>
+							<span class="edit_placeholder" style="display: none;">
+								<input type="text" value="<%=result.hometown%>" />
+								<a class="widget_button" onclick="generateEvent('UpdateProfile', {field: 'hometown', target: event.target, value: $(event.target).siblings('input').val()})">Cập nhật</a>
+								<a class="widget_button" onclick="generateEvent('CancelUpdateProfile', event.target)">Hủy</a>
+							</span>
+							<a class="edit-note">Sửa</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							Giới tính
+						</div>
+						<div class="right">
+							<input onchange="generateEvent('UpdateProfile', {field: 'gender', target: event.target, show: true, value: $('input[name=gender]:checked').val()})" type="radio" id="PartnerProfileEditPortlet-GenderMale" name="gender" value="Nam" />
+							<label for="PartnerProfileEditPortlet-GenderMale">Nam</label>
+							<input onchange="generateEvent('UpdateProfile', {field: 'gender', target: event.target, show: true, value: $('input[name=gender]:checked').val()})" type="radio" id="PartnerProfileEditPortlet-GenderFemale" name="gender" value="Nữ" />
+							<label for="PartnerProfileEditPortlet-GenderFemale">Nữ</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							Nghề nghiệp
+						</div>
+						<div class="right">
+							<span class="edit_content content_profession"><%=result.profession%></span>
+							<span class="edit_placeholder" style="display: none;">
+								<input type="text" value="<%=result.profession%>" />
+								<a class="widget_button" onclick="generateEvent('UpdateProfile', {field: 'profession', target: event.target, value: $(event.target).siblings('input').val()})">Cập nhật</a>
+								<a class="widget_button" onclick="generateEvent('CancelUpdateProfile', event.target)">Hủy</a>
+							</span>
+							<a class="edit-note">Sửa</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							Công ty
+						</div>
+						<div class="right">
+							<span class="edit_content content_company"><%=result.company%></span>
+							<span class="edit_placeholder" style="display: none;">
+								<input type="text" value="<%=result.company%>" />
+								<a class="widget_button" onclick="generateEvent('UpdateProfile', {field: 'company', target: event.target, value: $(event.target).siblings('input').val()})">Cập nhật</a>
+								<a class="widget_button" onclick="generateEvent('CancelUpdateProfile', event.target)">Hủy</a>
+							</span>
+							<a class="edit-note">Sửa</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							Trường
+						</div>
+						<div class="right">
+							<span class="edit_content content_school"><%=result.school%></span>
+							<span class="edit_placeholder" style="display: none;">
+								<input type="text" value="<%=result.school%>" />
+								<a class="widget_button" onclick="generateEvent('UpdateProfile', {field: 'school', target: event.target, value: $(event.target).siblings('input').val()})">Cập nhật</a>
+								<a class="widget_button" onclick="generateEvent('CancelUpdateProfile', event.target)">Hủy</a>
+							</span>
+							<a class="edit-note">Sửa</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							Chuyên ngành
+						</div>
+						<div class="right">
+							<span class="edit_content content_major"><%=result.major%></span>
+							<span class="edit_placeholder" style="display: none;">
+								<input type="text" value="<%=result.major%>" />
+								<a class="widget_button" onclick="generateEvent('UpdateProfile', {field: 'major', target: event.target, value: $(event.target).siblings('input').val()})">Cập nhật</a>
+								<a class="widget_button" onclick="generateEvent('CancelUpdateProfile', event.target)">Hủy</a>
+							</span>
+							<a class="edit-note">Sửa</a>
+						</div>
+					</div>
+                </div> <!-- reg-outer -->
+			</div>
+		</script>
+	</div>
+</div> <!-- portlet data -->

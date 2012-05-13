@@ -1,0 +1,35 @@
+<div class='portlet-data'>
+    <div id='PartnerProfilePortlet-RootData'>
+		<script type="text/html" id="PartnerProfilePortlet-HeaderInfoTmpl">
+			<div class="bluebox">
+              	<div class="bluebox_content">
+                		<div class="left">
+                        	<img class="avatar60" src="/bkprofile/avatar/<%=partner.logo%>" alt="avatar" />
+                        </div><!-- left -->
+                        <div class="right">
+                         	<span class="question_title"><%=partner.name%></span>
+                         	<span class="marker dark_blue_mark _right small_mark">Đối tác</span>
+                         	<div class="stat_outer">
+                         		<span title="Số lượng câu hỏi" class="stat question">20</span>
+                         		<span title="Số lượng trả lời" class="stat answer">30</span>
+                         		<span title="Điểm nổi bật" class="stat beescore">200</span>
+		                    </div>
+							<div class="description">
+								<span class="title">- Địa chỉ liên hệ: </span><span class="item"><%=partner.addressStreet%> – <%=partner.addressCity%></span><br />
+								<span class="title">- Điện thoại: </span><span class="item"><%=partner.phone%></span><br />
+								<span class="title">- Email: </span><span class="item"><a mailto="<%=partner.email%>"><%=partner.email%></a></span><br />
+								<span class="title">- Website: </span><span class="item"><a href="<%=partner.website%>"><%=partner.website%></a></span><br />
+							</div>
+                         </div><!-- right -->
+                  </div><!-- bluebox_content -->    
+            </div><!-- bluebox -->
+		</script>
+        <script type="text/html" id="PartnerProfilePortletView">
+        	<div class="box5">
+	        	<div id="PartnerProfilePortlet-HeaderInfo"> </div>    
+           	</div>
+			<div class="tab-outer extension-point" extensionName="MockupProfileTab">
+            </div>
+        </script>
+    </div>
+</div>

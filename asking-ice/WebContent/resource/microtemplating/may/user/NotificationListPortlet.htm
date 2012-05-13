@@ -1,0 +1,48 @@
+<div class="portlet-data">
+	<div id="NotificationListPortlet-RootData">
+		<script type="text/html" id="NotificationListPortlet-AnswerCommented">	
+			<%=usersTmpl%> đã bình luận về <a href="<%=link%>">câu trả lời</a> của bạn
+		</script>
+		<script type="text/html" id="NotificationListPortlet-AnswerReported">	
+			<%=usersTmpl%> đã góp ý cho <a href="<%=link%>">câu trả lời</a> của bạn
+		</script>
+		<script type="text/html" id="NotificationListPortlet-AnswerVoted">
+			<%=usersTmpl%> đã vote cho <a href="<%=link%>">câu trả lời</a> của bạn
+		</script>
+		<script type="text/html" id="NotificationListPortlet-QuestionAnswered">
+			<%=usersTmpl%> đã trả lời câu hỏi <a href="<%=link%>"><%=title%></a>
+		</script>
+		<script type="text/html" id="NotificationListPortlet-QuestionVoted">
+			<%=usersTmpl%> đã vote cho câu hỏi <a href="<%=link%>"><%=title%></a>
+		</script>
+		<script type="text/html" id="NotificationListPortlet-Asked">	
+			<%=usersTmpl%> đã hỏi bạn <a href="<%=link%>"><%=title%></a>
+		</script>
+		<script type="text/html" id="NotificationListPortlet-QuestionInvited">
+			<%=usersTmpl%> đã mời bạn trả lời câu hỏi <a href="<%=link%>"><%=title%></a>
+		</script>
+		<script type="text/html" id="NotificationListPortlet-UsersTemplate">
+			<% for (var i in users) { %>
+				<a href="#!page/Profile/id/<%=users[i].sourceId%>"><%=users[i].name%></a>
+				<% if (i < users.length - 1) { %> , <% } %>
+			<% } %>
+		</script>
+		<script id="NotificationListPortlet-List" type="text/html">
+			<% for(var j in notifs) { %>
+				<div class="feed_list">
+					<div class="font11 bold feed_header"><%=j%></div>
+					<% for(var i=0; i<notifs[j].length; i++) { %>
+						<div>
+							<%=notifs[j][i].content%>
+						</div>
+					<% } %>
+				</div>
+			<% } %>
+		</script>
+		<script id="NotificationListPortletView" type="text/html">
+			<span class="grey_title">Thông báo của bạn</span>
+			<div id="NotificationListPortlet-Container"></div>
+			<a id="NotificationListPortlet-ViewMore" onclick="generateEvent('ViewMoreNotification')" class="_right">Xem thêm</a>
+		</script>
+	</div>
+</div>

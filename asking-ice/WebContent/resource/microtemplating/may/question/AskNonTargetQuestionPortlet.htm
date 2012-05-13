@@ -1,0 +1,59 @@
+<div class='portlet-data'>
+	<div id=AskQuestionPortlet-RootData'>
+		<script type="text/html" id="AskQuestionPortletView">
+				<div class="askQuestionWrapper">
+					<div class="row">
+						<label>Câu hỏi:</label>
+						<span class="error" id="AskQuestionPortlet-QuestionError1"></span>
+					</div>
+					<div class="row">
+						<input type="text" onfocus="generateEvent('AskNonTargetTextBoxFocus')" value="<%=question%>" id="AskQuestionPortlet-TextBox" type="text" class="text" />
+					</div>
+					<div class="row">
+						<label>Chủ đề:</label>
+						<a class="topic-link" onclick="generateEvent('ShowTopicCreatePopup', {'callback':'AskNonTargetQuestionPortletFetchAutocomplete', 'commitcallback':'AskNonTargetQuestionPortletAppend'})">Không tìm thấy chủ đề?</a>
+					</div>
+					<div class="row">
+						<input id="AskQuestionPortlet-AddTopicInputBox" class="text" type="text" />
+					</div>
+					<div class="row">
+						<div class="bkp_question_topic" id="AskQuestionPortlet-AddTopicContainer"></div>
+					</div>
+					<!-- <div class="row">
+						<label>Người được hỏi:</label>
+						<span class="msg">Chọn tối đa 2 người để hỏi câu này</span>
+					</div>
+					<div class="row">
+						<input id="AskQuestionPortlet-AddPeopleInputBox" type="text" class="text" />
+					</div>
+					<div class="row">
+						<div class="bkp_question_topic" id="AskQuestionPortlet-AddPeopleContainer"></div>
+					</div> -->
+					<div class="row">
+						<label>Thông tin bổ sung: </label>
+						<span class="msg">Bổ sung chi tiết cho câu hỏi</span>
+					</div>
+					<div class="row">
+						<textarea type="text" class="textarea" id="AskQuestionPortlet-TextAreaExtended"></textarea>
+					</div>
+					<div class="row">
+						<input type="checkbox" id="AskQuestionPortlet-Anonymous" />
+						<label style="float: none;" for="AskQuestionPortlet-Anonymous">Ẩn danh</label>
+					</div>
+					<div class="popup-toolbar">
+						<a class="action_button" onclick="generateEvent('AskNonTargetButtonClick')"><%=askMsg%></a>
+						<a class="button" onclick="generateEvent('PopupRemove', {id: 'AskQuestionPortlet'})">Hủy bỏ</a>
+					</div>
+					<div class="row">
+						<span class="error" id="AskQuestionPortlet-QuestionError"></span>
+					</div>
+				</div>
+		</script>
+		<div id="AskQuestionPortletMessage">
+			<div id="AskQuestionPortlet-TextAskMessage">Gửi câu hỏi</div>
+			<div id="AskQuestionPortlet-TextAskMessageMissingTarget">Hỏi người này</div>
+			<div id="AskQuestionPortlet-TextAskSuccess">Câu hỏi của bạn đã được gửi thành công!</div>
+			<div id="AskQuestionPortlet-TextAskError">Hiện thời chúng tôi không thể gửi câu hỏi của bạn, hãy vui lòng thử lại sau</div>
+		</div>
+	</div>
+</div>

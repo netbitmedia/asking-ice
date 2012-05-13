@@ -1,0 +1,30 @@
+<div class='portlet-data'>
+    <div id='SmallTopicCreatePortlet-RootData'>
+        <script type="text/html" id="SmallTopicCreatePortletView">
+			<div class="boundgrid grey_box widget_form">       
+			    <div class="row">
+					<div class="left">
+						<label>Tên chủ đề:</label>
+					</div>
+					<div class="right">
+						<input onfocus="generateEvent('TopicNameFocus')" id="SmallTopicCreatePortlet-Name" type="text" class="widget_text" />
+					</div>
+				</div>
+				<div class="row" id="SmallTopicCreatePortlet-DesContainer" style="display: none;">
+					<div class="left">
+						<label>Chi tiết:</label>
+					</div>
+					<div class="right">
+						<textarea id="SmallTopicCreatePortlet-Des" rows="5" cols="30" class="textarea"></textarea>
+					</div>
+				</div>
+				<div class="row">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<button class="action_button" onclick="generateEvent('AddNewTopic')">Thêm chủ đề</button>
+					</div>
+				</div>
+			</div>
+        </script>
+    </div>
+</div>

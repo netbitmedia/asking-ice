@@ -1,0 +1,20 @@
+<div class='portlet-data'>
+	<div id='CatchWordIntroPortlet-RootData'>
+		<script type="text/html" id='CatchWordIntroPortletView'>
+			<div class="browse_title">Các lĩnh vực tiêu biểu</div>
+			<div id="CatchWordIntroPortlet-ContentPlaceholder">
+				<div class="topic_all grey_box no_margin" style="padding:20px 0 10px">
+       			<% for(var i=0; i< catchwords.length/6; i++) { %>
+					<ul>
+						<% for(var j=0; j<6; j++) { %>
+							<% if (catchwords[i*6+j] != undefined) { %>
+							<li><a title="<%=catchwords[i*6+j].catchWord%>" tid="<%=catchwords[i*6+j].id%>" href="#!page/Topic/id/<%=catchwords[i*6+j].id%>"><%=trimOff(catchwords[i*6+j].catchWord, 17)%></a> (<%=catchwords[i*6+j].totalQuestion%>)</li>
+							<% } %>
+						<% } %>
+					</ul>
+				<% } %>
+				</div>
+       		</div>
+		</script>
+	</div>
+</div>

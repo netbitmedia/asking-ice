@@ -1,0 +1,66 @@
+<div class='portlet-data'>
+    <div id='BriefInfoPortlet-RootData'>
+        <script type="text/html" id="BriefInfoPortletView">
+        	<div class="bluebox">
+           		<div class="bluebox_content">
+                    <div class="left">
+                    	<img class="bkp_pic_profile avatar60" src="resource/avatar/<%=avatar%>" alt="<%=name%>" />
+                    </div><!-- left -->
+                   	<div class="right">
+                     	<span class="user-name question_title"><%=name%></span>
+                     	<% if (titleType == 0) { %>
+                     		<span class="marker blue_mark _right small_mark"><%=title%></span>
+                     	<% } else if (titleType == 1) { %>
+                     		<span class="marker dark_blue_mark _right small_mark"><%=title%></span>
+                     	<% } else if (titleType == 2) { %>
+                     		<span class="marker green_mark _right small_mark"><%=title%></span>
+                     	<% } else if (titleType == 3) { %>
+                     		<span class="marker orange_mark _right small_mark"><%=title%></span>
+                     	<% } %>
+                     	<div class="stat_outer">
+	                    	<span title="Số lượng câu hỏi" class="stat question">
+	                        	<%=questionCount%>
+	                    	</span>
+	                    	<span title="Số lượng trả lời" class="stat answer">
+	                        	<%=answerCount%>
+	                    	</span>
+	                    	<span title="Điểm nổi bật" class="stat beescore">
+	                        	<%=score%>
+	                    	</span>
+	                    	<span class="extension-point" extensionName="BriefInfoControl"></span>
+	                    	<span class="extension-point" extensionName="FollowUserControl"></span>
+	                    </div>
+						<span class="title">Lĩnh vực quan tâm: </span>
+						<%if(interestContexts!=null){%>
+							<%if(interestContexts.length>0){%>
+								<% for ( var j = 0; j < interestContexts.length; j++ ) { %>
+									<a class="item" href="#!page/Topic/id/<%=interestContexts[j].catchWordId%>"><%=interestContexts[j].catchWord %></a>
+									<% if(j<interestContexts.length-1) { %>
+										, 
+									<% } else { %>
+										,...
+									<% } %>
+								<% } %>
+							<% } else { %><span class="p-none">Chưa cập nhật.</span><% } %>
+						<% } else {%><span class="p-none">Chưa cập nhật.</span><% } %>
+						<br />
+						<span class="title">Kinh nghiệm:</span>
+						<%if(expertiseContexts!=null){%>
+							<%if(expertiseContexts.length>0){%>
+								<% for ( var j = 0; j < expertiseContexts.length; j++ ) { %>
+									<a class="item" href="#!page/Topic/id/<%=expertiseContexts[j].catchWordId%>"><%=expertiseContexts[j].catchWord %></a>
+									<span class="count_vote font11">+ <%=expertiseContexts[j].vote%></span>
+									<% if(j<expertiseContexts.length-1) { %>, <% } %>
+									<% if(j==expertiseContexts.length-1) { %>...<% } %>
+								<% } %>
+							<% } else { %><span class="p-none">Chưa cập nhật.</span><% } %>
+						<% } else { %><span class="p-none">Chưa cập nhật.</span><% } %>
+						<br />
+                	</div><!-- right -->
+	            </div><!-- bluebox-content -->
+           	</div><!-- bluebox -->
+			<div class="tab-outer extension-point" extensionName="ProfileTab">
+            </div>
+        </script>
+    </div>
+</div>

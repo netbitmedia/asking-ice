@@ -1,0 +1,29 @@
+<div class='portlet-data'>
+    <div id='ExpertiseEditPortlet-RootData'>
+        <script type="text/html" id="ExpertiseEditPortletView">
+			<div class="user-outer" style="padding:10px;">
+				<div class="clear"></div>
+				<% for ( var j in expertiseContexts ) { %>
+	                <div class="row">
+	                	<div class="left"><span class="title"><%=j%></span></div>
+						<div class="right">
+	                		<ul>
+	                			<% for ( var i = 0; i < expertiseContexts[j].length; i++ ) { %>
+		                			<li class="uiListItem">
+		                				<span>
+		                					<span class="edit_tag"><%=expertiseContexts[j][i].catchWord %>
+		                						<span class="extension-point" extensionName="ExpertisePartial" extensionId="<%=expertiseContexts[j][i].catchWordId%>"></span>
+		                					</span>
+		                				</span>
+										<span class="topic-info"><% if (expertiseContexts[j][i].explanation.trim().length != 0) { %><%=expertiseContexts[j][i].explanation.trim() %><% } else { %>Mô tả kinh nghiệm của bạn về <%=expertiseContexts[j][i].catchWord %><% } %></span>
+										<span class="extension-point" extensionName="ExpertiseExplanation" extensionId="<%=expertiseContexts[j][i].catchWordId%>"></span>
+		                			</li>
+								<% } %>
+							</ul>
+						</div><!-- end right-->
+	                </div><!-- end row -->
+				<% } %>
+            </div><!-- user-outer -->
+        </script>
+    </div>
+</div>

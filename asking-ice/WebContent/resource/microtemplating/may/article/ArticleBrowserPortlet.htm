@@ -1,0 +1,17 @@
+<div class='portlet-data'>
+	<div id='ArticleBrowserPortlet-RootData'>
+		<script type="text/html" id='ArticleBrowserPortletView'>
+        	<div id="ArticleBrowserPortlet-ContentPlaceholder">
+        		<% for(var i=0; i< articles.length/6; i++) { %>
+					<ul>
+						<% for(var j=0; j<6; j++) { %>
+							<% if (articles[i*6+j] != undefined) { %>
+								<li><a href="#!page/ArticleDetail/aid/<%=articles[i*6+j].id%>"><%=articles[i*6+j].title%></a></li>
+							<% } %>
+						<% } %>
+					</ul>
+				<% } %>
+        	</div>
+		</script>
+	</div>
+</div>

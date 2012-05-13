@@ -1,0 +1,102 @@
+<div class='portlet-data'>
+	<div id='ArticleCommentPortlet-RootData'>
+		<script type="text/html" id="ArticleCommentPortlet-articleComment-template">
+			<div class="answer-top">
+				<div class="top-left">
+				</div>
+			</div>
+	 		<div class="top-middle">
+				<a class="title" href="#!page/Profile/id/<%=commentsUserID%>"><%=commentsUserFullName%></a>
+			</div>
+		</script>
+		<script type="text/html" id="ArticleCommentPortlet-articleComment-template">
+		 	<div class="answer-outer">
+				<div class="answer-top">
+					<div class="top-left">
+					</div>
+		 		<div class="top-middle">
+					<a class="title" href="#!page/Profile/id/<%=commentsUserID%>"><%=commentsUserFullName%></a>
+				</div>
+				<div class="top-time">
+					<span class="comment-time"><%=$.timeFormat(commentsCreatedDate)%></span>
+				</div>		
+				<div class="top-right">
+				</div>
+				</div>
+				<div class="answer-item">
+					<div class="ans-middle">
+						<%=commentsContent%>
+					</div>
+					<div class="ans-middle">
+						<span class="HungPDCommentIDSpan" style="visibility: hidden"><%=commentsID%></span>
+						<span class="HungPDCommentUserIDSpan" style="visibility: hidden"><%=commentsUserID%></span>
+						<span class="extension-point" extensionName="HungPDCommentArticleSpan">	</span>					
+					</div>
+				</div>		
+			</div>		
+		</script>
+		<script type="text/html" id="ArticleCommentPortlet-articleComment-SearchMoreButton-template">
+			<div class="answer-top">
+				<div class="top-middle">
+					<br/>
+					<a  onclick="generateEvent('UpdateCommentPage',{'type':-1});">Prev</a>
+					Trang: <%=activeCommentPage%>/<%=totalCommentPage%>
+					<a  onclick="generateEvent('UpdateCommentPage',{'type':1});">Next</a>	
+				</div>
+			</div>	
+		</script>
+		<script type="text/html" id="ArticleCommentPortletView">
+			<div class="browse_title">
+				<div class="simple_tab">
+					<a type="0" href="#!page/Article">Tất cả</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a type="2" href="#!page/Article/t/2">Chia sẻ kinh nghiệm</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a type="4" href="#!page/Article/t/4">Phỏng vấn</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+					<a type="1" href="#!page/Article/t/1">Bài báo khoa học</a>
+				</div>
+			</div>
+			<div id="ArticleCommentPortlet-HungPDArticleCommentPortlet" class="extension-point" extensionName="PostExtension">
+		        <div class="topic_list">
+				</div>
+				<div class="article_title"><%=title%></div>
+				<div class="article_widget">
+					<div class="note left">
+						Người viết: <a href="#!page/Profile/id/<%=userId%>"><%=name%></a><br/>
+						Ngày gửi: <span><%=$.timeFormat(since)%></span><br/>
+						Loại bài viết: <span><%=atype%></span>
+					</div>
+					<div onclick="generateEvent('ArticleVoteSubmit')" class="note right">
+						<div id="ArticleCommentPortlet-ArticleVote" class="count_right no_margin"><%=vote%></div>
+					</div>
+				</div>
+
+	           	<div class="article_content">
+		        	<div class="ans-content" aid="<%=id%>">
+						<%=content%>
+					</div>
+				</div>
+				<div class="comment_outer">
+					<div class="box4">
+		           		<div class="content">
+							<div class="q-middle">									
+			                	<div id="ArticleCommentPortlet-NavigationLink"></div>					          	
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="box4">
+	           		<div class="content">
+						<div class="q-middle">
+         					<div id="ArticleCommentPortlet-TextAreaContainer"></div>			          	
+						</div>
+					</div>
+				</div>
+			</div>
+		</script>
+		<script type="text/html">
+			<% if (catchWords != undefined) 
+			for(var i=0; i<catchWords.length; i++) { %>
+				<a class="tag-label" href="#!page/Topic/id/<%=catchWords[i].id%>" class="bkp_question_topic"><%=catchWords[i].catchWord%></a>
+			<% } %>
+		</script>
+	</div>
+</div>

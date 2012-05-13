@@ -1,0 +1,96 @@
+<div class='portlet-data'>
+    <div id='NewsInsertPortlet-RootData'>
+		<script type="text/html" id="NewsInsertPortlet-NewsTmpl">
+			<div class="row">
+                <div class="left">
+                 	<a  href="<%=news.isNew.val?"":news.url.val%>"><img class="pn-news" src="<%=news.isNew.val?"":news.image.val%>" alt="Ảnh minh họa tin tức" /> </a>
+	        		<div class="uploader dynamic-edit-editable dynamic-edit-new-hide-first">
+	        			<form id="PartnerNewsImageUploaderContainer" method="post" enctype="multipart/form-data" action="/bkprofileBackup/index.php/ajax/dynamic-update-image-profile" target="avatar-upload-frame">
+	        				<input onchange="generateEvent('ChangeNewsImage', {'e':event});" type="file" name="uploader" tid="<%=news.title.id%>" tbl="<%=news.tbl.val%>"/>
+							<input type="hidden" name="id" value="<%=news.title.id%>"/>
+						</form><br />
+						<iframe class="doNotDisplay" id="avatar-upload-frame" name="avatar-upload-frame"></iframe>
+						<div class="msg fade">Bạn có thể sử dụng ảnh định dạng png hay jpg. Nếu chưa thấy ảnh xuất hiện thì ấn F5 (Refresh)</div>
+						<div class="error" id="PartnerNewsImageUploaderErrorPlaceholder"></div>
+	        		</div>
+                </div>
+                <div class="right">
+					<span class="dynamic-edit-header dynamic-edit-editable">
+						<a class="dynamic-edit-header-button-delete" onclick="generateEvent('DyanmicEditDeleteButtonClick',event)">Xóa</a>
+						</br>
+					</span>
+					<span class="partner-title">
+						<span class="dynamic-edit-content">
+							<a class="dynamic-edit-content-value" href="<%=news.isNew.val?"":news.url.val%>"><%=news.title.val%></a>
+							<a class="dynamic-edit-content-button-fix dynamic-edit-editable"> Sửa  </a>
+							<br/>
+						</span>
+						<span class="dynamic-edit-form" style="display:none">
+							<input isRequired="true" class="text dynamic-edit-form-value" name="title" tid="<%=news.title.id%>" tbl="<%=news.tbl.val%>" type="text" />
+							<a class="dynamic-edit-content-button-save" onclick="generateEvent('DynamicEditSaveButtonClick',event)"> Lưu </a>
+							<a class="dynamic-edit-content-button-cancel"> Hủy </a>
+						</span>
+					</span>
+
+					<span class="partner-content">
+						<span class="dynamic-edit-content">
+							<span class="dynamic-edit-content-value" href="<%=news.isNew.val?"":news.url.val%>"><%=news.isNew.val?"":news.content.val%></span>
+							<a class="dynamic-edit-content-button-fix dynamic-edit-editable"> Sửa </a>
+							<br/>
+						</span>
+						<span class="dynamic-edit-form" style="display:none">
+							<input isRequired="true" class="text dynamic-edit-form-value" name="content" tid="<%=news.title.id%>" tbl="<%=news.tbl.val%>" type="text" />
+							<a class="dynamic-edit-content-button-save" onclick="generateEvent('DynamicEditSaveButtonClick',event)"> Lưu </a>
+							<a class="dynamic-edit-content-button-cancel"> Hủy </a>
+						</span>
+					</span>
+
+					<span class="partner-url">
+						<span class="dynamic-edit-content">
+							<span class="dynamic-edit-content-value dynamic-edit-editable"><%=news.isNew.val?"":news.url.val%></span>
+							<a class="dynamic-edit-content-button-fix dynamic-edit-editable dynamic-edit-new-hide-first"> Sửa </a>
+							<br/>
+						</span>
+						<span class="dynamic-edit-form" style="display:none">
+							<input isRequired="true" class="text dynamic-edit-form-value" name="url" tid="<%=news.title.id%>" tbl="<%=news.tbl.val%>" type="text" />
+							<a class="dynamic-edit-content-button-save" onclick="generateEvent('DynamicEditSaveButtonClick',event)"> Lưu </a>
+							<a class="dynamic-edit-content-button-cancel"> Hủy </a>
+						</span>
+					</span>
+                </div>
+    		</div>        				
+		</script>
+        <script type="text/html" id="NewsInsertPortletView">
+        		<div class="grey_title">
+                	Quảng cáo
+            	</div><!-- grey_title -->
+                <div class="user-outer">
+                	<div class="partner-ads">
+                		<img class="ads" src="static/css/beta/images/partner/aptech.png" alt="demo" />
+                		<img class="ads" src="static/css/beta/images/partner/usguide.png" alt="demo" />
+                		<img class="ads" src="static/css/beta/images/partner/thaiha.png" alt="demo" />
+                	</div>
+              	</div><!-- user-outer --> 
+              	<div class="grey_title">
+                	Tin tức mới nhất
+            	</div><!-- grey_title -->
+                <div class="pn-wrapper user-outer" id="NewsInsertPortlet-News">
+                	<div class="row">
+                    	<div class="left"></div>
+						<div class="right">
+							<span class="dynamic-edit-selection">	
+                            	<a class="dynamic-edit-selection-view" onclick="generateEvent('DynamicEditViewButtonClick',event)"> Xem </a>
+								<a class="dynamic-edit-selection-edit" onclick="generateEvent('DynamicEditEditButtonClick',event)"> Sửa </a>
+							</span>
+                        </div>
+            		</div>
+                    <div profileExtension = "news" tbl="partnerNews" fatherID="" tmpl="NewsTmpl" level=1 class="reg-wrapper">
+                    	<span class="dynamic-edit-editable">
+							<span class="dynamic-edit-form-add-item-label"> Thêm tin tức mới: </span>
+							<input class="text dynamic-edit-form-add-item" name="title_new" tid="" type="text" onkeypress="generateEvent('AddNewItem',event)" />
+						</span>
+					</div>
+                </div><!-- pn-wrapper user-outer -->
+        </script>
+    </div><!-- NewsInsertPortlet-RootData -->
+</div><!-- portlet-data -->

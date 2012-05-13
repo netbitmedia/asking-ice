@@ -1,0 +1,65 @@
+<div class='portlet-data'>
+	<div id='AllTopicsPortlet-RootData'>
+		<script type="text/html" id='AllTopicsPortlet-TopicItem'>
+			<div class="user_brief">
+				<div class="left">
+					<a title="<%=txt%>" href="#!page/Topic/id/<%=value%>">
+						<img class="avatar60" src="resource/images/topics/asking.png" alt="avatar" />
+					</a>
+				</div>
+				<div class="right">
+					<a title="<%=txt%>" class="lv_tag" tid="<%=value%>" href="#!page/Topic/id/<%=value%>"><%=txt%></a><br />
+					<span class="font11">
+						<span class="bold">0</span> người theo dõi<br />
+						<span class="bold">0</span> câu hỏi
+					</span>
+				</div>
+			</div>
+		</script>
+		<script type="text/html" id='AllTopicsPortletView'>
+			<div class="boundgrid">
+	        	<div id="AllTopicsPortlet-ContextPlaceholder">
+    	    		
+        		</div>
+				<div id="AllTopicsPortlet-ContentPlaceholder">
+        		
+        		</div>
+			</div>
+		</script>
+		<script type="text/html" id="AllTopicsPortlet-Contexts">
+			<!--<div class="">
+				<span class="_text_right">
+					<a onclick="generateEvent('SelectAllContexts')">Chọn tất cả</a>
+					<a onclick="generateEvent('DeselectAllContexts')">Bỏ tất cả</a>
+				</span>
+			</div>
+			<div>
+				<% for(var i in contexts) { %>
+					<input cid="<%=i%>" onchange="generateEvent('ContextSelectionChanged')" checked="checked" type="checkbox" id="AllTopicsPortlet-Context<%=i%>" />
+					<label for="AllTopicsPortlet-Context<%=i%>"><%=contexts[i].context%></label>
+				<% } %>
+			</div>-->
+		</script>
+		<script type="text/html" id="AllTopicsPortlet-Topics">
+			<% for(var i in catchwords) { %>
+				<div class="browse_title"><%=catchwords[i].context%></div>
+				<% for (var j in catchwords[i].catchwords) { %>
+					<div class="user_brief">
+						<div class="left">
+							<a title="<%=catchwords[i].catchwords[j].catchWordTitle%>" href="#!page/Topic/id/<%=catchwords[i].catchwords[j].id%>">
+								<img onerror="this.src='resource/images/topics/asking.png'" class="avatar60" src="resource/images/topics/<%=catchwords[i].catchwords[j].avatar%>" alt="avatar" />
+							</a>
+						</div>
+						<div class="right">
+							<a title="<%=catchwords[i].catchwords[j].catchWordTitle%>" class="lv_tag" tid="<%=catchwords[i].catchwords[j].id%>" href="#!page/Topic/id/<%=catchwords[i].catchwords[j].id%>"><%=catchwords[i].catchwords[j].catchWord%></a><br />
+							<span class="font11">
+								<span class="bold"><%=catchwords[i].catchwords[j].totalExperts+catchwords[i].catchwords[j].totalFollowers%></span> người theo dõi<br />
+								<span class="bold"><%=catchwords[i].catchwords[j].totalQuestions%></span> câu hỏi
+							</span>
+						</div>
+					</div>
+				<% } %>
+			<% } %>
+		</script>
+	</div>
+</div>

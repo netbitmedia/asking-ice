@@ -1,0 +1,63 @@
+<div class='portlet-data'>
+	<div id='ExpertsPortlet-RootData'>
+		<script type="text/html" id='ExpertsPortletView'>
+			<div class="box">
+				<div class="box_header">Thành viên tiêu biểu</div>
+				<div class="box_wrapper">
+					<div class="box_outer"><!--  id="ExpertsPortlet-Experts" -->
+						<div id="ExpertsPortlet-Experts" class="experts">
+							<div class="box_user">
+                    			<a href="#!page/Profile/id/242">
+									<img class="avatar60" src="resource/avatar/9985c110a8b3b14f220da481115f09007d7844d8" alt="PGS Huỳnh Quyết Thắng" />
+								</a>
+                    			<br />
+                    		
+                    			<a href="#!page/Profile/id/242">PGS TS. Huỳnh Quyết Thắng</a> Software Engineering.
+                    		</div>
+							<div class="box_user">
+                    			<a href="#!page/Profile/id/62">
+									<img class="avatar60" src="resource/avatar/bcd96441ab7e65d87bf248acb22c7aac24c9b9f9" alt="Thạc sĩ Lê Quốc" />
+								</a>
+                    			<br />
+                    		
+                    			<a href="#!page/Profile/id/62">Thạc sĩ Lê Quốc</a> Vertical Search
+                    		</div>
+							<div class="box_user">
+                    			<a href="#!page/Profile/id/1162">
+									<img class="avatar60" src="resource/avatar/4defb8a0beeef5fe7b45bf376639650e55c32888" alt="Tiến sĩ Trương Thị Diệu Linh" />
+								</a>
+                    			<br />
+                    			<a href="#!page/Profile/id/1162">Tiến sĩ Trương Thị Diệu Linh</a> Mạng máy tính
+                    		</div>
+
+							<% for (var i in users) { %>
+							<div class="box_user">
+                    			<a href="#!page/Profile/id/<%=users[i].id%>">
+									<img class="bkp_pic_profile avatar60" src="resource/avatar/<%=users[i].avatar%>" alt="<%=users[i].name%>" />
+								</a>
+                    			<div class="stat_outer">
+                    				<a href="#!page/Profile/id/<%=users[i].id%>"><%=users[i].name%></a>
+									<br /> 
+									<span class="beescore stat"><%=users[i].score%></span>
+								</div>
+                    		</div>
+							<% } %>
+                    	</div>
+					</div><!-- end box outer-->
+				</div><!-- end box wrapper-->
+			</div><!-- end box -->
+		</script>
+		
+		<script type="text/html" id="ExpertsPortlet-ExpertsTmpl">
+			<% for (var i=0;i<users.length;i++) { %>
+				<div class="box_user">
+					<a href="#!page/Profile/id/<%=users[i].id%>">
+						<img class="avatar60 bkp_pic_profile" src="resource/avatar/<%=users[i].avatar%>" alt="avatar" />
+					</a>
+					<br />
+					<a href="#!page/Profile/id/<%=users[i].id%>"><%=users[i].name%>, <%=users[i].expertField%></a>
+				</div>
+			<% } %>
+		</script>
+	</div>
+</div>

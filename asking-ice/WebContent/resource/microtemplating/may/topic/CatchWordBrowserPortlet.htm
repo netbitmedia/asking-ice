@@ -1,0 +1,20 @@
+<div class='portlet-data'>
+	<div id='CatchWordBrowserPortlet-RootData'>
+		<script type="text/html" id='CatchWordBrowserPortletView'>
+			<div class="topic_all">
+				<div id="CatchWordBrowserPortlet-ContentPlaceholder">
+        			<% for(var i=0; i< catchwords.length/6; i++) { %>
+						<ul>
+							<% for(var j=0; j<6; j++) { %>
+								<% if (catchwords[i*6+j] != undefined) { %>
+									<li><a title="<%=catchwords[i*6+j].catchWord%>" tid="<%=catchwords[i*6+j].id%>" href="#!page/Topic/id/<%=catchwords[i*6+j].id%>"><%=trimOff(catchwords[i*6+j].catchWord, 17)%></a> (<%=catchwords[i*6+j].totalQuestion%>)</li>
+								<% } %>
+							<% } %>
+						</ul>
+					<% } %>
+        		</div>
+        	</div>
+        	
+		</script>
+	</div>
+</div>

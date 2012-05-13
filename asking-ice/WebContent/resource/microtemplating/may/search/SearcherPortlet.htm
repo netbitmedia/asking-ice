@@ -1,0 +1,34 @@
+<div class='portlet-data'>
+	<div id='SearcherPortlet-RootData'>
+    	<script type="text/html" id="SearcherPortletView">
+		<div class="top_search_outer">
+			<div id="top_select">
+				<div>
+					<input id="SearcherPortlet-RadioKnol" onchange="generateEvent('SearcherTypeChange')" type="radio" name="rd_search" value="0" checked /> 
+					<label for="SearcherPortlet-RadioKnol">Tri thức</label>
+				</div>
+				<div>
+					<input id="SearcherPortlet-RadioMem" onchange="generateEvent('SearcherTypeChange')" type="radio" name="rd_search" value="1" /> 
+					<label for="SearcherPortlet-RadioMem">Thành viên</label>
+				</div>
+    			<!--<select id="SearcherPortlet-Select" onchange="generateEvent('SearcherTypeChange')" name="sl_search">
+			   		<option value="0">Tri thức</option>
+		            <option value="1">Thành viên</option>
+			    </select>
+			    <span class="customStyleSelectBox" style="display: inline-block; ">
+			    	<span class="customStyleSelectBoxInner" style="">Tri thức</span>
+			    </span>-->
+				
+		    </div>    		
+			<div class="hint top_search _right">
+				<input onkeyup="generateEvent('SearchInputKeyup', event)" id="SearcherPortlet-Input" type="text" name="search" />
+				<!--<a onclick="generateEvent('SearchButtonClick')"><img src="resource/css/fall/images/home/find.png" /></a>-->
+			</div>
+			
+			<!--<div class="find" style="float:left;">
+				<a onclick="generateEvent('SearchButtonClick')" class="action_button">Tìm kiếm</a>
+			</div>-->
+		</div>
+    	</script>
+	</div>
+</div>

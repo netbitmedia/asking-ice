@@ -1,0 +1,29 @@
+<div class='portlet-data'>
+	<div id='ArticleInsertPortlet-RootData'>
+		<div id="ArticleInsertPortlet-SearchResultDynamicPortlet">
+			<script type="text/html" id="ArticleInsertPortletView">
+				<h2>Điền vào bài viết mới </h2>
+				<div class="answer-text">
+					<div class="row">
+						Tiêu đề bài viết:
+	    	            <input type="text" id="ArticleInsertPortlet-txtArticleName" style="width: 80%" /><br/>
+					</div>
+					<div class="row">
+						<a onclick="generateEvent('InsertArticleCatchwordsShow',{})">Nhập topic liên quan</a></br/>						
+		        		<div id="ArticleInsertPortlet-TopicsContainer"></div>
+					</div>  
+					<div class="row">
+						Nội dung của bài viết: <br/>
+                		<textarea id="ArticleInsertPortlet-ArticleTextEditor" class="textarea" style="width: 80%"  ></textarea>
+            		</div>
+					<div class="row" style="text-align:right">							
+                		<a class="button"  onclick="generateEvent('HungPDInsertArticleSubmit')">Nhập bài viết</a>
+            		</div>
+					<div class="row">
+						<div id="ArticleInsertPortlet-ArticleError"></div>
+            		</div>
+				</div>
+			</script>
+		</div>
+	</div>
+</div>

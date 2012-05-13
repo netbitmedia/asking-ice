@@ -1,0 +1,27 @@
+<div class='portlet-data'>
+    <div id='InterestedAreaPortlet-RootData'>
+        <script type="text/html" id="InterestedAreaPortletView">
+        	<div class="grey_title">
+                 Lĩnh vực quan tâm
+            </div>
+        	<div class="user-outer">
+				<% for ( var j in interestContexts) { %>
+					<div class="row">
+		                <div class="left"><span class="title"><%=j%></span></div>
+	                	<div class="right">
+            				<% for ( var i = 0; i < interestContexts[j].length; i++ ) { %>
+            					<% if (i!=0) { %>, <% } %>
+            					<a href="#!page/Topic/id/<%=interestContexts[j][i].id%>">
+            						<%=interestContexts[j][i].catchWord %>
+								</a>
+							<% } %>	
+	                	</div>
+		          	</div>
+				<% } %>
+				<% if (empty) { %>
+        			<div class="p-none">Chưa cập nhật.</div>
+				<% } %>
+        	</div>
+        </script>
+    </div>
+</div>

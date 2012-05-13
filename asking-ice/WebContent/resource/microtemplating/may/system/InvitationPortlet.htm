@@ -1,0 +1,112 @@
+<div class='portlet-data'>
+    <div id='InvitationPortlet-RootData'>
+        <script type="text/html" id="InvitationPortletView">
+           	<div class="intro_reg _text_left">
+           		<div id="InvitationPortlet-AuthStep"></div>
+				<div id="InvitationPortlet-Processing" class="_text_center" style="display: none;">
+					<div class="grey_title _text_center">
+						Tìm kiếm bạn bè qua Email
+					</div>
+					<div class="progress_bar">Đang nhập địa chỉ liên lạc từ hòm thư...</div>
+				</div>
+				<div id="InvitationPortlet-ExistingContactsFeed"></div>
+				<div id="InvitationPortlet-ContactsFeed"></div>
+			</div>
+        </script>
+		
+		<script type="text/html" id="InvitationPortlet-Authenticate">
+			<div class="grey_title _text_center">
+				Tìm kiếm bạn bè qua Email
+			</div>
+			<div class="welcome-msg">
+				Bạn có thể mời bạn bè của mình tham gia Asking, tìm kiếm người quen đã có tài khoản trên hệ thống bằng
+				email của mình. Chọn loại email của bạn:
+				<div class="email_provider">
+					<a id="InvitationPortlet-Gmail" onclick="generateEvent('AuthSubAuthenticateButtonClick')">
+						<img src="resource/images/home/gmail_invite.png" height=28 />
+					</a>
+					<a id="InvitationPortlet-Yahoo" onclick="generateEvent('OperationNotSupported')">
+						<img src="resource/images/yahoo.png" />
+					</a>
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/html" id="InvitationPortlet-ExistingContacts">
+			<% if (contacts.length > 0) { %>
+				<div class="browse_title" style="font-size: 16px">Theo dõi bạn bè mình trên Asking:
+					<span class="font11 _right">Bước <b>1</b> trên <b>2</b></span>
+				</div>
+				<% for (var i=0;i<contacts.length;i++) { %>
+					<% if (i==6) { %>
+						<div class="_text_center">
+							<a onclick="$(this).parent().siblings('.hidden').removeClass('hidden'); $(this).addClass('hidden')">Xem thêm ↓</a>   
+						</div>
+						<div class="hidden">
+					<% } %>
+					<div class="contact_list">
+						<div class="_left" style="margin: 15px 0 0">
+							<input onchange="generateEvent('InvitePeopleSelectionChanged', this)" type="checkbox" checked="checked" uid="<%=contacts[i].id%>" />
+						</div>
+						<div class="left">
+							<img class="avatar32" onerror="this.src='resource/images/unknown.png'" src="resource/avatar/<%=contacts[i].avatar%>" alt="<%=contacts[i].name%>" />
+		    	        </div>
+						<div class="contact">
+							<a class="list_title" href="#!page/Profile/id/<%=contacts[i].id%>"><%=contacts[i].name%></a><br />
+							<a href="mailto:<%=contacts[i].email%>"><%=contacts[i].email%></a>
+						</div>
+					</div>
+					<% if (i>6 && i==contacts.length-1) { %>
+						</div>
+					<% } %>
+				<% } %>
+			<% } else { %>
+				<div>Chưa có ai trong hòm thư tham gia Asking</div>
+				<div>Mời bạn bè tham gia Asking để cùng họ chia sẻ tri thức!</div>
+			<% } %>
+			<div>
+				<span>
+					<input id="InvitationPortlet-SelectAll" onchange="generateEvent('SelectAllPeopleInvite')" type="checkbox" checked="checked" />
+					<label for="InvitationPortlet-SelectAll">Chọn tất cả</label>
+				</span>
+				<div class="_text_right">     
+					<a onclick="generateEvent('NextInvitePage', {follow: true})" class="action_button">Theo dõi bạn bè</a>     
+					<a onclick="generateEvent('NextInvitePage')" class="button">Bỏ qua</a>    
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/html" id="InvitationPortlet-Contacts">
+			<div class="browse_title">
+				Mời bạn bè vào Asking
+				<span class="font11 _right">Bước <b>2</b> trên <b>2</b></span>
+			</div>
+			<div>
+				<input id="InvitationPortlet-EmailFilter" type="text" class="text" value="" /><br />
+				<% for (var i=0;i<contacts.length;i++) { %>
+					<% if (i==10) { %>
+						<div id="InvitationPortlet-ShowMore" class="_text_center">
+							<a onclick="generateEvent('ShowMoreExistingContacts')">Xem thêm ↓</a>   
+						</div>
+						<div class="hidden">
+					<% } %>
+					<div class="listview" contactID="<%=i%>">
+						<div class="right">
+							<span class="_right"><a onclick="generateEvent('SendInviteButtonClick', {'email': '<%=contacts[i].email%>', 'origin': event})" class="widget_button">Mời bạn này</a></span>
+							<% if (contacts[i].name != undefined && $.trim(contacts[i].name).length > 0) { %>
+									<span class="bold"><%=contacts[i].name%></span><br />
+							<% } %>
+							<a href="mailto:<%=contacts[i].email%>"><%=contacts[i].email%></span></a>
+						</div>
+					</div>
+					<% if (i>10 && i==contacts.length-1) { %>
+						</div>
+					<% } %>
+				<% } %>
+				<div class="_text_right">
+					<a href="#">Quay lại trang chủ</a>
+				</div>
+			</div>
+		</script>
+	</div>
+</div>
