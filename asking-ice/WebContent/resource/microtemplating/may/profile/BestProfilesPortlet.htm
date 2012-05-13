@@ -1,0 +1,30 @@
+<div class="portlet-data">
+	<div id="BestProfilesPortlet-RootData">
+		<script type="text/html" id="BestProfilesPortletView">
+        	<div class="box" id="BestProfilesPortlet-TopContent">
+            	<div class="box_header">
+                	Thành viên có kinh nghiệm với lĩnh vực                   
+            	</div><!-- box header -->
+           		<div class="box_wrapper">
+                	<div class="box_outer top-userpro">
+                    </div><!-- box_outer -->
+            	</div><!-- box wrapper -->
+            </div><!-- box3 -->
+        </script>
+        	
+        <script type="text/html" id="BestProfilesPortletItem">
+        	<div class="box_row">
+            	<div class="left">
+            		<a href="#!page/Profile/id/<%=id%>"><img class="avatar60 bkp_pic_profile" src="resource/avatar/<%=avatar%>" alt="avatar" /></a>
+                </div>
+                <div class="right">
+                	<a class="userpro" href="#!page/Profile/id/<%=id%>"><%=name%></a>
+                	<% if (rank != undefined) { %>
+                		<div onmouseover="showtip('<%=tips%>')" onmouseout="hidetip()" ><%=topic%>: Hạng <%=rank%></div>
+                	<% } %>
+                	<div><a onclick="generateEvent('MakeNewQuestion',{profile:[{name:'<%=name%>',id:<%=id%>}]})" class="new-question">Hỏi người này</a></div>
+            	</div>
+            </div>
+        </script>
+    </div>
+</div>

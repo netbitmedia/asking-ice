@@ -1,0 +1,201 @@
+<div class='portlet-data'>
+    <div id='AnswerPortlet-RootData'>
+    	<script type="text/html" id="AnswerPortlet-QContentEdit">
+    		<input onblur="generateEvent('SubmitQuestionContent')" onkeyup="generateEvent('SubmitQuestionContentKeyup')" class="text" type="text" style="width: 400px" value="<%=oldContent%>">
+    	</script>
+		<script type="text/html" id="AnswerPortlet-QDetailEdit">
+    		<textarea onblur="generateEvent('SubmitQuestionDetail')" onkeyup="generateEvent('SubmitQuestionDetailKeyup')" class="textarea" style="width: 98%" ><%=oldContent%></textarea>
+    	</script>
+		<script type="text/html" id="AnswerPortlet-QEditControlTmpl">
+    		<a onclick="generateEvent('CancelSubmitQuestionEdit')" class="widget_button">Hủy</a><a onclick="generateEvent('SubmitQuestionContent')" class="widget_button">Cập nhật</a>
+    	</script>
+        <script type="text/html" id="AnswerPortletView">
+            <div id="AnswerPortlet-AnswerPortlet" class="extension-point" extensionName="PostExtension">
+            	<div class="bluebox" id="AnswerPortlet-Question">
+	           		<div class="bluebox_content">
+                    	<div class="left">
+							<% if (anonymous != 1) { %>
+                        		<a href="#!page/Profile/id/<%=quserid%>">
+									<img class="avatar60 bkp_pic_profile" src="resource/avatar/<%=avatar%>" alt="avatar" />
+								</a>
+							<% } else { %>
+								<img class="avatar60 bkp_pic_profile" src="resource/images/unknown.png" alt="avatar" />
+							<% } %>
+							<div id="AnswerPortlet-ChangeTopic" class="_left">
+							</div>
+                        </div><!-- end q-left -->
+                        <div class="right">
+							<a onclick="generateEvent('BookmarkQuestion')" id="AnswerPortlet-Bookmark" class="bookmark" title="Bookmark lại câu hỏi"></a>
+							<div>
+	                            <span class="topic_list" id="AnswerPortlet-TopicArea"></span>
+								<a onclick="generateEvent('ChangeTopicButtonClick')" class="edit-note owner_fn">Sửa chủ đề</a>
+							</div>
+							<div id="AnswerPortlet-EditTopicContainer" style="display: none;">
+								<div class="topic_list" id="AnswerPortlet-EditTopicArea"></div>
+								<div class="topic_edit_area">
+									<input id="AnswerPortlet-TopicInput" type="text" />
+									<a onclick="generateEvent('CancelChangeTopic')" class="widget_button">Xong</a>
+								</div>
+							</div>
+                        	<div class="right_detail">
+                            	<div class="question_title" id="AnswerPortlet-QContent">
+									<% if (bestSource != undefined) { %>
+										<img alt="best source" title="<%=bestSource%>" src="resource/images/home/bestsource_green.png" />
+									<% } %>
+									<%=qcontent%>
+								</div> 
+                            	<div class="question_detail">
+									<span id="AnswerPortlet-QDetail"><%=qdetail%></span>
+									<a onclick="generateEvent('ChangeQDetailButtonClick')" class="edit-note owner_fn">Sửa chi tiết câu hỏi</a>
+									<span id="AnswerPortlet-QEditControl"></span>
+								</div>
+                            	<div class="note extension-point" extensionName="QuestionTask">
+									<% if (anonymous != 1) { %>
+                            			<span>Bởi</span><%=quser%><%=qusertarget?"<span>hỏi</span> "+qusertarget:""%>
+									<% } %>
+									<span><%=$.timeFormat(qdate)%></span>
+									<span title="Bình chọn cho câu hỏi hay" class="action_button count_vote count_vote_action" id="AnswerPortlet-QVote" onclick="generateEvent('VoteUpQuestion', {id: <%=qid%>})"></span>
+								</div>
+                            </div>
+                        </div><!-- end q-right -->
+                    </div><!-- end bluebox_content -->
+                </div><!-- end bluebox -->
+                
+				<div class="lightbox">
+           			<div class="lightbox_content">
+           				<div id="AnswerPortlet-AnswersList"></div>
+						<span id="AVIMControl"></span>
+						<div id="AnswerPortlet-TextAreaContainer"></div>
+						<div id="AnswerPortlet-HiddenAnswers">
+							<div>
+								<a class="note" onclick="$('#AnswerPortlet-HiddenAnswersList').toggle()"><span id="AnswerPortlet-HiddenAnswerNo">0</span> câu trả lời bị ẩn</a>&nbsp;<a href="#!page/Question/qid/550/s/the-nao-la-mot-cau-tra-loi-tot-o-askingvn">[?]</a>
+							</div>
+							<div style="display: none" id="AnswerPortlet-HiddenAnswersList"></div>
+						</div>
+					</div><!-- end lightbox_content-->
+				</div><!-- end lightbox-->
+            </div>
+        </script>
+		
+		<script type="text/html" id="AnswerPortlet-MCE">
+			<div class="answerinput_outer">
+            	<div class="row">
+            		<textarea id="AnswerPortlet-AnswerTextEditor" class="textarea"></textarea>
+            	</div>
+            	<div class="answer_button">
+            		<span onclick="generateEvent('SubmitAnswer', {id: 'AnswerPortlet-AnswerTextEditor'})" class="action_button">
+               			Trả lời câu hỏi
+               		</span>
+            	</div>
+				<div class="note_line"></div>
+				<div class="clear font11">
+            		*** Bạn chỉ có thể <b> trả lời 1 lần </b>và chỉ có thể sửa câu trả lời của mình sau khi đã trả lời. 
+					Để có thể đưa ra câu trả lời tốt, bạn nên đọc <a target="_blank" href="#!page/Question/qid/550/s/the-nao-la-mot-cau-tra-loi-tot-o-askingvn">tiêu chí đánh giá một câu trả lời tốt</a>.
+					Những câu trả lời bị nhiều đánh giá không tốt có thể <b>bị ẩn</b> đi.
+            	</div>
+            </div>
+		</script>
+		
+        <script type="text/html" id="AnswerPortlet-UserLink">
+			<a href="#!page/Profile/id/<%=quserid%>" class="small-user"><%=qusername%></a>
+		</script>
+		
+        <script type="text/html" id="AnswerPortlet-Item">
+        	<div class="answer_outer" id="AnswerPortlet-Outer<%=aid%>">
+        		<div class="left">
+        			<a href="#!page/Profile/id/<%=uid%>"><img class="avatar40 bkp_pic_profile" src="resource/avatar/<%=uimglink%>" alt="avatar" /></a>
+        		</div><!-- end left -->
+        		<div class="right">
+        			<a href="#!page/Profile/id/<%=uid%>" class="bold"><%=uname%></a>
+      				<span extensionId="<%=uid%>" class="note_left extension-point" extensionName="AnswerProfileName"></span>
+					<div aid="<%=aid%>" class="ans-content">
+                   		<%=acontent%>
+					</div>
+					<% if (negatives.length > 0) { %>
+						<div class="negative-comment">
+						<% for(var i=0;i<negatives.length;i++) { %>
+							<%=negatives[i]%><br>
+						<% } %>
+						</div>
+					<% } %>
+					<% if (lastEdited != null) { %>
+						<div class="last_edited">Cập nhật cuối: <%=$.timeFormat(lastEdited)%></div>
+					<% } %>
+                </div><!-- end right -->
+				<div extensionName="AnswerExtension" aid="<%=aid%>" uid="<%=uid%>" class="extension-point">
+					<div class="ans-control row _text_right">
+						<span class="note"><%=$.timeFormat(adate)%></span>
+						<span class="extension_place"></span>
+						<span onclick="generateEvent('VoteAnswerIncrease', {id: <%=aid%>})"  class="action_button count_vote count_vote_action" id="AnswerPortlet-AVote-<%=aid%>" title="Bình chọn cho câu trả lời">+<%=avote%></span>
+					</div>
+					<div class="ans-extension-area"></div>
+				</div>
+            </div><!-- answer_outer -->
+        </script>
+		
+		<script type="text/html" id="AnswerPortlet-HiddenItem">
+        	<div class="answer-outer">
+                <div class="answer-top">
+                     <div class="top-middle">
+                     	<a href="#!page/Profile/id/<%=uid%>" class="title"><%=uname%></a>
+      					<span extensionId="<%=uid%>" style="display: block;" class="extension-point" extensionName="AnswerProfileName"></span>
+                     </div>
+                  </div>
+                  <div class="answer-item">
+                     <div class="ans-middle">
+                        <div class="row">
+                        	<div class="listview">
+                                <div class="row">
+                                	<div aid="<%=aid%>" class="ans-content">
+                                		<%=acontent%>
+									</div>
+									<div class="box2">
+										<% for(var i=0;i<negatives.length;i++) { %>
+											<div class="box2-content announce">
+												<%=negatives[i]%>
+											</div>
+										<% } %>
+									</div>
+                                    <div class="vote-outer">
+                        			</div><!-- vote-outer -->
+                                </div>
+            				</div><!-- listview -->
+                        </div>
+                    </div><!-- ans-middle -->
+                </div><!-- answer-item -->
+            </div><!-- answer-outer -->
+        </script>
+        <script type="text/html" id="AnswerPortlet-Topic">
+        	<a href="#!page/Topic/id/<%=cid%>" class="tag-label extension-point" extensionName="CheckTopicEditable"><%=content%></a>
+        </script>
+        <script type="text/html" id="AnswerPortlet-EditTopic">
+			<% for (var i in topicsQuestion) { %>
+				<span class="edit_tag">
+					<%=topicsQuestion[i].catchWord%>
+					<a eid="<%=topicsQuestion[i].id%>" onclick="generateEvent('QuestionTagDeleteButtonClick', event)">x</a>
+				</span>
+			<% } %>
+        </script>
+        <script type="text/html" id="AnswerPortlet-TopicTmpl">
+			<span class="edit_tag">
+				<%=catchWord%>
+				<a eid="<%=id%>" onclick="generateEvent('QuestionTagDeleteButtonClick', event)">x</a>
+			</span>
+        </script>
+        <script type="text/html" id="AnswerPortlet-TextArea">
+            <div id="answer-editor-<%=aid%>-<%=uid%>" style="display:none; margin-top: 10px;">
+                <textarea id="editor_<%=aid%>_<%=uid%>" style="width:100%">
+                </textarea>
+                </br>
+                <div style="display: inline-block; position: relative; width:100%" class="bkp_box_footer">
+                    <div class="round_button" onclick="generateEvent(&apos;RejectChanges&apos;,{uid:&apos;<%=uid%>&apos;, aid:&apos;<%=aid%>&apos;})">
+                        Hủy
+                    </div>
+                    <div class="round_button" onclick="generateEvent(&apos;AcceptChanges&apos;,{uid:&apos;<%=uid%>&apos;, aid:&apos;<%=aid%>&apos;})">
+                        Cập nhật
+                    </div>
+                </div>
+            </div>
+    	</script>
+    </div>
+</div>

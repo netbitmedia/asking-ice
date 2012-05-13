@@ -1,0 +1,45 @@
+<div class='portlet-data'>
+    <div id='ContactsPortlet-RootData'>
+		<script type="text/html" id="ContactsPortletView">
+			<% if (contacts.length > 0) { %>
+				<div class="browse_title">Danh sách liên lạc của bạn</div>
+				<div id="ContactsPortlet-Container"></div>
+				<div id="ContactsPortlet-ShowMore" class="_text_center">
+		        	<a onclick="generateEvent('ShowMoreMyContacts')">Xem thêm ↓</a>
+				</div>
+			<% } else { %>
+				<div class="grey_title">Bạn chưa nhập danh sách liên lạc</div>
+			<% } %>
+			<div class="green_box">Tìm kiếm bạn bè từ <a class="bold" href="#!page/Invite">các tài khoản email khác</a></div>
+		</script>
+		<script type="text/html" id="ContactsPortlet-Contacts">
+			<% for(var i in contacts) { %>
+				<div class="listview">
+					<% if (contacts[i].targetId != 0) { %>
+						<div class="left">
+							<a href="#!page/Profile/id/<%=contacts[i].targetId%>">
+								<img class="bkp_pic_profile avatar32" src="resource/avatar/<%=contacts[i].avatar%>" alt="avatar" />
+							</a>
+						</div>
+						<div class="right">
+							<a class="bold" href="#!page/Profile/id/<%=contacts[i].targetId%>"><%=contacts[i].username%></a>
+							<br />
+							<a href="mailto:<%=contacts[i].email%>"><%=contacts[i].email%></span></a>
+						</div>
+					<% } else { %>
+					<div class="right">
+						<span class="_right">
+							<a onclick="generateEvent('SendInviteButtonClick', {'email': '<%=contacts[i].email%>', 'origin': event})" class="widget_button">Mời bạn này</a>
+						</span>
+						<% if (contacts[i].name != undefined && contacts[i].name.length > 0 && contacts[i].name != contacts[i].email) { %>
+							<span class="bold"><%=contacts[i].name%></span><br />
+						<% } %>
+						<a href="mailto:<%=contacts[i].email%>"><%=contacts[i].email%></span></a>
+					</div>
+					<div class="left">&nbsp;</div>
+					<% } %>
+				</div>
+			<% } %>
+		</script>
+	</div>
+</div>

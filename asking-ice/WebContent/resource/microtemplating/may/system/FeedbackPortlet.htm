@@ -1,0 +1,48 @@
+<div class="portlet-data">
+	<div id="FeedbackPortlet-RootData">
+		<script type="text/html" id="FeedbackPortletView">
+			<div class="reg-wrapper">
+            	<div class="question_title uppercase _text_center">
+                	  Góp ý cho Asking.vn
+            	</div><!-- box4-title -->
+                
+				<div class="block feedbackWelcome reg-welcome">
+					Cảm ơn bạn đã góp ý cho chúng tôi. Những góp ý của các bạn sẽ là cơ sở
+					để chúng tôi cải thiện hệ thống tốt hơn.
+				</div>
+				<div class="reg-outer">
+					<div class="row">
+						<div class="left">
+							<label>Email</label><br />
+							<span class="msg _font-italic">(Không bắt buộc)</span><span class="msg">Chúng tôi sẽ gửi lại thông báo bằng email cho bạn nếu có cập nhật</span>
+						</div>
+						<div class="right">
+							<input id="FeedbackPortlet-Email" class="text" type="text" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">
+							<label>Nội dung góp ý</label><br />
+							<span class="msg">Hãy cho chúng tôi biết cảm nghĩ, đánh giá của bạn về Asking.vn</span>
+						</div>
+						<div class="right">
+							<textarea id="FeedbackPortlet-TextInput" rows="10" cols="40" class="textarea"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left"></div>
+						<div class="right">
+							<span class="error block errorMsg" id="FeedbackPortlet-Error"></span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">&nbsp;</div>
+						<div class="right">
+							<a class="button" onclick="generateEvent('FeedbackSubmit')">Gửi góp ý</a>
+						</div>
+					</div>
+				</div><!-- reg outer -->
+			</div> <!-- end reg wrapper -->
+		</script>
+	</div>
+</div><!-- end Feedback portlet-->

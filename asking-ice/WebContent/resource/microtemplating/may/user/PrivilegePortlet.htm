@@ -1,0 +1,32 @@
+<div class='portlet-data'>
+	<div id='PrivilegePortlet-RootData'>
+		<script type="text/html" id='PrivilegePortletView'>
+        	<div class="box">
+        		<div class="box_header">Đặc quyền</div>
+        		<div class="box_wrapper">
+        			<div class="box_outer" id="PrivilegePortlet-ContentPlaceholder">
+        			</div>
+        		</div>
+        	</div>
+		</script>
+		
+		<script type="text/html" id='PrivilegePortlet-Privileges'>
+			<ul>
+				<% for (var i in privs) { %>
+					<% if (parseInt(privs[i].requiredScore) > parseInt(current)) { %>
+    					<li class="unsufficient">
+    						<%=privs[i].title%>
+    						<span class="_right"><%=privs[i].requiredScore%></span>
+    					</li>
+					<% } else { %>
+    					<li class="passed">
+    						<%=privs[i].title%>
+    						<span class="_right"><%=privs[i].requiredScore%></span>
+    					</li>
+					<% } %>
+				<% } %>
+			</ul>
+			<span>Số điểm cần để đạt được cấp tiếp theo: <%=remainingScore%></span>
+		</script>
+	</div>
+</div>

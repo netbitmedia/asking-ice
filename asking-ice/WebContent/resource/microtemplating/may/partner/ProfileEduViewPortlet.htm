@@ -1,0 +1,64 @@
+<div class="portlet-data">
+	<div id="ProfileEduViewPortlet-RootData">
+		<script type="text/html" id="ProfileEduViewPortletView">
+			<div class="grey_title"> 
+				Thông tin học tập
+			</div>
+			<div id="ProfileEduViewPortlet-Profile">
+				<div profileExtension="school" class="user-outer">
+				</div> 
+			</div>
+		</script>
+		<script type="text/html" id="ProfileEduViewPortlet-SchoolTmpl">
+			<div class="dynamic-edit-main" level=<%=partner.level.val%> id=<%=partner.id.val%> tbl="<%=partner.tbl.val%>" >
+				<div class="row2 title-formatter">
+					<div class="left">
+						<span class="keyword">Trường</span>
+					</div>
+					<div class="right">
+						<div class="content">
+							<%=partner.name.val%>
+						</div>
+					</div>
+				</div><!-- end row -->
+				<div class="row2 normal-formatter">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<div class="normal-left">
+							<span class="keyword">Khoa:</span> 
+						</div>
+						<div class="normal-right">
+							<span class="content"><%=partner.isNew.val?"":partner.department.val%></span>
+						</div>
+					</div>
+				</div><!-- end row -->
+
+				<div class="row2 normal-formatter">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<div class="normal-left">
+							<span class="keyword">Khóa:</span> 
+						</div>
+						<div class="normal-right">
+							<span class="content"><%=partner.isNew.val?"":partner.course.val%></span>
+						</div>
+					</div>
+				</div><!-- end row -->
+				<div class="row2 normal-formatter">
+					<div class="left">&nbsp;</div>
+					<div class="right">
+						<div class="normal-left"><span class="keyword">Lớp: </span></div>
+						<div class="normal-right" profileExtension = "class" tbl="profileDetailedClass" fatherID="<%=partner.id.val%>" tmpl="ClassTmpl" level=0 >
+						</div> 
+					</div>
+				</div><!-- end row -->
+			</div>	
+		</script>
+		
+		<script type="text/html" id="ProfileEduViewPortlet-ClassTmpl">
+			<span class="dynamic-edit-main reg-outer" level="<%=partner.level.val%>" level=<%=partner.level.val%> id=<%=partner.id.val%> tbl="<%=partner.tbl.val%>">
+				<%=partner.name.val%>, 
+			</span>
+		</script>
+	</div>
+</div>

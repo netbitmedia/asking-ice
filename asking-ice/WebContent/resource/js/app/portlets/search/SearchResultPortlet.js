@@ -60,10 +60,10 @@ SearchResultPortlet = Class.extend({
 			case "question-latest" :
 			case "question-best" :
 			case "question-open" :
-				this.pageType = "Notification";
+				this.pageType = "Feed";
 				break;
 			case "notification-filter" :
-				this.pageType = "Notification";
+				this.pageType = "Feed";
 				break;
 			case "question-flagged":
 			case "catchword-filter" :
@@ -176,17 +176,17 @@ SearchResultPortlet = Class.extend({
 			params.query = this.query;
 			break;
 		case "notification-filter" :
-			params.core = "knowledge";
-			params.handler = "notification";
-//			if(all == 1){
+			params.core = "feed";
+			params.handler = "home";
+			if(all == 1){
 				params.query = "";
-//			} else {
-//				params.query = this.query;
-//			}
+			} else {
+				params.query = this.query;
+			}
 			break;
 		default :
-			params.core = "knowledge";
-			params.handler = "notification";
+			params.core = "feed";
+			params.handler = "home";
 			if(all == 1){
 				params.query = "";
 			} else {

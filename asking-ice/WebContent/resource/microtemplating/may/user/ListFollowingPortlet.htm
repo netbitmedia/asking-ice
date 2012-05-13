@@ -1,0 +1,31 @@
+<div class='portlet-data'>
+    <div id='ListFollowingPortlet-RootData'>
+		<script type="text/html" id="ListFollowingPortletView">
+			<% if (list.length > 0) { %>
+				<div>
+					<%=pronoun.charAt(0).toUpperCase()+pronoun.substr(1)%> đang follow 
+					<% if (list.length > 20) { %>
+						<a onclick="generateEvent('ListAllFollowing')"><%=list.length%> người</a>:
+					<% } else { %>
+						<%=list.length%> người:
+					<% } %>
+				</div>
+				<% for (var i=0;i<list.length&&i<20;i++) { %>
+					<a title="<%=list[i].name%>" href="#!page/Profile/id/<%=list[i].id%>">
+						<img class="avatar24 bkp_pic_profile" src="resource/avatar/<%=list[i].avatar%>" alt="<%=list[i].name%>" />
+					</a>
+				<% } %>
+			<% } %>
+		</script>
+		<script type="text/html" id="ListFollowingPortlet-AllPeople">
+			<div class="user_list">
+				<% for (var i in list) { %>
+					<div class="row">
+						<div class="left"><img src="resource/avatar/<%=list[i].avatar%>" alt="avatar" class="avatar48" onerror="this.src='resource/images/unknown.png'" /></div>
+						<div class="right"><a href="#!page/Profile/id/<%=list[i].id%>"><%=list[i].name%></a></div>
+					</div>
+				<% } %>
+			</div>
+		</script>
+	</div>
+</div>

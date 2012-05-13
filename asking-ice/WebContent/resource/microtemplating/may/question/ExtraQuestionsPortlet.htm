@@ -1,0 +1,14 @@
+<div class='portlet-data'>
+	<div id='ExtraQuestionsPorlet-RootData'>
+		<script type="text/html" id="ExtraQuestionsPortletView">
+			<div class="grey_box">
+				<div class="grey_title green">Các câu hỏi mới cập nhật</div>
+				<% for (var i=0;i<list.length;i++) { %>
+					<div>
+						<a class="dark_link" href="#!page/Question/qid/<%=list[i].id%>"><%=list[i].title%></a> <span class="note"><%=$.timeFormat(list[i].since)%></span>
+					</div>
+				<% } %>
+			</div>
+		</script>
+	</div>
+</div>

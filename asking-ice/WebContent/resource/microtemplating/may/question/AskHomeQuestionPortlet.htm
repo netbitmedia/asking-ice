@@ -1,0 +1,44 @@
+<div class='portlet-data'>
+	<div id=AskHomeQuestionPortlet-RootData'>
+		<script type="text/html" id="AskHomeQuestionPortletView">
+				<div class="widget_form askhome_box">
+					<div class="row">
+						<div class="left widget_title">Đặt câu hỏi</div>
+						<div class="right">
+							<input onfocus="$('.ask_hint').show()"; onblur="$('.ask_hint').hide()" onkeydown="$('.ask_hint').hide()" placeholder="Tìm kiếm trước khi đặt câu hỏi" name="search" type="text" onfocus="generateEvent('AskHomeTextBoxFocus')" id="AskHomeQuestionPortlet-TextBox" class="widget_text" />
+							<span class="ask_hint" style="display: none;">Nhập nội dung để Hỏi/Tìm kiếm</span>
+							
+							<!-- <span class="error" id="AskHomeQuestionPortlet-QuestionError1"></span> -->
+						</div>
+					</div><!-- end row -->
+					<!--<div class="row" id="AskHomeQuestionPortlet-Extended" style="display: none;">
+						<div class="left">
+							<label>Thông tin bổ sung: </label>
+						</div>
+						<div class="right">
+							<textarea placeholder="Bổ sung chi tiết cho câu hỏi" type="text" class="textarea" id="AskHomeQuestionPortlet-TextAreaExtended"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">&nbsp;</div>
+						<div class="right">
+							<input type="checkbox" id="AskHomeQuestionPortlet-Anonymous" />
+							<label for="AskHomeQuestionPortlet-Anonymous">Ẩn danh</label>
+							<a class="action_button" onclick="generateEvent('AskHomeButtonClick')">Gửi câu hỏi</a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="left">&nbsp;</div>
+						<div class="right">
+							<span class="msg" id="AskHomeQuestionPortlet-QuestionInfo"></span>
+							<span class="error" id="AskHomeQuestionPortlet-QuestionError"></span>
+						</div>
+					</div> -->
+				</div><!-- end widget_form -->
+		</script>
+		<div id="AskHomeQuestionPortletMessage">
+			<div id="AskHomeQuestionPortlet-TextAskSuccess">Câu hỏi của bạn đã được gửi thành công!</div>
+			<div id="AskHomeQuestionPortlet-TextAskError">Hiện thời chúng tôi không thể gửi câu hỏi của bạn, hãy vui lòng thử lại sau</div>
+		</div>
+	</div>
+</div>

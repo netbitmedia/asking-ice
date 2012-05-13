@@ -1,0 +1,131 @@
+<div class='portlet-data'>
+    <div id="RegisterPortlet-RootData">
+        <div id="RegisterPortletMessage">
+            <span id="RegisterPortlet-TextWelcome">
+			<strong>Asking.vn</strong> là mạng cộng đồng chia sẻ tri thức tin cậy, hướng tới đáp ứng nhu cầu hỏi đáp uy tín của cộng đồng trí thức Việt Nam.
+			<strong>Đăng ký tài khoản</strong> tại <strong>Asking.vn</strong> để tham gia cùng chúng tôi!
+			</span>
+            <label id="RegisterPortlet-TextName">Họ và tên</label>
+            <label id="RegisterPortlet-TextUsername">Tên đăng nhập</label>
+            <label id="RegisterPortlet-TextPassword">Mật khẩu</label>
+            <label id="RegisterPortlet-TextEmail">Email</label>
+            <label id="RegisterPortlet-TextToken">Mã đăng ký</label>
+            <span id="RegisterPortlet-TextSubmit">Đăng ký</span>
+            <span id="RegisterPortlet-TextSkip">Bỏ qua</span>
+            <span id="RegisterPortlet-TextRegister">1. Nhập các thông tin cơ bản để tiến hành đăng ký</span>
+            <span id="RegisterPortlet-TextAdditionInfo">2. Bổ sung thêm thông tin cá nhân của bạn</span>
+            <span id="RegisterPortlet-TextExpertise">3. Hãy cho chúng tôi biết kinh nghiệm và mối quan tâm của bạn!</span>
+            <span id="RegisterPortlet-TextUsernameTitle">Hãy nhập vào tên đăng nhập mà bạn muốn</span>
+            <span id="RegisterPortlet-TextEmailTitle">Hãy nhập vào email chính xác của bạn</span>
+            <span id="RegisterPortlet-TextPasswordTitle">Hãy nhập vào mật khẩu của bạn, độ dài từ 6-32 ký tự</span>
+            <span class="error" id="RegisterPortlet-TextRegisterError">Đã có lỗi xảy ra khi tiến hành đăng ký. Hãy kiểm tra chắc chắn các thông tin bạn nhập vào là chính xác</span>
+			<span class="error" id="RegisterPortlet-TextRegisterEditError">Hiện tại không thể tiến hành nhập dữ liệu, bạn có thể tạm thời bỏ qua bước này.</span>
+        </div>
+        <script type="text/html" id="RegisterPortlet-ViewStep1">
+            <div class="reg-wrapper">
+            	<div class="grey_title uppercase _text_center">
+                	  Đăng ký thành viên
+            	</div>
+                <div class="reg-welcome">
+                    <%=welcomeMsg %>
+                    Bạn đã có tài khoản? <a class="bold" onclick="generateEvent('NeedLogin', {disableWarning: true, type: 'Register'})">Đăng nhập</a>
+                </div>
+                <div class="reg-outer" id="RegisterPortlet-FormMain">
+                        <div class="row">
+                       		<div class="left"><label><%=emailMsg%>* :</label></div>
+							<div class="right">
+                               	<input isRequired="true" name="email" id="RegisterPortlet-Email" title="<%=emailTitle%>" value="<%=preEmail%>" class="text" type="text" onblur="generateEvent('CheckEmail', 'RegisterPortlet-Email')"/>
+								<div class="error" id="RegisterPortlet-EmailError"></div>
+								<div class="msg" style="font-weight: bold; color: #474747">
+                                   	Email của bạn, dùng để đăng nhập vào hệ thống.
+                               	</div>
+							</div>
+                       	</div>
+                       	<div class="row">
+                       		<div class="left"><label><%=passwordMsg%>* :</label></div>
+                            <div class="right">
+								<input isRequired="true" name="password" id="RegisterPortlet-Password" title="<%=passwordTitle%>" class="text" type="password" onblur="generateEvent('CheckPassword', 'RegisterPortlet-Password')"/>
+								<div id="RegisterPortlet-PasswordError" class="error" id="RegisterPortlet-PasswordError"></div>
+								<div class="msg">
+                                   	Mật khẩu phải có độ dài từ 6-32 kí tự
+                                </div>
+							</div>
+                       	</div>
+						<div class="row">
+                        	<div class="left"><label><%=nameMsg %>* :</label></div>
+							<div class="right">
+								<input isRequired="true" name="fullname" id="RegisterPortlet-Name" class="text" type="text" value="<%=preName%>" />
+								<div id="RegisterPortlet-NameError" class="error"></div>
+								<div class="msg">
+                                   	Họ và tên của bạn. Bạn nên sử dụng tên thật của mình
+                               	</div>
+							</div>
+                        </div>
+
+						<div class="row">
+                       		<div class="left">&nbsp;</div>
+							<div class="right">
+                               	<input id="RegisterPortlet-ReceiveUpdates" type="checkbox" checked="checked" />
+								<label class="font11" for="RegisterPortlet-ReceiveUpdates">Nhận tin tức, cập nhật từ hệ thống Asking</label>
+							</div>
+                       	</div>
+
+					   	<div class="row doNotDisplay">
+					   		<div class="left"><label><%=tokenMsg%>* :</label></div>
+							<div class="right">	
+								<input isRequired="true" name="token" id="RegisterPortlet-Token" value="BKP2011" class="text" type="text" />
+								<div id="RegisterPortlet-TokenError" class="error"></div>
+								<div class="msg">Mã đăng ký có hiệu lực đến ngày 01/06/2011: <strong>BKP2011</strong></div>
+							</div>
+					   	</div>
+
+                       	<div class="row">
+                        	<div class="left">&nbsp;</div>
+							<div class="right" style="padding:2px">	
+                            	<button onclick="generateEvent('RegisterButtonClick')" class="action_button" >
+                                	<%=submitMsg %>
+                            	</button>
+                            </div>
+                        </div>
+                </div> <!-- reg-outer -->
+            </div><!-- end reg-wrapper -->
+        </script>
+        <script type="text/html" id="RegisterPortlet-Errors">
+            <ul>
+                <% for ( var i = 0; i < errors.length; i ++ ) { %>
+                <li>
+                    <%=errors[i] %>
+                </li>
+                <% } %>
+            </ul>
+        </script>
+        <script type="text/html" id="RegisterPortlet-ViewStep3">
+            <div class="box4 reg-wrapper">
+            	<div class="box4-title">
+            		  <img class="bigicon" src="static/css/beta/images/logo/big.logo.png" alt="logo" />
+                	  <label>Hoàn thành đăng ký</label>
+            	</div><!-- box4-title -->
+                <div class="reg-welcome">
+                    Bổ sung kinh nghiệm và lĩnh vực quan tâm.
+                </div>
+                <div class="reg-outer" id="RegisterPortlet-FormMain">
+                    <div id="RegisterPortlet-ExpertisePlaceholder">
+                    </div>
+					<div id="RegisterPortlet-InterestPlaceholder">
+                    </div>
+                    <div class="row">
+                    	<div class="left">&nbsp;</div>
+                    	<div class="right">
+                            <button onclick="generateEvent('SubmitExpertiseRegisterButtonClick')" class="button">
+                                Lưu lại
+                            </button>
+							<button onclick="generateEvent('SkipExpertiseRegisterButtonClick')" class="button">
+                                <%=skipMsg %>
+                            </button>
+                        </div>
+                    </div><!-- end row-->
+                </div> <!-- end reg-outer -->
+            </div> <!-- end box4 reg-wrapper -->
+        </script>
+    </div><!-- end RegisterPortlet-RootData -->
+</div><!-- end  portlet-data-->

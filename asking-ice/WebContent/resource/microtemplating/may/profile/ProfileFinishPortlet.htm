@@ -1,0 +1,27 @@
+<div class='portlet-data'>
+	<div id='ProfileFinishPortlet-RootData'>
+		<script type="text/html" id='ProfileFinishPortletView'>
+			<div class="box">
+            	<div class="box_header">
+                	Hoàn tất thông tin cá nhân
+            	</div><!-- box_header -->
+           		<div class="box_wrapper">
+					<div class="box_outer _text_left">
+						<div class="profile_status">
+    	                	<div style="width: <%=finish%>%" class="ps_bar"></div>
+        	                <span><%=finish%>%</span>
+            	        </div>
+	                	<div class="box_toolbar">
+    	            		<% for (var i=0;i<msgs.length; i++) { %>
+        	        			<div><%=msgs[i]%></div>
+							<% } %>
+                	    </div>
+						<div class="box_toolbar _text_right">
+                   			<a href="#!page/UserAvatarEdit" class="button">Sửa hồ sơ</a>
+						</div>
+					</div><!-- box_outer -->
+            	</div><!-- box_wrapper -->
+            </div><!-- box -->
+		</script>
+	</div>
+</div>

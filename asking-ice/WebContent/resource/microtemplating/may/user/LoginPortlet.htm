@@ -1,0 +1,113 @@
+<div class='portlet-data'>
+    <div id='LoginPortletView-RootData'>
+        <script type="text/html" id="LoginPortlet-LightView">
+			<div id="LoginPortlet-Form">
+                	<span class="error" id="LoginPortlet-LoginError"><%=loginError %></span>
+                    <div class="login_row">
+                        <div class="left">
+							&nbsp;
+						</div>
+						<div class="right"><input placeholder="Email/ID" id="LoginPortlet-Username" type="text" name="username" /></div>
+                    </div>
+					<div class="login_row">
+						<div class="left">
+							&nbsp;
+						</div>
+						<div class="right">
+                        	<input placeholder="Mật khẩu" id="LoginPortlet-Password" type="password" name="password" onkeyup="generateEvent('PasswordTextBoxKeyUp', event)"/>
+                    	</div>
+                    </div>
+                    <div class="login_row last">
+						<input class="button" style="padding:5px 15px;" id="LoginPortlet-SubmitButton" onclick="generateEvent('LoginButtonClick', event)" type="submit" value="Đăng nhập" />
+					</div>
+                    <div class="login_row">
+                    	<div class="left">&nbsp;</div>
+                    	<div class="right">
+                    		<input class="remember-chk" type="checkbox" checked="checked" name="persistent" id="LoginPortlet-Persistent" />
+							<span class="remember-msg">Tự động đăng nhập</span>
+						</div>
+                    </div>
+                    <div class="login_row">
+                    	<div class="left">&nbsp;</div>
+                    	<div class="right">
+                    		<a onclick="generateEvent('PopupRemove', {id: 'Login'})" href="#!page/RecoverPassword">Quên mật khẩu?</a>
+                    	</div>
+                    </div>
+					<div class="login_row bottom">
+                   		<a onclick="generateEvent('PopupRemove', {id: 'Login'})" href="#!page/Register"> Đăng ký</a>
+                    </div>
+					<!--<div class="row">
+                   		<span class="openid_note">Đăng nhập bằng tài khoản&nbsp;&nbsp;</span>
+						<span class="openid_outer">
+							<a onclick="generateEvent('LoginOpenID', {type: 'gmail'})">
+								<img src="resource/images/google.png" alt="Gmail" />
+							</a>
+							<a onclick="generateEvent('LoginOpenID', {type: 'yahoo'})">
+								<img src="resource/images/yahoo.png" alt="Yahoo" />
+							</a>
+						</span>
+                    </div>
+					<div class="row bottom">
+                   		Bạn chưa có tài khoản?&nbsp;&nbsp;<a onclick="generateEvent('PopupRemove', {id: 'Login'})" href="#!page/Register"> Đăng ký tại đây</a>
+                    </div>-->
+            </div>
+    	</script>
+        <script type="text/html" id="LoginPortletView">
+            <div id="LoginPortlet-Form" class="login-wrapper">
+                <div class="login-form">
+                	<span class="error" id="LoginPortlet-LoginError"><%=loginError %></span>
+                    <div class="row">
+                        <div class="left">
+							<label>Email/ID </label>
+							<span class="link" onmouseout="hidetip()" onmouseover="showtip('Bạn có thể sử dụng Email hoặc tên đăng nhập')">[?]</span> : 
+						</div>
+						<div class="right"><input id="LoginPortlet-Username" class="text" type="text" name="username" /></div>
+                    </div>
+					<div class="row">
+                        <div class="left"><label>Mật khẩu: </label></div>
+						<div class="right">
+                        	<input class="text" id="LoginPortlet-Password" type="password" name="password" onkeyup="generateEvent('PasswordTextBoxKeyUp', event)"/>
+                    	</div>
+                    </div>
+                    
+                    <div class="row">
+                    	<div class="left">&nbsp;</div>
+                    	<div class="right">
+                    		<input class="remember-chk" type="checkbox" checked="checked" name="persistent" id="LoginPortlet-Persistent" />
+							<span class="remember-msg">Tự động đăng nhập</span>
+						</div>
+                    </div>
+                    <div class="row">
+                    	<div class="left">&nbsp;</div>
+                    	<div class="right">
+							<input class="action_button" style="padding:5px 15px;" id="LoginPortlet-SubmitButton" onclick="generateEvent('LoginButtonClick', event)" type="submit" value="Đăng nhập" />
+                    		<a onclick="generateEvent('PopupRemove', {id: 'Login'})" href="#!page/RecoverPassword">Quên mật khẩu?</a>
+                    	</div>
+                    </div>
+					<div class="row">
+                   		<span class="openid_note">Đăng nhập bằng tài khoản&nbsp;&nbsp;</span>
+						<span class="openid_outer">
+							<a onclick="generateEvent('LoginOpenID', {type: 'gmail'})">
+								<img src="resource/images/google.png" alt="Gmail" />
+							</a>
+							<a onclick="generateEvent('LoginOpenID', {type: 'yahoo'})">
+								<img src="resource/images/yahoo.png" alt="Yahoo" />
+							</a>
+						</span>
+                    </div>
+					<div class="row bottom">
+                   		Bạn chưa có tài khoản?&nbsp;&nbsp;<a onclick="generateEvent('PopupRemove', {id: 'Login'})" href="#!page/Register"> Đăng ký tại đây</a>
+                    </div>
+                </div>
+            </div>
+        </script>
+        <div id="LoginPortletMessage">
+            <div id="LoginPortlet-TextNeedLogin">
+                Để thực hiện chức năng này bạn cần đăng nhập
+            </div>
+			<div id="LoginPortlet-LoginInsufficientInput">
+				Bạn cần nhập tên đăng nhập và mật khẩu
+			</div>
+        </div>
+    </div>
+</div>

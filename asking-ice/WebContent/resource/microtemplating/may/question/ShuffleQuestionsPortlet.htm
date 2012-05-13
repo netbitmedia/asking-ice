@@ -1,0 +1,33 @@
+<div class='portlet-data'>
+  	<div id='ShuffleQuestionsPortlet-RootData'>
+  		<script type="text/html" id='ShuffleQuestionsPortletView'>
+			<div class="box">
+				<div class="box_header">
+						Câu hỏi ngẫu nhiên
+						<a title="Xem các câu hỏi ngẫu nhiên khác" class="_right shuffle" onclick="generateEvent('FetchShuffleQuestions')"><img src="resource/images/home/shuffle24.png" alt="shuffle" /></a>
+				</div>
+				<div class="box_wrapper">
+					<div class="box_outer _text_left" style="background:#DCEAF7">
+						<ul class="box_list" id="ShuffleQuestionsPortlet-Questions"></ul>
+					</div>
+				</div><!-- box_wrapper -->
+			</div>
+  		</script>
+		<script type="text/html" id='ShuffleQuestionsPortlet-QuestionsTmpl'>
+		    <% if(user.length > 0) {
+				for (var i=0;i<user.length;i++) { %>
+		    		<li>
+						<% if (user[i].bestSource) { %>
+							<img alt="best source" title="<%=user[i].bestSource %>" src="resource/images/home/bestsource_green.png">
+							<a class="feature_question" href="#!page/Question/qid/<%=user[i].id%>/s/<%=$.slugify(user[i].title)%>">
+								<%=user[i].title%>
+							</a>
+						<% } else { %>
+							<a class="unfeature_question" href="#!page/Question/qid/<%=user[i].id%>/s/<%=$.slugify(user[i].title)%>"><%=user[i].title%></a>
+						<% } %>
+					</li>
+				<% } %>
+			<% } %>
+ 		</script>	
+	</div>
+</div>
