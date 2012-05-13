@@ -8,6 +8,7 @@ import javax.servlet.ServletContextListener;
 import model.question.QuestionCatch;
 import model.system.Privilege;
 import model.topic.CatchWord;
+import model.user.FeedObserver;
 import model.user.NotificationObserver;
 
 import org.ice.Config;
