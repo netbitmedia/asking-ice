@@ -1,0 +1,33 @@
+<root>
+	<username>bkprofile</username>
+	<password>YNcn3SnSw8</password>
+	<database>bkprofile</database>
+	<host>joolist.com</host>
+	<port>3306</port>
+	<query><![CDATA[SELECT `objects`.profile_id, `objects`.oid, `keywords`.keyword, `terms`.`content_en` AS `content`, `indexing_keyword_tag`.is_indexed, `indexing_keyword_tag`.is_stored, `objects`.`mark` AS `realMark` FROM (SELECT * FROM `objects` WHERE (objects.profile_id >= ?) AND (objects.profile_id < ?)) as objects INNER JOIN `obj_def` ON objects.oid=obj_def.oid   INNER JOIN `keywords` ON obj_def.keywordsID=keywords.keywordsID INNER JOIN `terms` ON objects.termid=terms.id LEFT JOIN (SELECT indexing_keyword_tag.* FROM `indexing_keyword_tag` INNER JOIN `indexing_tags` ON indexing_tags.id =indexing_keyword_tag.tag_id  AND indexing_tags.tag = 'default') as indexing_keyword_tag ON keywords.keywordsID=indexing_keyword_tag.keywordsID ORDER BY `profile_id` ASC, `cid` DESC]]></query>
+	<hostSolr>localhost</hostSolr>
+	<portSolr>8080</portSolr>
+	<coreSolr>feed</coreSolr>
+	<maxDocCommit>1000</maxDocCommit>
+	<step>10000</step>
+	<indexField>
+		<field>name</field>
+		<field>hometown_location</field>
+		<field>about_me</field>
+		<field>country</field>
+		<field>city</field>
+		<field>parents</field>
+		<field>children</field>
+		<field>siblings</field>
+		<field>article_summary</field>
+		<field>school_name</field>
+		<field>school_department</field>
+		<field>school_course</field>
+		<field>school_class</field>
+		<field>school_concentrations</field>
+		<field>student_id</field>
+		<field>school_concentration</field>
+		<field>company_name</field>
+		<field>company_position</field>
+	</indexField>
+</root>
