@@ -131,8 +131,6 @@ public class AjaxModule extends BaseAjaxModule {
 	}
 	
 	public void registerTask() throws Exception {
-		if (true) throw new Exception("Login is disabled");
-		
 		ArrayList<RegisterError> errors = new ArrayList<RegisterError>();
 		User user = new User();
 		try {
@@ -178,7 +176,6 @@ public class AjaxModule extends BaseAjaxModule {
 	}
 	
 	public void loginTask() throws Exception {
-		if (true) throw new Exception("Login is disabled");
 		if (getParam("username") != null && getParam("password") != null) {
 			String username = getParam("username");
 			String password = getParam("password");
