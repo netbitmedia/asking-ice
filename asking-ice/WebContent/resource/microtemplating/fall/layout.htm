@@ -24,7 +24,7 @@
         portlets: 
         [ 
 		{ portlet: 'SearcherPortlet', position: 'header_right', order: 'B' },
-		{ portlet: 'TopicCreatePortletStandalone', position: 'main_left', active: false },
+		{ portlet: 'TopicCreatePortletStandalone', position: 'main', active: false },
         { portlet: 'AskQuestionPortlet', position: 'content_right', order: 'F', active: false },
 		{ portlet: 'LoginPortlet', position: 'header_right', order: 'A', params: {light: true} },
         { portlet: 'FooterPortlet', position: 'other' }
@@ -72,7 +72,7 @@
         ,
         portlets: 
         [ 
-			{ portlet: 'InvitationPortlet', position: 'main_left' }
+			{ portlet: 'InvitationPortlet', position: 'main' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -86,7 +86,7 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'UnsubscribePortlet', position: 'main_left' }
+		{ portlet: 'UnsubscribePortlet', position: 'main' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -106,9 +106,9 @@
         ,
         portlets: 
         [
-		{ portlet: 'AskHomeQuestionPortlet', position: 'top_left', order: 'A1' },
-		{ portlet: 'ExtraQuestionsPortlet', position: 'main_left', order: 'AA' },
-		{ portlet: 'SearchResultPortlet', position: 'main_left', order: 'AB', params:{rows:25} },
+		{ portlet: 'AskHomeQuestionPortlet', position: 'menu_right', order: 'A1' },
+		{ portlet: 'ExtraQuestionsPortlet', position: 'main', order: 'AA' },
+		{ portlet: 'SearchResultPortlet', position: 'main', order: 'AB', params:{rows:25} },
 		{ portlet: 'ExpertsPortlet', position: 'content_right', order: 'A0' },
 		{ portlet: 'OnlineSupportPortlet', position: 'content_right', order: 'A2' },
 		{ portlet: 'InviteLinkPortlet', position: 'content_right', order: 'F' },
@@ -128,7 +128,7 @@
         ,
         portlets: 
         [ 
-        { portlet: 'NotificationListPortlet', position: 'main_left', order: 'A' }
+        { portlet: 'NotificationListPortlet', position: 'main', order: 'A' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -184,7 +184,7 @@
         ,
         portlets:
         [
-        {  portlet: 'ArticleCommentPortlet', position: 'main_left' },
+        {  portlet: 'ArticleCommentPortlet', position: 'main' },
         {  portlet: 'ArticleSummaryPortlet', position: 'content_right', order: 'B' }
         ]
 		,
@@ -203,7 +203,7 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'ArticleListPortlet', position: 'main_left', order: 'AB' },
+		{ portlet: 'ArticleListPortlet', position: 'main', order: 'AB' },
 		{ portlet: 'FeaturedArticlesPortlet', position: 'content_right', order: 'A' },
 		{ portlet: 'LatestArticlesPortlet', position: 'content_right', order: 'B' },
         ]
@@ -221,7 +221,7 @@
         portlets: 
         [ 
 		{ portlet: 'HungPDInsertArticleCatchwordBoxPortlet',position: 'right', order: 'F' ,active: false },				
-		{ portlet: 'HungPDInsertArticlePortlet',position:'main_left',order:'A'},
+		{ portlet: 'HungPDInsertArticlePortlet',position:'main',order:'A'},
         ]
 		,
 		parent: 'LayoutPage'
@@ -236,7 +236,7 @@
         portlets: 
         [
         { portlet: 'FeedbackListPortlet', position: 'content_right', order: 'E' },
-		{ portlet: 'FeedbackPortlet', position: 'main_left'}
+		{ portlet: 'FeedbackPortlet', position: 'main'}
         ]
 		,
 		parent: 'LayoutPage'
@@ -264,7 +264,7 @@
         ,
         portlets:
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' }
+		{ portlet: 'StaticContentPortlet', position: 'main' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -278,7 +278,7 @@
         ,
         portlets:
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
         ]
@@ -294,7 +294,7 @@
         ,
         portlets:
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
         ]
@@ -310,7 +310,7 @@
         ,
         portlets:
         [
-		{ portlet: 'PartnersPortlet', position: 'main_left' },
+		{ portlet: 'PartnersPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
         ]
@@ -326,7 +326,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
 		]
@@ -342,7 +342,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
 		]
@@ -358,7 +358,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
 		]
@@ -374,7 +374,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
 		]
@@ -390,7 +390,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
 		]
@@ -406,7 +406,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
 		]
@@ -422,7 +422,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
         ]
@@ -438,7 +438,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
         ]
@@ -454,7 +454,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
         ]
@@ -470,7 +470,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'StaticContentPortlet', position: 'main_left' },
+		{ portlet: 'StaticContentPortlet', position: 'main' },
 		{ portlet: 'IntroduceNavPortlet', position: 'content_right' },
 		{ portlet: 'LinksPortlet', position: 'content_right' ,order: 'G'}
         ]
@@ -482,7 +482,7 @@
         {
         portlets:
         [
-        { portlet: 'ErrorPortlet', position: 'main_left' }
+        { portlet: 'ErrorPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -496,7 +496,7 @@
         {
         portlets:
         [
-        { portlet: 'LoginPortlet', position: 'main_left' }
+        { portlet: 'LoginPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -511,7 +511,7 @@
 		{
         portlets:
         [
-        { portlet: 'PasswordResetPortlet', position: 'main_left' }
+        { portlet: 'PasswordResetPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -525,7 +525,7 @@
 		{
         portlets:
         [
-        { portlet: 'EmailRecoverPortlet', position: 'main_left' }
+        { portlet: 'EmailRecoverPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -539,7 +539,7 @@
 		{
         portlets:
         [
-        { portlet: 'EmailPasswdEditPortlet', position: 'main_left' }
+        { portlet: 'EmailPasswdEditPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -554,8 +554,8 @@
 		{
         portlets:
         [
-		{ portlet: 'ExpertiseAdderPortlet', position: 'main_left' },
-		{ portlet: 'ExpertiseEditPortlet', position: 'main_left' }
+		{ portlet: 'ExpertiseAdderPortlet', position: 'main' },
+		{ portlet: 'ExpertiseEditPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -575,8 +575,8 @@
 		{
         portlets:
         [
-		{ portlet: 'InterestAdderPortlet', position: 'main_left' },
-		{ portlet: 'InterestedAreaEditPortlet', position: 'main_left' }
+		{ portlet: 'InterestAdderPortlet', position: 'main' },
+		{ portlet: 'InterestedAreaEditPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -595,7 +595,7 @@
 		{
         portlets:
         [
-        { portlet: 'ProfileEditPortlet', position: 'main_left' }
+        { portlet: 'ProfileEditPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -614,7 +614,7 @@
 		{
         portlets:
         [
-        { portlet: 'BriefInfoEditPortlet', position: 'main_left' }
+        { portlet: 'BriefInfoEditPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -658,8 +658,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-		{ portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'user-feed',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+		{ portlet: 'SearchResultPortlet', position: 'main', params:{type:'user-feed',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'UserBased'
@@ -674,12 +674,12 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'ExpertisePortlet', position: 'main_left' },
-		{ portlet: 'InterestedAreaPortlet', position: 'main_left' },
-		{ portlet: 'ProfileEduViewPortlet', position: 'main_left' },
-		{ portlet: 'ProfileProjViewPortlet', position: 'main_left' },
-		{ portlet: 'ProfileViewPortlet', position: 'main_left' }
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'ExpertisePortlet', position: 'main' },
+		{ portlet: 'InterestedAreaPortlet', position: 'main' },
+		{ portlet: 'ProfileEduViewPortlet', position: 'main' },
+		{ portlet: 'ProfileProjViewPortlet', position: 'main' },
+		{ portlet: 'ProfileViewPortlet', position: 'main' }
         ]
 		,
 		parent: 'UserBased'
@@ -695,8 +695,8 @@
         ,
         portlets: 
         [
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-		{ portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-asking',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+		{ portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-asking',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'UserBased'
@@ -711,8 +711,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-asked',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-asked',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'UserBased'
@@ -727,8 +727,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'answer',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'SearchResultPortlet', position: 'main', params:{type:'answer',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'UserBased'
@@ -742,8 +742,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-		{ portlet: 'BookmarkPortlet', position: 'main_left' }
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+		{ portlet: 'BookmarkPortlet', position: 'main' }
         ]
 		,
 		parent: 'UserBased'
@@ -758,8 +758,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-flagged',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-flagged',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'UserBased'
@@ -769,7 +769,7 @@
 		{
         portlets:
         [
-        { portlet: 'UserActivationPortlet', position: 'main_left' }
+        { portlet: 'UserActivationPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -807,8 +807,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-		{ portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'user-feed',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+		{ portlet: 'SearchResultPortlet', position: 'main', params:{type:'user-feed',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'ProfileBased'
@@ -823,9 +823,9 @@
         ,
         portlets: 
         [
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' }, 
-        { portlet: 'ExpertisePortlet', position: 'main_left' },
-		{ portlet: 'InterestedAreaPortlet', position: 'main_left' }
+		{ portlet: 'BriefInfoPortlet', position: 'main' }, 
+        { portlet: 'ExpertisePortlet', position: 'main' },
+		{ portlet: 'InterestedAreaPortlet', position: 'main' }
         ]
 		,
 		parent: 'ProfileBased'
@@ -840,8 +840,8 @@
         ,
         portlets: 
         [
-		{ portlet: 'PartnerMockupProfilePortlet', position: 'main_left' },
-		{ portlet: 'PartnerBasicInfoPortlet', position: 'main_left' }
+		{ portlet: 'PartnerMockupProfilePortlet', position: 'main' },
+		{ portlet: 'PartnerBasicInfoPortlet', position: 'main' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -856,8 +856,8 @@
         ,
         portlets: 
         [
-		{ portlet: 'PartnerProfilePortlet', position: 'main_left' },
-		{ portlet: 'NewsInsertPortlet', position: 'main_left' }
+		{ portlet: 'PartnerProfilePortlet', position: 'main' },
+		{ portlet: 'NewsInsertPortlet', position: 'main' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -872,8 +872,8 @@
         ,
         portlets: 
         [
-		{ portlet: 'PartnerProfilePortlet', position: 'main_left' },
-		{ portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-asked',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'PartnerProfilePortlet', position: 'main' },
+		{ portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-asked',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'LayoutPage'
@@ -888,8 +888,8 @@
         ,
         portlets: 
         [
-		{ portlet: 'PartnerProfilePortlet', position: 'main_left' },
-		{ portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-asking',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'PartnerProfilePortlet', position: 'main' },
+		{ portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-asking',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'LayoutPage'
@@ -904,8 +904,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-asking',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-asking',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'ProfileBased'
@@ -919,8 +919,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'BookmarkPortlet', position: 'main_left' }
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'BookmarkPortlet', position: 'main' }
         ]
 		,
 		parent: 'ProfileBased'
@@ -935,8 +935,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-asked',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-asked',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'ProfileBased'
@@ -951,8 +951,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'answer',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'SearchResultPortlet', position: 'main', params:{type:'answer',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'ProfileBased'
@@ -967,8 +967,8 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'BriefInfoPortlet', position: 'main_left' },
-        { portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'question-flagged',showSearchResult:false,showNavigator:false }}
+		{ portlet: 'BriefInfoPortlet', position: 'main' },
+        { portlet: 'SearchResultPortlet', position: 'main', params:{type:'question-flagged',showSearchResult:false,showNavigator:false }}
         ]
 		,
 		parent: 'ProfileBased'
@@ -983,7 +983,7 @@
         ,
         portlets: 
         [ 
-        { portlet: 'OwnAnswerPortlet', position: 'main_left' }
+        { portlet: 'OwnAnswerPortlet', position: 'main' }
         ]
         }
     </script>
@@ -991,7 +991,7 @@
         {
         portlets:
         [
-        { portlet: 'RegisterPortlet', position: 'main_left' }
+        { portlet: 'RegisterPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -1017,7 +1017,7 @@
         ,
         portlets:
         [
-        { portlet: 'SearchResultPortlet', position: 'main_left' }
+        { portlet: 'SearchResultPortlet', position: 'main' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -1043,7 +1043,7 @@
         ,
         portlets:
         [
-        { 	portlet: 'AnswerPortlet', position: 'main_left' },
+        { 	portlet: 'AnswerPortlet', position: 'main' },
 		{ 	portlet: 'QuestionActionPortlet', position: 'content_right', order: 'A0' },
 		{ 	portlet: 'SimilarQuestionsPortlet', position: 'content_right', order: 'A1' },
 		{ 	portlet: 'RecommendAnswerPortlet', position: 'content_right', order: 'A2' },
@@ -1081,8 +1081,8 @@
         ,
         portlets:
         [
-        { 	portlet: 'TopicMainPortlet', position: 'main_left', order: 'A' },
-		{ 	portlet: 'SearchResultPortlet', position: 'main_left', params:{type:'catchword-filter', showSearchResult:false, showNavigator:false }, order: 'C' },
+        { 	portlet: 'TopicMainPortlet', position: 'main', order: 'A' },
+		{ 	portlet: 'SearchResultPortlet', position: 'main', params:{type:'catchword-filter', showSearchResult:false, showNavigator:false }, order: 'C' },
 		{  	portlet: 'BestProfilesPortlet', position: 'content_right', order: 'A0' }
         ]
 		,
@@ -1099,7 +1099,7 @@
         ,
         portlets:
         [
-        { portlet: 'TopicCreatePortlet', position: 'main_left' }
+        { portlet: 'TopicCreatePortlet', position: 'main' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -1109,7 +1109,7 @@
         {
         portlets:
         [
-        { portlet: 'ProfileEditPortlet', position: 'main_left' }
+        { portlet: 'ProfileEditPortlet', position: 'main' }
         ]
         ,
         plugins:
@@ -1175,7 +1175,7 @@
 		{
         portlets:
         [
-		{ portlet: 'PartnerProfileEditPortlet', position: 'main_left' }
+		{ portlet: 'PartnerProfileEditPortlet', position: 'main' }
         ]
         ,
         plugins:
