@@ -27,7 +27,7 @@
 		{ portlet: 'TopicCreatePortletStandalone', position: 'main', active: false },
         { portlet: 'AskQuestionPortlet', position: 'content_right', order: 'F', active: false },
 		{ portlet: 'LoginPortlet', position: 'header_right', order: 'A', params: {light: true} },
-        { portlet: 'FooterPortlet', position: 'other' }
+        { portlet: 'FooterPortlet', position: 'footer' }
         ]
         }
 	</script>
@@ -57,7 +57,7 @@
         ,
         portlets: 
         [ 
-        { portlet: 'ContactsPortlet', position: 'content_left', order: 'A' }
+        { portlet: 'ContactsPortlet', position: 'main', order: 'A' }
         ]
 		,
 		parent: 'LayoutPage'
@@ -106,7 +106,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'AskHomeQuestionPortlet', position: 'menu_right', order: 'A1' },
+		{ portlet: 'AskHomeQuestionPortlet', position: 'content_top', order: 'A1' },
 		{ portlet: 'ExtraQuestionsPortlet', position: 'main', order: 'AA' },
 		{ portlet: 'SearchResultPortlet', position: 'main', order: 'AB', params:{rows:25} },
 		{ portlet: 'ExpertsPortlet', position: 'content_right', order: 'A0' },
