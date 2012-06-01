@@ -386,12 +386,13 @@
 		<span class="bold blue"><%=name%></span> đã mời bạn trả lời câu hỏi <span class="bold blue"><%=trimOff(title, 20)%></span>
 	</script>
 	<script type="text/html" id="UserControlBoxPluginContainer">
-		<ul id="UserControlBoxPlugin" class="no_padding"></ul>
+		<ul id="UserControlBoxPlugin" class="no_padding topnav _right"></ul>
 	</script>
 	<script type="text/html" id="UserControlBoxPluginTmpl">
 		<% if (!login) { %>           
-			<!--<li><a class="" page="Register" href="#!page/Register" title="Đăng ký tài khoản tại Asking.vn">Đăng ký thành viên</a></li>-->
-			<!--<li><a class="" onclick="generateEvent('NeedLogin', {disableWarning: true})" page="Login" title="Đăng nhập vào Asking.vn">Đăng nhập</a>&nbsp;&#183;&nbsp;</li>-->
+			<li class="topnav_link"><a class="" onclick="generateEvent('NeedLogin', {disableWarning: true})" page="Login" title="Đăng nhập vào Asking.vn">Đăng nhập</a></li>
+			<li class="topnav_divider"><span>|</span></li>			
+			<li class="topnav_link"><a class="" page="Register" href="#!page/Register" title="Đăng ký tài khoản tại Asking.vn">Đăng ký</a></li>
 		<% } else { %>
 			<li id="nav-wrapper" class="dropdown_outer">
 				<a class="user_signup" onclick="generateEvent('ToggleAccountNav')"><%=name%></a>
