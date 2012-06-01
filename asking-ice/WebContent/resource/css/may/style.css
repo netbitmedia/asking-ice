@@ -31,7 +31,7 @@ a,.link {
 	text-decoration:none; 
 	cursor:pointer; 
 	border:none;
-	color:#0A9600;
+	color:#069;
 }
 a:hover{
 	text-decoration: underline;
@@ -569,7 +569,7 @@ label.hint {
 .list_title{
 	display: inline-block;
 	color: #444;
-	font-size: 18px;
+	font-size: 14px;
 }
 .best_source_img {
 	margin: 5px 0 0 15px;
@@ -805,7 +805,7 @@ input[type=text].widget_text{
 	text-transform: uppercase;
 }
 .topnav_link a.active{
-	color:#0A9600;
+	color:#069;
 }
 .topnav_divider span{
 	padding-right: 10px;
@@ -1311,7 +1311,7 @@ ul.menu_tab{
 	margin:5px 0;
 }
 .listview .right, .contact_list .right{
-	width: 590px;
+	width: 580px;
 	text-align: justify;
 	padding: 0 5px 0 10px;
 }
@@ -1431,7 +1431,7 @@ td.left{
 
 .bluebox{
 	float: left;	
-	width: 628px;
+	width: 608px;
 	padding:8px;
 	margin: 0 0 10px;
 	background: #C3D9FF;
@@ -1443,7 +1443,7 @@ td.left{
 
 }
 .bluebox_content .left{
-	width:68px;
+	width:60px;
 }
 .bluebox_content .right{
 	width:548px;
@@ -1516,7 +1516,7 @@ td.left{
 	clear:both;
 	border-top: 1px solid #E8E8E8;
 	padding: 5px 0 10px;
-	width:644px;
+	width:620px;
 	min-height: 50px;
 }
 .control_bar{
@@ -1524,20 +1524,18 @@ td.left{
 }
 .lightbox{
 	padding-top: 10px;
-	/*background: url(../images/home/bkg-highlight-3.png) no-repeat center top;
-	border-top: 1px solid #E8E8E8;*/
-	width:644px;
+	width:628px;
 }
 .answer_outer .left{
-	width:50px;
+	width:45px;
 	text-align: right;
 }
 .answer_outer .left img, .bluebox_content .left img{
 	border:1px solid #dfdfdf;
 }
 .answer_outer .right{
-	width:586px;
-	padding:0 0 10px 5px;
+	width:565px;
+	padding:0 0 10px;
 }
 .answer_outer .right_detail{
 	padding:0;
@@ -1568,7 +1566,7 @@ td.left{
 }
 .answerinput_outer{
 	clear: both;
-	width: 644px;
+	width: 625px;
 	margin: 20px 0 0;
 	display: inline-block;
 }
