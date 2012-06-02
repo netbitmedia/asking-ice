@@ -972,8 +972,6 @@ input.joo-non-focus{
 .topic_all{
 	border: silver solid 1px;
 	border-top: none;
-	height: 150px;
-	width: 958px;
 }
 .topic_all ul {
 	float: left;
