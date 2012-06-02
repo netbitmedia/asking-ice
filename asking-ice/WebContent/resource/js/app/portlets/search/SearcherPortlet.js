@@ -71,12 +71,12 @@ SearcherPortlet = Class.extend({
 	},
 	
 	run: function() {
-		var logged = SingletonFactory.getInstance(Application).getSystemProperties().get('user.login');
-		if (logged == 1) {
+//		var logged = SingletonFactory.getInstance(Application).getSystemProperties().get('user.login');
+//		if (logged == 1) {
 			this.getPortletPlaceholder().paintCanvas(this.render());
-		} else {
-			this.getPortletPlaceholder().paintCanvas('');
-		}
+//		} else {
+//			this.getPortletPlaceholder().paintCanvas('');
+//		}
 	},
 	
 	onEnd: function()	{

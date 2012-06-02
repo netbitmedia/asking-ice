@@ -63,8 +63,7 @@ input[type=text]:focus,input[type=password]:focus,.textarea:focus, textarea:focu
 	border:#00aeef solid 1px;
 }
 .hint {
-	position: relative; 
-	float: left; 
+	display: inline-block; 
 }
 label.hint {
 	color: #ccc; 
@@ -884,10 +883,9 @@ input[type=text].widget_text{
 	border-right:none;
 }
 #top_select{
-	float: left;
-	position: relative;
 	width: 95px;
 	margin: -5px 0 0;
+	display: inline-block;
 	/*background: url(../images/home/bg_find.png) repeat-x;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
@@ -1063,7 +1061,6 @@ input.joo-non-focus{
 .top_search_outer{
 	width: 420px;
 	clear: both;
-	float: right;
 	margin: 15px 0 0;
 }
 .statistic .number{
