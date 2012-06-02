@@ -988,12 +988,6 @@ input.joo-non-focus{
 	padding: 5px 5px 10px 5px;
 	min-width: 100px;
 }
-.topic_all ul.first{
-	padding: 5px 5px 10px 15px;
-}
-.topic_all ul.last{
-	padding: 5px 8px 10px;
-}
 .topic_all a{
 	font-size: 11px;
 	color:#474747;
