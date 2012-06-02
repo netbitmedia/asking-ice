@@ -789,6 +789,7 @@ input[type=text].widget_text{
 	overflow: hidden;
 	padding: 0 0 5px;
 	border-bottom: solid 1px #E2E2E2;
+	margin: 0 0 10px;
 }
 #menu_left{
 	width:600px;
@@ -884,8 +885,8 @@ input[type=text].widget_text{
 }
 #top_select{
 	width: 95px;
-	margin: -5px 0 0;
 	display: inline-block;
+	margin:5px 0 0;
 	/*background: url(../images/home/bg_find.png) repeat-x;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
@@ -919,7 +920,9 @@ input[type=text].widget_text{
 	-moz-border-bottom-right-radius: 3px;
 }
 .top_search input[type=text]{
-	width: 305px;
+	width: 500px;
+	float:left;
+	margin:-5px 0 0;
 }
 span.customStyleSelectBox {
 	font-size: 12px;
@@ -964,7 +967,6 @@ input.joo-non-focus{
 
 /* WRAPPER HOME */
 #wrapper{
-	margin:18px 0 0;
 	clear:both;
 	min-height: 535px;
 }
@@ -1051,9 +1053,7 @@ input.joo-non-focus{
 	margin: 15px -16px 0 0;
 }
 .top_search_outer{
-	width: 420px;
 	clear: both;
-	margin: 15px 0 0;
 }
 .statistic .number{
 	color:white;
@@ -1066,15 +1066,8 @@ input.joo-non-focus{
 	width: 810px;
 	float:right;
 }
-.content_top{
-	border-radius: 6px;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	margin: 5px 0;
-	background: #C3D9FF;/*#DDF0F8  #C3D9FF*/
-	padding: 8px 5px 8px 10px;
-	width: 960px;
-	margin: auto;
+#content_top{
+	margin:0 0 15px;
 }
 #top_left{
 	clear:both;
@@ -1145,7 +1138,7 @@ ul.menu_tab{
 	margin: 5px 0;
 }
 .box_header{
-	line-height:35px; 
+	line-height:30px; 
 	padding:0 0 0 10px; 
 	font-size:13px;
 	border-top-left-radius:5px;
@@ -1414,7 +1407,6 @@ td.left{
 
 .bluebox{
 	float: left;	
-	width: 608px;
 	padding:8px;
 	margin: 0 0 10px;
 	background: #C3D9FF;
@@ -1426,10 +1418,10 @@ td.left{
 
 }
 .bluebox_content .left{
-	width:60px;
+	width:48px;
 }
 .bluebox_content .right{
-	width:548px;
+	width:542px;
 }
 .bluebox_content .right_detail{
 	padding:5px 5px 5px 10px;
@@ -1510,14 +1502,13 @@ td.left{
 	width:628px;
 }
 .answer_outer .left{
-	width:45px;
-	text-align: right;
+	width:40px;
 }
 .answer_outer .left img, .bluebox_content .left img{
 	border:1px solid #dfdfdf;
 }
 .answer_outer .right{
-	width:565px;
+	width:570px;
 	padding:0 0 10px;
 }
 .answer_outer .right_detail{
