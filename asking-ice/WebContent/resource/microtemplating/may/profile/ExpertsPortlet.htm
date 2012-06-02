@@ -6,40 +6,55 @@
 				<div class="box_wrapper">
 					<div class="box_outer"><!--  id="ExpertsPortlet-Experts" -->
 						<div id="ExpertsPortlet-Experts" class="experts">
-							<div class="box_user">
-                    			<!--<a href="#!page/Profile/id/242">
+						<ul class="box_list">
+							<li>
+								<a href="#!page/Profile/id/242" title="PGS TS. Huỳnh Quyết Thắng - Chuyên gia về Software Engineering."
+									alt="PGS TS. Huỳnh Quyết Thắng - Chuyên gia về Software Engineering.">PGS TS. Huỳnh Quyết Thắng</a>
+							</li>
+							<li>
+								<a href="#!page/Profile/id/62" title="Thạc sĩ Lê Quốc - Chuyên gia về Vertical Search, Giám đốc công ty Cazoodle Việt Nam">Thạc sĩ Lê Quốc</a>
+							</li>
+							<li>
+								<a href="#!page/Profile/id/1162" title="Tiến sĩ Trương Thị Diệu Linh - Chuyên gia về mạng máy tính, giảng viên tại SOICT">Tiến sĩ Trương Thị Diệu Linh</a>
+							</li>
+							<!--<div class="box_user">
+                    			<a href="#!page/Profile/id/242">
 									<img class="avatar60" src="resource/avatar/9985c110a8b3b14f220da481115f09007d7844d8" alt="PGS Huỳnh Quyết Thắng" />
 								</a>
-                    			<br />-->
+                    			<br />
                     			<a href="#!page/Profile/id/242">PGS TS. Huỳnh Quyết Thắng</a> Software Engineering.
                     		</div>
 							<div class="box_user">
-                    			<!--<a href="#!page/Profile/id/62">
+                    			<a href="#!page/Profile/id/62">
 									<img class="avatar60" src="resource/avatar/bcd96441ab7e65d87bf248acb22c7aac24c9b9f9" alt="Thạc sĩ Lê Quốc" />
 								</a>
-                    			<br />-->
+                    			<br />
                     			<a href="#!page/Profile/id/62">Thạc sĩ Lê Quốc</a> Vertical Search
                     		</div>
 							<div class="box_user">
-                    			<!--<a href="#!page/Profile/id/1162">
+                    			<a href="#!page/Profile/id/1162">
 									<img class="avatar60" src="resource/avatar/4defb8a0beeef5fe7b45bf376639650e55c32888" alt="Tiến sĩ Trương Thị Diệu Linh" />
 								</a>
-                    			<br />-->
+                    			<br />
                     			<a href="#!page/Profile/id/1162">Tiến sĩ Trương Thị Diệu Linh</a> Mạng máy tính
-                    		</div>
+                    		</div>-->
 
 							<% for (var i in users) { %>
-							<div class="box_user">
-                    			<!--<a href="#!page/Profile/id/<%=users[i].id%>">
+							<li>
+								<a href="#!page/Profile/id/<%=users[i].id%>" title="Điểm tại hệ thống Asking: <%=users[i].score%>"><%=users[i].name%></a>
+							</li>
+							<!--<div class="box_user">
+                    			<a href="#!page/Profile/id/<%=users[i].id%>">
 									<img class="bkp_pic_profile avatar60" src="resource/avatar/<%=users[i].avatar%>" alt="<%=users[i].name%>" />
-								</a>-->
+								</a>
                     			<div class="stat_outer">
                     				<a href="#!page/Profile/id/<%=users[i].id%>"><%=users[i].name%></a>
 									<br /> 
 									<span class="beescore stat"><%=users[i].score%></span>
 								</div>
-                    		</div>
+                    		</div>-->
 							<% } %>
+							</ul>
                     	</div>
 					</div><!-- end box outer-->
 				</div><!-- end box wrapper-->
