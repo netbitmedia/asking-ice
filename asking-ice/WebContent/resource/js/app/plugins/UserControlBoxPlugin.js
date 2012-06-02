@@ -63,9 +63,9 @@ UserControlBoxPlugin = Class.extend({
 			obj.name = systemProperties.get('user.name');
 		} else {
 			obj.login = false;
-			if (page.pagename == 'Home')	{
-				subject.notifyEvent('RequestRoute', new Request('Introduce'));
-			}
+//			if (page.pagename == 'Home')	{
+//				subject.notifyEvent('RequestRoute', new Request('Introduce'));
+//			}
 		}
 		if ($('#UserControlBoxPlugin').length <= 0)	{
 			$('div.extension-point[extensionName="TopRight"]').append(tmpl('UserControlBoxPluginContainer', {}));
@@ -162,7 +162,8 @@ UserLogoutPlugin = Class.extend({
 				var systemProperties = SingletonFactory.getInstance(Application).getSystemProperties();
 				systemProperties.set('user.login', 0, true);
 				systemProperties.set('user.id', undefined, true);
-				var request = new Request("Introduce");
+//				var request = new Request("Introduce");
+				var request = new Request("Home");
 				var subject = SingletonFactory.getInstance(Subject);
 				subject.notifyEvent("RequestRoute", request);
 			}

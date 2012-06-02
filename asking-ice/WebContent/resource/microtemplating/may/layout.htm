@@ -23,7 +23,7 @@
         ,
         portlets: 
         [ 
-		{ portlet: 'SearcherPortlet', position: 'header_right', order: 'B' },
+		{ portlet: 'SearcherPortlet', position: 'content_top', order: 'B', active: true },
 		{ portlet: 'TopicCreatePortletStandalone', position: 'main', active: false },
         { portlet: 'AskQuestionPortlet', position: 'content_right', order: 'F', active: false },
 		{ portlet: 'LoginPortlet', position: 'header_right', order: 'A', params: {light: true} },
@@ -106,7 +106,7 @@
         ,
         portlets: 
         [
-		{ portlet: 'AskHomeQuestionPortlet', position: 'content_top', order: 'A1' },
+		{ portlet: 'AskHomeQuestionPortlet', position: 'content_top', order: 'A1', active: false },
 		{ portlet: 'ExtraQuestionsPortlet', position: 'main', order: 'AA' },
 		{ portlet: 'SearchResultPortlet', position: 'main', order: 'AB', params:{rows:25} },
 		{ portlet: 'ExpertsPortlet', position: 'content_right', order: 'A0' },
