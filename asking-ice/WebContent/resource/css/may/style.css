@@ -2655,6 +2655,12 @@ pre {
 	padding: 4px 7px;
 	font-size: 11px;
 	border-right: 3px solid #FFB400;
+	/*
+	background: #EAFDC1;
+	padding: 4px 7px;
+	font-size: 11px;
+	border-right: 3px solid #7DAB3F;
+	*/
 }
 #support_widget a.facebook_link{
 	padding: 0;
