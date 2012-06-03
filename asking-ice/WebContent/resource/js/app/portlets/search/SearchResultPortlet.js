@@ -157,11 +157,11 @@ SearchResultPortlet = Class.extend({
 			params.handler = "latest";
 			break;
 		case "question-best" :
-			params.core = "knowledge";
+			params.core = "feed";
 			params.handler = "best";
 			break;
 		case "question-open" :
-			params.core = "knowledge";
+			params.core = "feed";
 			params.handler = "open";
 			if(all == 1){
 				params.query = "";

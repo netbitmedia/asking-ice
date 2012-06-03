@@ -2666,3 +2666,8 @@ pre {
 	padding: 0;
 	background: none;
 }
+
+.experts {
+	height: 110px;
+	overflow: hidden; 
+}

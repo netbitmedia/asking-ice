@@ -27,7 +27,7 @@ QuestionTypePortlet = Class.extend({
 		case 'question-best':
 			this.requestForEffectiveResource('Featured').addClass('active');
 			return;
-		case 'all':
+		case 'question-all':
 			this.requestForEffectiveResource('All').addClass('active');
 			return;
 		default:
