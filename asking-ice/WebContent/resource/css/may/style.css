@@ -1005,8 +1005,8 @@ input.joo-non-focus{
 	color:#474747;
 	font-weight:bold;
 }
-.topic_all a:hover, .topic_all a.active{
-	color:#2295cc;
+.topic_all a.active{
+	color:#0A9600;
 }
 .more{
 	text-align: right;
@@ -1372,7 +1372,7 @@ ul.menu_tab{
 }
 #company_name{
 	font-size: 13px;
-	color: #0A9600;
+	color: #777;
 	text-align: right;
 	margin-top: -23px;
 }
@@ -2355,19 +2355,19 @@ img.pn-news{
 .profile_status {
 	margin:5px 7px 0;
 	border:1px solid #c4c2c0;
-	height:25px;
+	height:20px;
 	position:relative;
 }
 
 .profile_status .ps_bar{
 	width:70%;
-	background:#D1F1FC;
-	height:25px;
+	background:#7DAB3F;
+	height:20px;
 }
 
 .profile_status span{
 	position:absolute;
-	top:2px;
+	top:0;
 	left:120px;
 	font-weight:bold;
 }
@@ -2499,7 +2499,7 @@ img.pn-news{
 	background:none !important;
 }
 .option_list ul li a:hover{
-	background-color: #2295CC !important;
+	background-color: #0A9600 !important;
 	text-decoration:none;
 	color:white;
 }
