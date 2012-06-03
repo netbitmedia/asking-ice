@@ -394,6 +394,12 @@
 			<li class="topnav_divider"><span>|</span></li>			
 			<li class="topnav_link"><a class="" page="Register" href="#!page/Register" title="Đăng ký tài khoản tại Asking.vn">Đăng ký</a></li>
 		<% } else { %>
+			<li class="dropdown_outer">
+				<a onmouseover="generateEvent('FetchFullNotifications')" class="menu_downdown" onclick="generateEvent('ToggleAccountNav')">
+					<span id="NotificationNumber" class="number_record"></span>
+				</a>
+				<ul class="notification_dropdown" id="NotificationDropdown"></ul>
+			</li>
 			<li id="nav-wrapper" class="dropdown_outer">
 				<a class="user_signup" onclick="generateEvent('ToggleAccountNav')"><%=name%></a>
 				<ul id="navAccount" class="dropdown">
@@ -411,12 +417,7 @@
 					</li>
 				</ul>
 			</li>
-			<li class="dropdown_outer">
-				<a onmouseover="generateEvent('FetchFullNotifications')" class="menu_downdown" onclick="generateEvent('ToggleAccountNav')">
-					<span id="NotificationNumber" class="number_record"></span>
-				</a>
-				<ul class="notification_dropdown" id="NotificationDropdown"></ul>
-			</li>
+			
 		<% } %>
 	</script>
 	<script type="text/html" id="SystemMessagePlugin">
