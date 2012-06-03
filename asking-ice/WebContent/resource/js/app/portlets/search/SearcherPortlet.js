@@ -74,6 +74,7 @@ SearcherPortlet = Class.extend({
 //		var logged = SingletonFactory.getInstance(Application).getSystemProperties().get('user.login');
 //		if (logged == 1) {
 			this.getPortletPlaceholder().paintCanvas(this.render());
+			this.onSearcherTypeChange();
 //		} else {
 //			this.getPortletPlaceholder().paintCanvas('');
 //		}
