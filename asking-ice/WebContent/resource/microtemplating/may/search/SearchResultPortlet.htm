@@ -305,7 +305,7 @@
 						<a href="#!page/Profile/id/<%=feed_id%>"><%=feed_name%></a> đã trả lời một <a href="#!page/Question/qid/<%=qid%>">câu hỏi</a><br />
 					<% } else if (type == "PersonCommented") { %>
 						<a href="#!page/Profile/id/<%=feed_id%>"><%=feed_name%></a> đã bình luận một <a href="#!page/Question/qid/<%=qid%>/hl/<%=feed_content_id%>">câu trả lời</a><br />
-					<% } else if (type == "QuestionAdded") { %>
+					<% } else if (type == "QuestionAsked") { %>
 						Câu hỏi mới trong lĩnh vực <a href="#!page/Topic/id/<%=feed_content_id%>"><%=feed_content%></a><br />
 					<% } else if (type == "QuestionAnswered") { %>
 						Câu trả lời mới trong lĩnh vực <a href="#!page/Topic/id/<%=feed_content_id%>"><%=feed_content%></a><br />
@@ -363,7 +363,7 @@
 						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
 					<% } else if (type == "PersonCommented") { %>
 						<a href="#!page/Profile/id/<%=user_id%>"><img class="bkp_pic_profile avatar32" src="resource/avatar/<%=img%>" alt="avatar"></a>
-					<% } else if (type == "QuestionAdded") { %>
+					<% } else if (type == "QuestionAsked") { %>
 						<a href="#!page/Topic/id/<%=content_id%>"><img onerror="this.src='resource/images/topics/asking.png'" class="avatar32" src="resource/images/topics/<%=img%>" alt="avatar"></a>
 					<% } else if (type == "QuestionAnswered") { %>
 						<a href="#!page/Topic/id/<%=content_id%>"><img onerror="this.src='resource/images/topics/asking.png'" class="avatar32" src="resource/images/topics/<%=img%>" alt="avatar"></a>

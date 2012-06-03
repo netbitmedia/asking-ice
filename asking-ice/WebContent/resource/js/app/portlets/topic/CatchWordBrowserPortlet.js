@@ -37,7 +37,7 @@ CatchWordBrowserPortlet = Class.extend({
 				obj.getPortletPlaceholder().paintCanvas(obj.render());
 				obj.requestForEffectiveResource('ContentPlaceholder').find('ul:first').addClass('first');
 				obj.requestForEffectiveResource('ContentPlaceholder').find('ul:last').addClass('last');
-				obj.requestForEffectiveResource('ContentPlaceholder').find('ul:last').append('<li class="more"><a style="font-weight: normal; color: #069" href="#!page/AllTopics">Xem tất cả</a></li>');
+				obj.requestForEffectiveResource('ContentPlaceholder').find('ul:last').append('<li class="more"><a style="font-weight: normal; color: #0A9600" href="#!page/AllTopics">Xem tất cả</a></li>');
 				//obj.checkActive();
 			}
 		}, true, 300000);
