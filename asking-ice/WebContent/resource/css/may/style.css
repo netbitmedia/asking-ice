@@ -458,7 +458,7 @@ label.hint {
 .edit_tag {
 	display: inline-block;
 	padding: 2px 7px;
-	background: #069;
+	background: #0A9600;
 	color: white;
 	font-size: 11px;
 	margin: 1px;
@@ -586,6 +586,7 @@ label.hint {
 	-webkit-border-radius: 3px;
 	font-size: 11px;
 	line-height: 14px;
+	margin:-2px 0 0;
 }
 .note_line{
 	width:150px;
@@ -718,6 +719,9 @@ img.circle_may{
     font-size:13px;
     font-weight:bold;
 }
+.user_signup:hover{
+	text-decoration: none;
+}
 .dropdown_outer,.menu_downdown{
 	position: relative;
     z-index: 4;
@@ -729,7 +733,7 @@ img.circle_may{
 	display: block;
 }
 #header ul li ul.notification_dropdown {
-	width: 330px;
+	width: 370px;
 	right: -50px;
 	padding: 3px;
 }
@@ -738,18 +742,21 @@ img.circle_may{
 	text-align: left;
 	text-decoration: none;
 	color: black;
+	line-height:20px;
 }
 #header ul li ul.dropdown li a {
 	color: black;
 }
 #header ul li ul.notification_dropdown li:hover, #header ul li ul.notification_dropdown li.active,
 #header ul li ul li a:hover {
-	background-color: #2295CC;
+	background-color: #EAFDC1;
 	text-decoration:none;
 }
 #header ul li ul.notification_dropdown li:hover *, #header ul li ul.notification_dropdown li.active *,
 #header ul li ul li a:hover {
-	color: #FFF;
+}
+.notification_outer{
+	margin:16px 0 20px;
 }
 /*end top menu*/
 #header ul {
@@ -771,6 +778,7 @@ img.circle_may{
 	box-shadow: 1px 1px 3px #bfbfbf;
 	-webkit-box-shadow: 1px 1px 3px #bfbfbf;
 	-moz-box-shadow: 1px 1px 3px #bfbfbf;
+	top:14px;
 }
 #header ul li ul li {
 	display: block;
@@ -781,6 +789,7 @@ img.circle_may{
 	height: auto;
 	padding: 0 10px 0 5px;
 	white-space: nowrap;
+	line-height:20px;
 }
 
 .openlogin_outer img{
@@ -794,7 +803,6 @@ img.circle_may{
 	float:left; 
 	font-size: 11px;
 	line-height: 100%;
-	overflow: hidden;
 	padding: 0 0 5px;
 	border-bottom: solid 1px #E2E2E2;
 	margin: 0 0 10px;
@@ -1691,7 +1699,7 @@ td.left{
 	padding-left:10px;
 }
 .reg-wrapper .reg-outer .row .right{
-	width:420px;
+	width:410px;
 }
 
 .reg-wrapper .reg-welcome, .welcome-msg{
