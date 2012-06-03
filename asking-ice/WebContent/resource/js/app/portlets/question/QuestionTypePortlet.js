@@ -16,6 +16,10 @@ QuestionTypePortlet = Class.extend({
 		this.requestForEffectiveResource('All').removeClass('active');
 		this.requestForEffectiveResource('Feed').removeClass('active');
 		
+		if (SingletonFactory.getInstance(Page).pagename != "Home") {
+			return;
+		}
+		
 		switch (param) {
 		case 'question-open':
 			this.requestForEffectiveResource('Open').addClass('active');
