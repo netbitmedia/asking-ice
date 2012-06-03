@@ -20,13 +20,12 @@ ExpertsPortlet = Class.extend({
 	},
 	
 	slideUsers: function() {
-		var e = this.requestForEffectiveResource('Experts');
+		var e = this.requestForEffectiveResource('Experts').find('ul.box_list');
 		var total = e.children().length;
-		var w = e.find('.box_user').width();
-		this.pos -= 3;
+		this.pos -= 5;
 		if (-this.pos >= total)
 			this.pos = 0;
-		e.animate({'left': this.pos*w}, 1500);
+		e.animate({'margin-top': this.pos*23}, 1500);
 	},
 	
 	onEnd: function() {
