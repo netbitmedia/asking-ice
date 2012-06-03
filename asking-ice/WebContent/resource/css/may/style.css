@@ -31,11 +31,11 @@ a,.link {
 	text-decoration:none; 
 	cursor:pointer; 
 	border:none;
-	color:#069;
+	color:#00473D;
 }
 a:hover{
 	text-decoration: underline;
-	color:#069;
+	color:#0A9600;
 }
 input[type="submit"]{
 	cursor:pointer;
@@ -60,7 +60,7 @@ input[type=text],input[type=password],textarea,select{
 }
 input[type=text]:focus,input[type=password]:focus,.textarea:focus, textarea:focus, select:focus{
 	background:#FFF; 
-	border:#00aeef solid 1px;
+	border:#00473D solid 1px;
 }
 .hint {
 	display: inline-block; 
@@ -530,7 +530,7 @@ label.hint {
 .bottom_box{
 	margin: 20px 0 0;
 	display: inline-block;
-	width: 960px;
+	width: 100%;
 	background:#E0DBD7;
 }
 .bottom_box .header{
@@ -538,7 +538,6 @@ label.hint {
 	padding: 10px 10px;
 	margin: 0;
 	border-bottom: 1px solid white;
-	color: #069;
 	background: #CCC;
 	background: -webkit-gradient(linear, left top, left bottom, from(#DDD), to(#CCC));
 	background: -moz-linear-gradient(top, #DDD, #CCC);
@@ -563,7 +562,7 @@ label.hint {
 	font-size:22px;
 }
 .listview .list_title {
-	width: 560px;
+	width: 535px;
 }
 .list_title{
 	display: inline-block;
@@ -574,7 +573,7 @@ label.hint {
 	margin: 5px 0 0 15px;
 }
 .list_title:hover{
-	color:#069;
+	color:#0A9600;
 	text-decoration:normal;
 }
 .number_record {
@@ -682,17 +681,26 @@ input[type=text].widget_text{
 	padding-right:5px;
 	text-indent: 0;
 }
-#logo{
-	float: left;
-	height: 100px;
-	margin: 5px 0 0;
-	width: 345px;
-}
-#logo img{
-	
-	max-width:345px;
-}
 
+#logo img{
+	width:165px;
+}
+img.circle_may{
+	width: 24px;
+	margin: -8px 10px 0;
+}
+#feature_link ul{
+	padding: 0 0 0 8px;
+	list-style:none;
+	width:150px;
+	margin:10px 0;
+}
+#feature_link ul li{
+	border-left: 3px solid #7DAB3F;
+	padding: 0 0 0 10px;
+	margin: 0 0 5px;
+	background:#eafdc1;
+}
 	/* top menu*/
 #nav-wrapper{
 	position: relative;
@@ -747,6 +755,7 @@ input[type=text].widget_text{
 /*end top menu*/
 #header ul {
 	float: left;
+	padding:0;
 }
 #header ul li {
 	float: left;
@@ -801,11 +810,12 @@ input[type=text].widget_text{
 	text-align: left;
 }
 .topnav_link a{
-	color:#999;
+	color:#666;
 	text-transform: uppercase;
+	font-weight:bold;
 }
 .topnav_link a.active{
-	color:#069;
+	color:#0A9600;
 }
 .topnav_divider span{
 	padding-right: 10px;
@@ -825,6 +835,7 @@ input[type=text].widget_text{
 #content_right{
 	float:right;
 	width:190px;
+	margin:15px 0 0;
 }
 #main{
 	float:left;
@@ -886,7 +897,7 @@ input[type=text].widget_text{
 #top_select{
 	width: 95px;
 	display: inline-block;
-	margin:5px 0 0;
+	margin:10px 0 0 20px;
 	/*background: url(../images/home/bg_find.png) repeat-x;
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
@@ -920,7 +931,7 @@ input[type=text].widget_text{
 	-moz-border-bottom-right-radius: 3px;
 }
 .top_search input[type=text]{
-	width: 500px;
+	width: 476px;
 	float:left;
 	margin:-5px 0 0;
 }
@@ -972,8 +983,6 @@ input.joo-non-focus{
 }
 /* ---------- BOX TOP ---------*/
 .topic_all{
-	border: silver solid 1px;
-	border-top: none;
 }
 .topic_all ul {
 	float: left;
@@ -1002,6 +1011,12 @@ input.joo-non-focus{
 	text-align: right;
 	font-size: 8px !important;
 	color:#2295cc;
+}
+a.all_topic_link{
+	font-weight: normal;
+	color: #0A9600;
+	text-align: left;
+	text-decoration: underline;
 }
 .box_top ul.top_user li.title{
 	font-size: 11px;
@@ -1062,12 +1077,17 @@ input.joo-non-focus{
 /* --------------END BOX TOP-----------------*/
 
 /*----------------- CONTENT --------------------*/
-#content,.boundgrid{
+#content{
 	width: 810px;
 	float:right;
+	min-height:1050px;
+}
+.boundgrid{
+	width:777px;
+	float:left;
 }
 #content_top{
-	margin:0 0 15px;
+	margin:0 0 -2px;
 }
 #top_left{
 	clear:both;
@@ -1174,38 +1194,36 @@ ul.menu_tab{
 	display: inline-block;
 }
 .box_row .left{
-	width: 65px;
+	width: 45px;
 	text-align: left;
-	margin: 5px 5px 0 -5px;
 }
 .box_row .right{
-	width:208px;
+	width:130px;
 	text-align: left;
-	padding:10px 0 0;
+	padding: 0 0;
 }
 .box_article_row, .invite_row{
 	clear: both;
-	margin: 5px;
 	float: left;
 }
 .box_article_row .left{
-	width: 45px;
+	width: 35px;
 	text-align: center;
 	padding: 5px 0;
 	margin: 5px 5px 0 0;
 }
 .box_article_row .right{
-	width:220px;
+	width:140px;
 	text-align: left;
 }
 
 .invite_row .left{
-	width: 200px;
+	width: 120px;
 	text-align: left;
 	margin: 5px 5px 0 0;
 }
 .invite_row .right{
-	width: 65px;
+	width: 50px;
 	text-align: left;
 	margin: 5px 5px 0 0;
 }
@@ -1408,7 +1426,7 @@ td.left{
 .bluebox{
 	float: left;	
 	padding:8px;
-	margin: 0 0 10px;
+	margin: 15px 0 10px;
 	background: #C3D9FF;
 	background: #F8F8F8 url(../images/home/bkg-toolbar.gif) repeat-x 0 0;
 	border: 1px solid #D6D9D9;
@@ -1491,7 +1509,7 @@ td.left{
 	clear:both;
 	border-top: 1px solid #E8E8E8;
 	padding: 5px 0 10px;
-	width:620px;
+	width:608px;
 	min-height: 50px;
 }
 .control_bar{
@@ -1508,7 +1526,7 @@ td.left{
 	border:1px solid #dfdfdf;
 }
 .answer_outer .right{
-	width:570px;
+	width:565px;
 	padding:0 0 10px;
 }
 .answer_outer .right_detail{
@@ -1540,7 +1558,7 @@ td.left{
 }
 .answerinput_outer{
 	clear: both;
-	width: 625px;
+	width: 608px;
 	margin: 20px 0 0;
 	display: inline-block;
 }
@@ -1662,11 +1680,11 @@ td.left{
 	padding-left:10px;
 }
 .reg-wrapper .reg-outer .row .right{
-	width:430px;
+	width:420px;
 }
 
 .reg-wrapper .reg-welcome, .welcome-msg{
-    color: #069;
+    color: #00473D;
     margin: 10px 5px 5px 10px;
 }
 .reg-wrapper .reg-info {
@@ -1758,7 +1776,7 @@ td.left{
 	width:130px;
 }
 .user-outer .row .right,.row2 .right, .title-formatter .right, .Title_container .row .right{
-	width:470px;
+	width:450px;
 }
 .title-formatter .content{
 	color:#202020;
@@ -1838,7 +1856,7 @@ td.left{
 	padding: 0 5px;
 }
 .user-tab a:hover,.user-tab a.active{
-	color: #069;
+	color: #0A9600;
 }
 .control_bar{
 	float: right;
@@ -1867,12 +1885,13 @@ td.left{
 .article_content{
 	clear: both;
 	margin: 20px 0 0;
+	padding:0 15px;
 }
 .article_content img{
 	max-width: 450px;
 }
 .article_title{
-	margin:5px 0 0;
+	margin:30px 0 0;
 	font-size: 22px;
 	line-height: 30px;
 	text-shadow: 0 1px 0 #FBFBFB;
@@ -1941,7 +1960,7 @@ td.left{
 .small_mark{
 	font-size: 15px;
 	padding: 2px 10px;
-	margin: 0 -20px 0 0;
+	margin: 0 -9px 0 0;
 }
 .article_listview{
 	display: inline-block;
@@ -2183,8 +2202,8 @@ img.pn-news{
 	width: 18px;
 }
 .user_brief {
-	width: 230px;
-	height: 70px;
+	width: 180px;
+	height: 60px;
 	float: left;
 	padding: 5px;
 }
@@ -2248,7 +2267,7 @@ img.pn-news{
 }
 .intro_reg input[type=text] {
 	margin: 2px 0;
-	width: 208px;
+	width: 178px;
 	height: 22px;
 }
 .intro_reg{	
