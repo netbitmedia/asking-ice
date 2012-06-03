@@ -2651,15 +2651,15 @@ pre {
 	margin: 15px 0 0;
 }
 #support_widget a{
-	background: #FFF0CC;
-	padding: 4px 7px;
-	font-size: 11px;
-	border-right: 3px solid #FFB400;
-	/*
 	background: #EAFDC1;
 	padding: 4px 7px;
 	font-size: 11px;
 	border-right: 3px solid #7DAB3F;
+	/*
+	background: #FFF0CC;
+	padding: 4px 7px;
+	font-size: 11px;
+	border-right: 3px solid #FFB400;
 	*/
 }
 #support_widget a.facebook_link{
