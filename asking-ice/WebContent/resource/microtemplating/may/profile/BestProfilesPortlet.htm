@@ -3,7 +3,7 @@
 		<script type="text/html" id="BestProfilesPortletView">
         	<div class="box" id="BestProfilesPortlet-TopContent">
             	<div class="box_header">
-                	Thành viên có kinh nghiệm với lĩnh vực                   
+                	Thành viên có kinh nghiệm                  
             	</div><!-- box header -->
            		<div class="box_wrapper">
                 	<div class="box_outer top-userpro">
@@ -15,10 +15,10 @@
         <script type="text/html" id="BestProfilesPortletItem">
         	<div class="box_row">
             	<div class="left">
-            		<a href="#!page/Profile/id/<%=id%>"><img class="avatar60 bkp_pic_profile" src="resource/avatar/<%=avatar%>" alt="avatar" /></a>
+            		<a href="#!page/Profile/id/<%=id%>"><img class="avatar40 bkp_pic_profile" src="resource/avatar/<%=avatar%>" alt="avatar" /></a>
                 </div>
                 <div class="right">
-                	<a class="userpro" href="#!page/Profile/id/<%=id%>"><%=name%></a>
+                	<a class="userpro bold" href="#!page/Profile/id/<%=id%>"><%=name%></a>
                 	<% if (rank != undefined) { %>
                 		<div onmouseover="showtip('<%=tips%>')" onmouseout="hidetip()" ><%=topic%>: Hạng <%=rank%></div>
                 	<% } %>
