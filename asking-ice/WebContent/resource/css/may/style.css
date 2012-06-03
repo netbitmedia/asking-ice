@@ -698,7 +698,7 @@ img.circle_may{
 #feature_link ul li{
 	border-left: 3px solid #7DAB3F;
 	padding: 0 0 0 10px;
-	margin: 0 0 5px;
+	margin: 0 0 2px;
 	background:#eafdc1;
 }
 	/* top menu*/
@@ -840,6 +840,7 @@ img.circle_may{
 #main{
 	float:left;
 	width:610px;
+	margin: 0 0 20px;
 }
 /*#menu_left a{ 
 	padding: 0 20px;
@@ -1218,12 +1219,12 @@ ul.menu_tab{
 }
 
 .invite_row .left{
-	width: 120px;
+	width: 135px;
 	text-align: left;
 	margin: 5px 5px 0 0;
 }
 .invite_row .right{
-	width: 50px;
+	width: 30px;
 	text-align: left;
 	margin: 5px 5px 0 0;
 }
@@ -1325,10 +1326,10 @@ ul.menu_tab{
 /* -----------------FOOTER------------------------*/
 #footer{
 	clear: both;
-	text-align: center;
-	width: 100%;
-	background:url(../images/spring/footer_bg.jpg) repeat-x; 
-	height:55px;
+	height: 25px;
+	background: #F2F2F2;
+	border-top: 2px solid #CECECE;
+	padding: 5px 20px 15px;
 }
 #partner{
 	height: 90px;
@@ -1370,10 +1371,21 @@ ul.menu_tab{
 	padding: 0 30px 0 0;
 }
 #company_name{
-	font-size: 14px;
-	color: white;
+	font-size: 13px;
+	color: #0A9600;
 	text-align: right;
 	margin-top: -23px;
+}
+a.footer_link{
+	font-weight:bold;
+	color:#777;
+	font-size:11px;
+}
+.footer_divider span{
+	padding:0 0 0 10px;
+	color: #999;
+	font-size: 8px;
+	font-weight: bold;
 }
 /* ---------------------END FOOTER -----------------*/
 
