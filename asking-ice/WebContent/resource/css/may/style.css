@@ -137,7 +137,7 @@ label.hint {
 	padding:5px 15px;
 	text-decoration:none;
 }
-.action_button,a.action_button:hover,.widget_button, .button,.green_button{
+.action_button,.widget_button, .button,.green_button{
 	background: #FF8400;
 	padding:5px 15px;
 	cursor:pointer;
@@ -185,10 +185,10 @@ label.hint {
 	margin: 0 0 0 5px;
 	font-weight: normal;
 }
-.green_button{
+.green_button,.action_button{
 	background:#0A9600;
 }
-.green_button:hover{
+.green_button:hover,.action_button:hover{
 	text-decoration:none;
 	color:white;
 }
@@ -1424,8 +1424,8 @@ td.left{
 
 .text{
 	float:left;
-	width:200px;
-	margin:3px 10px 0 0;
+	width:165px;
+	margin:5px 10px 5px 0;
 }
 .table a{
 	font-size:11px;
@@ -2027,7 +2027,7 @@ td.left{
 }
 .comment-text .textarea {
 	height: 27px;
-	width: 623px;
+	width: 585px;
 	overflow-y: hidden;
 	min-height: 50px;
 	background:#f8f8f8;
@@ -2059,7 +2059,7 @@ td.left{
 }
 .comment-put{
 	display: inline-block;
-	width: 625px;
+	width: 588px;
 	background: #F7F7F7;
 	padding: 5px;
 	border-bottom: 1px solid #E7E7E7;
@@ -2506,9 +2506,8 @@ img.pn-news{
 	background:none !important;
 }
 .option_list ul li a:hover{
-	background-color: #0A9600 !important;
+	background-color: #EAFDC1 !important;
 	text-decoration:none;
-	color:white;
 }
 .separator, .short_separator {
 	background-color:#DDD;
