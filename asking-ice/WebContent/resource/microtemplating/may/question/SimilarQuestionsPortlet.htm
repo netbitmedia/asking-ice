@@ -6,6 +6,7 @@
 				<div class="box_wrapper">
 					<div class="box_outer _text_left">
 						<ul class="box_list" id="SimilarQuestionsPortlet-SimilarQuestions"></ul>
+						<a class="edit-note _left" id="SimilarQuestionsPortlet-AddNew" onclick="generateEvent('AttachSimilarQuestions')">Thêm câu hỏi tương tự</a>
 						<div style="display: none" id="SimilarQuestionsPortlet-AttachQuestions">
 							<input id="SimilarQuestionsPortlet-AddQuestionInputBox" type="text" style="float: none" class="text" />
 							<a id="SimilarQuestionsPortlet-SubmitButtonContainer" class="form_button" onclick="generateEvent('SimilarQuestionsButtonClick')">Xong</a>
@@ -30,7 +31,7 @@
 				<% } %>
 				<a id="SimilarQuestionsPortlet-ViewMore" onclick="generateEvent('ViewAllSimilarQuestions')" class="_right">Xem thêm</a>
 			<% } %>
-			<a class="edit-note" id="SimilarQuestionsPortlet-AddNew" onclick="generateEvent('AttachSimilarQuestions')">Thêm câu hỏi tương tự</a>
+			
  		</script>	
 	</div>
 </div>
