@@ -712,7 +712,6 @@ img.circle_may{
 }
 .top-menu .user_signup {
 	background: url("../images/home/search-select.png") no-repeat scroll right center transparent;
-    color: white;
     padding: 0 15px 0 10px;
     position: relative;
     z-index: 10;
