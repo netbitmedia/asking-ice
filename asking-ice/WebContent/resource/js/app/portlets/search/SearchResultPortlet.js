@@ -60,8 +60,7 @@ SearchResultPortlet = Class.extend({
 			case "question-latest" :
 			case "question-best" :
 			case "question-open" :
-				this.pageType = "Feed";
-				break;
+			case "question-all" :
 			case "notification-filter" :
 				this.pageType = "Feed";
 				break;
@@ -98,7 +97,8 @@ SearchResultPortlet = Class.extend({
 		var obj = this;
 		var params = {'start': this.searchPage*this.rows, 'rows': this.rows, 'type': this.core.toLowerCase()};
 		var scope = this.scope;
-		var login = SingletonFactory.getInstance(Application).getSystemProperties().get('user.login');
+		var props = SingletonFactory.getInstance(Application).getSystemProperties();
+		var login = props.get('user.login');
 		if (scope == 'all' || login != 1)	{
 			params.all = 1;
 		}
@@ -107,7 +107,6 @@ SearchResultPortlet = Class.extend({
 		case "user-feed":
 			params.core = "feed";
 			params.handler = "user";
-			var props = SingletonFactory.getInstance(Application).getSystemProperties();
 			var id = undefined;
 			if (props.get('user.login') == 1) {
 				id = props.get('user.id');
@@ -169,6 +168,11 @@ SearchResultPortlet = Class.extend({
 			} else {
 				params.query = this.query;
 			}
+			break;
+		case "question-all" :
+			params.core = "feed";
+			params.handler = "home";
+			params.query = "";
 			break;
 		case "catchword-filter" :
 			params.core = "knowledge";
