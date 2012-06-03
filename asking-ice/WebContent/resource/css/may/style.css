@@ -702,6 +702,13 @@ img.circle_may{
 	margin: 0 0 2px;
 	background:#eafdc1;
 }
+#feature_link ul li.active{
+	background:#0A9600;
+}
+#feature_link ul li.active a{
+	color:white;
+}
+
 	/* top menu*/
 #nav-wrapper{
 	position: relative;
@@ -2638,4 +2645,18 @@ pre {
 
 .button, .popup-title {
 	
+}
+#support_widget{
+	float: right;
+	margin: 15px 0 0;
+}
+#support_widget a{
+	background: #FFF0CC;
+	padding: 4px 7px;
+	font-size: 11px;
+	border-right: 3px solid #FFB400;
+}
+#support_widget a.facebook_link{
+	padding: 0;
+	background: none;
 }
