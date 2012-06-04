@@ -1233,13 +1233,13 @@ ul.menu_tab{
 }
 
 .invite_row .left{
-	width: 135px;
+	width: 123px;
 	text-align: left;
 	margin: 5px 5px 0 0;
 }
 .invite_row .right{
-	width: 30px;
-	text-align: left;
+	width: 47px;
+	text-align: right;
 	margin: 5px 5px 0 0;
 }
 .box_user{

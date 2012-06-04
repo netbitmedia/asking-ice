@@ -3,7 +3,7 @@
 		<script type="text/html" id='FollowRecommendPortletView'>
 			<div class="box">
             	<div class="box_header">
-                	Những người bạn có thể quan tâm            
+                	Có thể bạn muốn theo dõi
             	</div><!-- box_header -->
            		<div class="box_wrapper">
 					<div class="box_outer" id="InviteLinkPortlet-Container">
@@ -13,7 +13,7 @@
 									<a class="_text_left" href="#!page/Profile/id/<%=list[i].id%>"><%=list[i].name%></a>
 								</div>
 								<div class="right">
-									<a onclick="generateEvent('FollowPerson', {id: '<%=list[i].id%>', target: this})" class="action_button">Follow</a>
+									<a onclick="generateEvent('FollowPerson', {id: '<%=list[i].id%>', target: this})" class="green">Theo dõi</a>
 								</div>
 	    					</div>
 						<% } %>

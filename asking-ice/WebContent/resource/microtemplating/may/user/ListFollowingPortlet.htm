@@ -3,7 +3,7 @@
 		<script type="text/html" id="ListFollowingPortletView">
 			<% if (list.length > 0) { %>
 				<div>
-					<%=pronoun.charAt(0).toUpperCase()+pronoun.substr(1)%> đang follow 
+					<%=pronoun.charAt(0).toUpperCase()+pronoun.substr(1)%> đang theo dõi 
 					<% if (list.length > 20) { %>
 						<a onclick="generateEvent('ListAllFollowing')"><%=list.length%> người</a>:
 					<% } else { %>
