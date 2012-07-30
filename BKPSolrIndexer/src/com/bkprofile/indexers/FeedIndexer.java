@@ -145,7 +145,7 @@ public class FeedIndexer extends AbstractIndexer {
 			
 			for(Answer answer: answers) {
 				if (!answerCountMap.containsKey(answer.questionId)) {
-					answerCountMap.put(answer.questionId, 0L);
+					answerCountMap.put(answer.questionId, 1L);
 				} else {
 					answerCountMap.put(answer.questionId, answerCountMap.get(answer.questionId)+1);
 				}
@@ -206,6 +206,7 @@ public class FeedIndexer extends AbstractIndexer {
 				if (count++ > MAX_DOC_UPDATE) {
 					updateDocuments(docs);
 					optimiseUpdate();
+					docs.clear();
 					count = 0;
 				}
 			}
@@ -257,6 +258,7 @@ public class FeedIndexer extends AbstractIndexer {
 					if (count++ > MAX_DOC_UPDATE) {
 						updateDocuments(docs);
 						optimiseUpdate();
+						docs.clear();
 						count = 0;
 					}
 				}
@@ -303,6 +305,7 @@ public class FeedIndexer extends AbstractIndexer {
 				if (count++ > MAX_DOC_UPDATE) {
 					updateDocuments(docs);
 					optimiseUpdate();
+					docs.clear();
 					count = 0;
 				}
 			}
@@ -361,6 +364,7 @@ public class FeedIndexer extends AbstractIndexer {
 					if (count++ > MAX_DOC_UPDATE) {
 						updateDocuments(docs);
 						optimiseUpdate();
+						docs.clear();
 						count = 0;
 					}
 				}
